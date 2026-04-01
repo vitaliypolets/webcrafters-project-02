@@ -29,6 +29,75 @@
   <div class="container header__container">
     <a class="logo" href="#top" aria-label="Меблерія — на початок сторінки">Меблерія</a>
 
+    
+
+    <a class="header__cta btn btn--primary" href="#furniture">До покупок</a>
+
+    <button
+      class="header__burger"
+      type="button"
+      aria-label="Відкрити меню"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-open
+    >
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__overlay" data-menu-overlay></div>
+
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__top">
+        <a class="mobile-menu__logo" href="#top">Меблерія</a>
+
+        <button
+          class="mobile-menu__close"
+          type="button"
+          aria-label="Закрити меню"
+          data-menu-close
+        >
+          ×
+        </button>
+      </div>
+
+      <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#hero">Головна</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#furniture">Каталог</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#about">Про нас</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#faq">FAQ</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#feedback">Відгуки</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="mobile-menu__cta btn btn--primary" href="#furniture">
+        До покупок
+      </a>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+
+
+
     <nav class="nav" aria-label="Основна навігація">
       <ul class="nav__list">
         <li><a class="nav__link" href="#top">Головна</a></li>
@@ -83,21 +152,32 @@
 </section>
 
       <section class="furniture section" id="furniture">
-  <div class="container">
-    <div class="section-head">
-      <p class="section-head__eyebrow">Каталог</p>
-      <h2 class="section-head__title">Наші меблі</h2>
-      <p class="section-head__text">
-        Обирайте меблі, що доповнять ваш інтер’єр і зроблять дім затишнішим.
+  <div class="container furniture__container">
+    <div class="furniture__head">
+      <p class="furniture__label section-label">Каталог</p>
+      <h2 class="furniture__title section-title">Наші меблі</h2>
+      <p class="furniture__subtitle section-text">
+        Обирайте меблі, які поєднують стиль, комфорт і функціональність для
+        вашого дому.
       </p>
     </div>
 
-    <ul class="categories" data-categories></ul>
+    <div class="furniture__categories" data-categories-container>
+      <!-- renderCategories() -->
+    </div>
 
-    <ul class="furniture-grid" data-furniture-list></ul>
+    <div class="furniture__list" data-furniture-container>
+      <!-- renderFurnitureCards() -->
+    </div>
 
-    <div class="section-actions">
-      <button class="btn btn--primary" type="button" data-load-more>Показати ще</button>
+    <div class="furniture__actions">
+      <button
+        class="furniture__load-more btn btn--secondary"
+        type="button"
+        data-load-more
+      >
+        Показати ще
+      </button>
     </div>
   </div>
 </section>
@@ -186,39 +266,140 @@
   </div>
 </footer>
 
-    <div class="modal is-hidden" data-furniture-modal>
-  <div class="modal__backdrop" data-close-furniture-modal></div>
-  <div class="modal__dialog">
-    <button class="modal__close" type="button" aria-label="Закрити" data-close-furniture-modal>×</button>
-    <div class="modal__content" data-furniture-modal-content>
-      <p class="modal__placeholder">Тут буде контент модалки товару.</p>
+    <div class="modal furniture-modal is-hidden" data-furniture-modal>
+  <div class="modal__backdrop" data-modal-backdrop></div>
+
+  <div
+    class="modal__dialog furniture-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="furniture-modal-title"
+  >
+    <button
+      class="modal__close"
+      type="button"
+      aria-label="Закрити модальне вікно"
+      data-modal-close
+    >
+      ×
+    </button>
+
+    <div class="furniture-modal__body">
+      <div class="furniture-modal__gallery" data-furniture-gallery>
+        <!-- render gallery -->
+      </div>
+
+      <div class="furniture-modal__content">
+        <p class="furniture-modal__category" data-furniture-category></p>
+
+        <h2
+          class="furniture-modal__title"
+          id="furniture-modal-title"
+          data-furniture-title
+        ></h2>
+
+        <p class="furniture-modal__price" data-furniture-price></p>
+
+        <div class="furniture-modal__rating" data-furniture-rating>
+          <!-- render stars -->
+        </div>
+
+        <div class="furniture-modal__colors">
+          <p class="furniture-modal__label">Колір</p>
+          <div class="furniture-modal__colors-list" data-furniture-colors>
+            <!-- render color markers -->
+          </div>
+        </div>
+
+        <div class="furniture-modal__description-block">
+          <p class="furniture-modal__label">Опис</p>
+          <p
+            class="furniture-modal__description"
+            data-furniture-description
+          ></p>
+        </div>
+
+        <div class="furniture-modal__dimensions-block">
+          <p class="furniture-modal__label">Розміри</p>
+          <p class="furniture-modal__dimensions" data-furniture-dimensions></p>
+        </div>
+
+        <button
+          class="furniture-modal__action btn btn--primary"
+          type="button"
+          data-open-order-modal
+        >
+          Перейти до замовлення
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
-    <div class="modal is-hidden" data-order-modal>
-  <div class="modal__backdrop" data-close-order-modal></div>
-  <div class="modal__dialog modal__dialog--sm">
-    <button class="modal__close" type="button" aria-label="Закрити" data-close-order-modal>×</button>
-    <div class="modal__content">
-      <h2 class="modal__title">Оформлення замовлення</h2>
+    <div class="modal order-modal is-hidden" data-order-modal>
+  <div class="modal__backdrop" data-modal-backdrop></div>
+
+  <div
+    class="modal__dialog order-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="order-modal-title"
+  >
+    <button
+      class="modal__close"
+      type="button"
+      aria-label="Закрити модальне вікно"
+      data-modal-close
+    >
+      ×
+    </button>
+
+    <div class="order-modal__content">
+      <h2 class="order-modal__title" id="order-modal-title">
+        Оформлення замовлення
+      </h2>
+
+      <p class="order-modal__text">
+        Залиште свої дані, і ми зв’яжемося з вами для уточнення деталей
+        замовлення.
+      </p>
+
       <form class="order-form" data-order-form>
-        <label class="field">
-          <span class="field__label">Ім’я</span>
-          <input class="field__input" type="text" name="name" placeholder="Ваше ім’я" required />
+        <label class="order-form__label">
+          <span class="order-form__label-text">Ім’я</span>
+          <input
+            class="order-form__input"
+            type="text"
+            name="name"
+            placeholder="Ваше ім’я"
+            required
+          />
         </label>
 
-        <label class="field">
-          <span class="field__label">Телефон</span>
-          <input class="field__input" type="tel" name="phone" placeholder="+380..." required />
+        <label class="order-form__label">
+          <span class="order-form__label-text">Телефон</span>
+          <input
+            class="order-form__input"
+            type="tel"
+            name="phone"
+            placeholder="+380XXXXXXXXX"
+            required
+          />
         </label>
 
-        <label class="field">
-          <span class="field__label">Коментар</span>
-          <textarea class="field__input field__input--textarea" name="comment" rows="4" placeholder="Ваш коментар"></textarea>
+        <label class="order-form__label">
+          <span class="order-form__label-text">Коментар</span>
+          <textarea
+            class="order-form__textarea"
+            name="comment"
+            rows="4"
+            placeholder="Ваш коментар"
+          ></textarea>
         </label>
 
-        <button class="btn btn--primary btn--block" type="submit">Надіслати замовлення</button>
+        <button class="order-form__submit btn btn--primary" type="submit">
+          Надіслати заявку
+        </button>
       </form>
     </div>
   </div>
