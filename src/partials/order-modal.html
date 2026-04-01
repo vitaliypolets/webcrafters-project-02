@@ -1,0 +1,27 @@
+<div class="modal is-hidden" data-order-modal>
+  <div class="modal__backdrop" data-close-order-modal></div>
+  <div class="modal__dialog modal__dialog--sm">
+    <button class="modal__close" type="button" aria-label="Закрити" data-close-order-modal>×</button>
+    <div class="modal__content">
+      <h2 class="modal__title">Оформлення замовлення</h2>
+      <form class="order-form" data-order-form>
+        <label class="field">
+          <span class="field__label">Ім’я</span>
+          <input class="field__input" type="text" name="name" placeholder="Ваше ім’я" required />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Телефон</span>
+          <input class="field__input" type="tel" name="phone" placeholder="+380..." required />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Коментар</span>
+          <textarea class="field__input field__input--textarea" name="comment" rows="4" placeholder="Ваш коментар"></textarea>
+        </label>
+
+        <button class="btn btn--primary btn--block" type="submit">Надіслати замовлення</button>
+      </form>
+    </div>
+  </div>
+</div>
