@@ -2,9 +2,12 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/webcrafters-project-02/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcoTote — Стиль, що не шкодить планеті</title>
+    <title>Меблерія - там, де народжується комфорт</title>
+    <meta
+      name="description"
+      content="Меблерія — сучасний меблевий магазин із каталогом, відгуками та формою замовлення."
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
@@ -15,29 +18,212 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fira+Sans:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Raleway:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/webcrafters-project-02/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-CJVlqK73.css">
+    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-DLiKqJKY.css">
   </head>
   <body>
-    
+    <header class="header" id="top">
+  <div class="container header__container">
+    <a class="logo" href="#top" aria-label="Меблерія — на початок сторінки">Меблерія</a>
+
+    <nav class="nav" aria-label="Основна навігація">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#top">Головна</a></li>
+        <li><a class="nav__link" href="#furniture">Каталог</a></li>
+        <li><a class="nav__link" href="#about">Про нас</a></li>
+        <li><a class="nav__link" href="#faq">FAQ</a></li>
+        <li><a class="nav__link" href="#feedback">Відгуки</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn--primary header__cta" href="#furniture">До покупок</a>
+
+    <button class="burger" type="button" aria-label="Відкрити меню" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu is-hidden" data-menu>
+    <div class="mobile-menu__inner">
+      <button class="mobile-menu__close" type="button" aria-label="Закрити меню">×</button>
+      <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
+        <ul class="mobile-menu__list">
+          <li><a class="mobile-menu__link" href="#top">Головна</a></li>
+          <li><a class="mobile-menu__link" href="#furniture">Каталог</a></li>
+          <li><a class="mobile-menu__link" href="#about">Про нас</a></li>
+          <li><a class="mobile-menu__link" href="#faq">FAQ</a></li>
+          <li><a class="mobile-menu__link" href="#feedback">Відгуки</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
     <main>
-      <section class="vite-promo">
-  <div class="container"></div>
+      <section class="hero section">
+  <div class="container hero__container">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Стиль. Комфорт. Ваш простір.</p>
+      <h1 class="hero__title">Створіть дім, у який хочеться повертатись</h1>
+      <p class="hero__text">
+        Сучасні меблі для вітальні, спальні та робочого простору. Зручний каталог,
+        швидке замовлення та перевірена якість.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#furniture">Перейти до каталогу</a>
+        <a class="btn btn--secondary" href="#feedback">Що про нас думають</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-      
-      
-      
-      
-      
-      
+      <section class="furniture section" id="furniture">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-head__eyebrow">Каталог</p>
+      <h2 class="section-head__title">Наші меблі</h2>
+      <p class="section-head__text">
+        Обирайте меблі, що доповнять ваш інтер’єр і зроблять дім затишнішим.
+      </p>
+    </div>
+
+    <ul class="categories" data-categories></ul>
+
+    <ul class="furniture-grid" data-furniture-list></ul>
+
+    <div class="section-actions">
+      <button class="btn btn--primary" type="button" data-load-more>Показати ще</button>
+    </div>
+  </div>
+</section>
+
+      <section class="about section" id="about">
+  <div class="container about__container">
+    <div class="about__content">
+      <p class="section-head__eyebrow">Про бренд</p>
+      <h2 class="section-head__title">Про Меблерію</h2>
+      <p class="about__text">
+        Ми створюємо простір, у якому поєднуються естетика, функціональність і
+        відчуття дому. Добираємо рішення для сучасних інтер’єрів і допомагаємо
+        знайти меблі, які служать роками.
+      </p>
+      <a class="btn btn--secondary" href="#feedback">Переглянути відгуки</a>
+    </div>
+
+    <div class="about__media">
+      <div class="about__image-placeholder">Image / Team photo</div>
+    </div>
+  </div>
+</section>
+
+      <section class="faq section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-head__eyebrow">Допомога</p>
+      <h2 class="section-head__title">Часті питання</h2>
+    </div>
+
+    <div class="faq__list">
+      <details class="faq__item">
+        <summary class="faq__question">Як оформити замовлення?</summary>
+        <p class="faq__answer">
+          Оберіть товар, відкрийте деталі, натисніть кнопку переходу до замовлення й
+          заповніть форму.
+        </p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">Чи є доставка по Україні?</summary>
+        <p class="faq__answer">Так, доставка доступна по всій Україні.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">Чи можна замовити меблі в іншому кольорі?</summary>
+        <p class="faq__answer">
+          Так, у картці товару та в модалці можна обрати доступні кольори.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+      <section class="feedback section" id="feedback">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-head__eyebrow">Соціальний доказ</p>
+      <h2 class="section-head__title">Відгуки клієнтів</h2>
+      <p class="section-head__text">
+        Реальні враження покупців про якість меблів, сервіс і доставку.
+      </p>
+    </div>
+
+    <ul class="feedback-list" data-feedback-list></ul>
+  </div>
+</section>
+
     </main>
+
     <footer class="footer">
-  <div class="container"></div>
+  <div class="container footer__container">
+    <a class="logo logo--light" href="#top">Меблерія</a>
+
+    <ul class="footer__nav">
+      <li><a class="footer__link" href="#furniture">Каталог</a></li>
+      <li><a class="footer__link" href="#about">Про нас</a></li>
+      <li><a class="footer__link" href="#faq">FAQ</a></li>
+      <li><a class="footer__link" href="#feedback">Відгуки</a></li>
+    </ul>
+
+    <ul class="footer__socials">
+      <li><a class="footer__link" href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a class="footer__link" href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    </ul>
+  </div>
 </footer>
+
+    <div class="modal is-hidden" data-furniture-modal>
+  <div class="modal__backdrop" data-close-furniture-modal></div>
+  <div class="modal__dialog">
+    <button class="modal__close" type="button" aria-label="Закрити" data-close-furniture-modal>×</button>
+    <div class="modal__content" data-furniture-modal-content>
+      <p class="modal__placeholder">Тут буде контент модалки товару.</p>
+    </div>
+  </div>
+</div>
+
+    <div class="modal is-hidden" data-order-modal>
+  <div class="modal__backdrop" data-close-order-modal></div>
+  <div class="modal__dialog modal__dialog--sm">
+    <button class="modal__close" type="button" aria-label="Закрити" data-close-order-modal>×</button>
+    <div class="modal__content">
+      <h2 class="modal__title">Оформлення замовлення</h2>
+      <form class="order-form" data-order-form>
+        <label class="field">
+          <span class="field__label">Ім’я</span>
+          <input class="field__input" type="text" name="name" placeholder="Ваше ім’я" required />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Телефон</span>
+          <input class="field__input" type="tel" name="phone" placeholder="+380..." required />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Коментар</span>
+          <textarea class="field__input field__input--textarea" name="comment" rows="4" placeholder="Ваш коментар"></textarea>
+        </label>
+
+        <button class="btn btn--primary btn--block" type="submit">Надіслати замовлення</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 
   </body>
 </html>
