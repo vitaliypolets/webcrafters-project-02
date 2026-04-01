@@ -69,16 +69,14 @@
 }
 
 .hero__title {
-  margin: 0 0 20px;
-  font-size: clamp(40px, 6vw, 72px);
-  line-height: 1.05;
+  margin: 0 0 24px;
+  font: 700 40px / 1.2 var(--font-family);
 }
 
 .hero__text {
   margin: 0;
-  max-width: 560px;
-  font-size: 18px;
-  line-height: 1.7;
+  font: 400 18px / 1.6 var(--font-family);
+    color: var(--color-white);
 }
 
 .hero__actions {
@@ -141,10 +139,17 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
   }
+  .hero__text {
+    max-width: 560px;
+  }
 }
 
 @media (min-width: 1440px) {
   :root {
     --container-padding: 64px;
+  }
+  .hero__title {
+    font-size: 56px;
+    max-width: 560px;
   }
 }
