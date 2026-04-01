@@ -11,9 +11,11 @@ export function renderFurniture(items = []) {
               <p class="furniture-card__meta">Колір: ${item.color}</p>
               <p class="furniture-card__price">${item.price}</p>
               <div class="furniture-card__actions">
-                <button class="btn btn--primary" type="button" data-furniture-id="${item.id}">
-                  Детальніше
-                </button>
+              
+              <button class="product-card__btn btn btn--primary" type="button" data-furniture-details data-id="${item.id}">
+              Детальніше
+              </button>
+             
               </div>
             </div>
           </article>

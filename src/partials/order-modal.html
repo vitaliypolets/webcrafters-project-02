@@ -1,26 +1,67 @@
-<div class="modal is-hidden" data-order-modal>
-  <div class="modal__backdrop" data-close-order-modal></div>
-  <div class="modal__dialog modal__dialog--sm">
-    <button class="modal__close" type="button" aria-label="Закрити" data-close-order-modal>×</button>
-    <div class="modal__content">
-      <h2 class="modal__title">Оформлення замовлення</h2>
+<div class="modal order-modal is-hidden" data-order-modal>
+  <div class="modal__backdrop" data-modal-backdrop></div>
+
+  <div
+    class="modal__dialog order-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="order-modal-title"
+  >
+    <button
+      class="modal__close"
+      type="button"
+      aria-label="Закрити модальне вікно"
+      data-modal-close
+    >
+      ×
+    </button>
+
+    <div class="order-modal__content">
+      <h2 class="order-modal__title" id="order-modal-title">
+        Оформлення замовлення
+      </h2>
+
+      <p class="order-modal__text">
+        Залиште свої дані, і ми зв’яжемося з вами для уточнення деталей
+        замовлення.
+      </p>
+
       <form class="order-form" data-order-form>
-        <label class="field">
-          <span class="field__label">Ім’я</span>
-          <input class="field__input" type="text" name="name" placeholder="Ваше ім’я" required />
+        <label class="order-form__label">
+          <span class="order-form__label-text">Ім’я</span>
+          <input
+            class="order-form__input"
+            type="text"
+            name="name"
+            placeholder="Ваше ім’я"
+            required
+          />
         </label>
 
-        <label class="field">
-          <span class="field__label">Телефон</span>
-          <input class="field__input" type="tel" name="phone" placeholder="+380..." required />
+        <label class="order-form__label">
+          <span class="order-form__label-text">Телефон</span>
+          <input
+            class="order-form__input"
+            type="tel"
+            name="phone"
+            placeholder="+380XXXXXXXXX"
+            required
+          />
         </label>
 
-        <label class="field">
-          <span class="field__label">Коментар</span>
-          <textarea class="field__input field__input--textarea" name="comment" rows="4" placeholder="Ваш коментар"></textarea>
+        <label class="order-form__label">
+          <span class="order-form__label-text">Коментар</span>
+          <textarea
+            class="order-form__textarea"
+            name="comment"
+            rows="4"
+            placeholder="Ваш коментар"
+          ></textarea>
         </label>
 
-        <button class="btn btn--primary btn--block" type="submit">Надіслати замовлення</button>
+        <button class="order-form__submit btn btn--primary" type="submit">
+          Надіслати заявку
+        </button>
       </form>
     </div>
   </div>

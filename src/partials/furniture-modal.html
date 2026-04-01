@@ -1,9 +1,69 @@
-<div class="modal is-hidden" data-furniture-modal>
-  <div class="modal__backdrop" data-close-furniture-modal></div>
-  <div class="modal__dialog">
-    <button class="modal__close" type="button" aria-label="Закрити" data-close-furniture-modal>×</button>
-    <div class="modal__content" data-furniture-modal-content>
-      <p class="modal__placeholder">Тут буде контент модалки товару.</p>
+<div class="modal furniture-modal is-hidden" data-furniture-modal>
+  <div class="modal__backdrop" data-modal-backdrop></div>
+
+  <div
+    class="modal__dialog furniture-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="furniture-modal-title"
+  >
+    <button
+      class="modal__close"
+      type="button"
+      aria-label="Закрити модальне вікно"
+      data-modal-close
+    >
+      ×
+    </button>
+
+    <div class="furniture-modal__body">
+      <div class="furniture-modal__gallery" data-furniture-gallery>
+        <!-- render gallery -->
+      </div>
+
+      <div class="furniture-modal__content">
+        <p class="furniture-modal__category" data-furniture-category></p>
+
+        <h2
+          class="furniture-modal__title"
+          id="furniture-modal-title"
+          data-furniture-title
+        ></h2>
+
+        <p class="furniture-modal__price" data-furniture-price></p>
+
+        <div class="furniture-modal__rating" data-furniture-rating>
+          <!-- render stars -->
+        </div>
+
+        <div class="furniture-modal__colors">
+          <p class="furniture-modal__label">Колір</p>
+          <div class="furniture-modal__colors-list" data-furniture-colors>
+            <!-- render color markers -->
+          </div>
+        </div>
+
+        <div class="furniture-modal__description-block">
+          <p class="furniture-modal__label">Опис</p>
+          <p
+            class="furniture-modal__description"
+            data-furniture-description
+          ></p>
+        </div>
+
+        <div class="furniture-modal__dimensions-block">
+          <p class="furniture-modal__label">Розміри</p>
+          <p class="furniture-modal__dimensions" data-furniture-dimensions></p>
+        </div>
+
+        <button
+          class="furniture-modal__action btn btn--primary"
+          type="button"
+          data-open-order-modal
+        >
+          Перейти до замовлення
+        </button>
+      </div>
     </div>
   </div>
 </div>
