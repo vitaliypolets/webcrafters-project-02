@@ -1,19 +1,30 @@
 <section class="furniture section" id="furniture">
-  <div class="container">
-    <div class="section-head">
-      <p class="section-head__eyebrow">Каталог</p>
-      <h2 class="section-head__title">Наші меблі</h2>
-      <p class="section-head__text">
-        Обирайте меблі, що доповнять ваш інтер’єр і зроблять дім затишнішим.
+  <div class="container furniture__container">
+    <div class="furniture__head">
+      <p class="furniture__label section-label">Каталог</p>
+      <h2 class="furniture__title section-title">Наші меблі</h2>
+      <p class="furniture__subtitle section-text">
+        Обирайте меблі, які поєднують стиль, комфорт і функціональність для
+        вашого дому.
       </p>
     </div>
 
-    <ul class="categories" data-categories></ul>
+    <div class="furniture__categories" data-categories-container>
+      <!-- renderCategories() -->
+    </div>
 
-    <ul class="furniture-grid" data-furniture-list></ul>
+    <div class="furniture__list" data-furniture-container>
+      <!-- renderFurnitureCards() -->
+    </div>
 
-    <div class="section-actions">
-      <button class="btn btn--primary" type="button" data-load-more>Показати ще</button>
+    <div class="furniture__actions">
+      <button
+        class="furniture__load-more btn btn--secondary"
+        type="button"
+        data-load-more
+      >
+        Показати ще
+      </button>
     </div>
   </div>
 </section>
