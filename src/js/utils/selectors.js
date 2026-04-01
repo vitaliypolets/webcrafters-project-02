@@ -1,0 +1,15 @@
+export const refs = {
+  body: document.body,
+  burger: document.querySelector('.burger'),
+  mobileMenu: document.querySelector('[data-menu]'),
+  mobileMenuClose: document.querySelector('.mobile-menu__close'),
+  mobileMenuLinks: document.querySelectorAll('.mobile-menu__link'),
+  categoriesList: document.querySelector('[data-categories]'),
+  furnitureList: document.querySelector('[data-furniture-list]'),
+  loadMoreBtn: document.querySelector('[data-load-more]'),
+  feedbackList: document.querySelector('[data-feedback-list]'),
+  furnitureModal: document.querySelector('[data-furniture-modal]'),
+  furnitureModalContent: document.querySelector('[data-furniture-modal-content]'),
+  orderModal: document.querySelector('[data-order-modal]'),
+  orderForm: document.querySelector('[data-order-form]'),
+};
