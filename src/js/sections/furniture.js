@@ -38,6 +38,27 @@ async function loadFurniture({ append = false } = {}) {
   }
 }
 
+export function initFurnitureSection() {
+  if (!refs.categoriesContainer || !refs.furnitureContainer) return;
+
+  const mockCategories = ['Дивани', 'Стільці', 'Столи'];
+  const mockFurniture = [
+    {
+      _id: '1',
+      name: 'Сучасний диван',
+      price: 12500,
+      colors: ['Бежевий'],
+      images: ['./images/placeholder-furniture.jpg'],
+    },
+  ];
+
+  refs.categoriesContainer.innerHTML = renderCategories(mockCategories);
+  refs.furnitureContainer.innerHTML = renderFurnitureCards(mockFurniture);
+}
+
+
+
+
 export async function initFurniture() {
   if (!refs.categoriesList || !refs.furnitureList) return;
 
