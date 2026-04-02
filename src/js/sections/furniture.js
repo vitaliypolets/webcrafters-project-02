@@ -42,15 +42,30 @@ export function initFurnitureSection() {
   if (!refs.categoriesContainer || !refs.furnitureContainer) return;
 
   const mockCategories = ['Дивани', 'Стільці', 'Столи'];
-  const mockFurniture = [
-    {
-      _id: '1',
-      name: 'Сучасний диван',
-      price: 12500,
-      colors: ['Бежевий'],
-      images: ['./images/placeholder-furniture.jpg'],
-    },
-  ];
+
+const mockFurniture = [
+  {
+    _id: '1',
+    name: 'Сучасний диван',
+    price: 12500,
+    colors: ['Бежевий'],
+    images: ['./images/placeholder-furniture.jpg'],
+  },
+  {
+    _id: '2',
+    name: 'Дерев’яний стілець',
+    price: 3200,
+    colors: ['Горіх'],
+    images: ['./images/placeholder-furniture.jpg'],
+  },
+  {
+    _id: '3',
+    name: 'Журнальний столик',
+    price: 5400,
+    colors: ['Дуб'],
+    images: ['./images/placeholder-furniture.jpg'],
+  },
+];
 
   refs.categoriesContainer.innerHTML = renderCategories(mockCategories);
   refs.furnitureContainer.innerHTML = renderFurnitureCards(mockFurniture);
