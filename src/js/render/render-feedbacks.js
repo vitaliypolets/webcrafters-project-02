@@ -8,7 +8,7 @@ export function renderFeedbacks(feedbacks) {
     .map(feedback => {
       const { name, descr, rate } = feedback;
       return `<li class ="feedback-item">
-    <p>${renderStars(rate)}</p>
+    ${renderStars(rate)}
     <p class="feedback-descr">${descr}</p>
     <p class="feedback-name">${name}</p></li>`;
     })

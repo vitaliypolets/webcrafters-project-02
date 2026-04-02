@@ -28,3 +28,25 @@
 .feedback-descr {
   margin-bottom: 24px;
 }
+
+.star-container {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+}
+
+.star-filled::before {
+  content: '★';
+  color: gold;
+}
+
+.star-half::before {
+  content: '☆'; /* або зробити складніше */
+  color: gold;
+}
+
+.star-empty::before {
+  content: '☆';
+  color: gray;
+}
