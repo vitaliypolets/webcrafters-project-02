@@ -15,9 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initFurnitureSection();
   initAbout();
   initFaq();
-  initFeedback();
   initFooter();
 
   initFurnitureModal();
   initOrderModal();
 });
+
+initFeedback();
