@@ -1,6 +1,6 @@
 import { fetchCategories, fetchFurniture } from '../api/furniture-api.js';
 import { renderCategories } from '../render/render-categories.js';
-import { renderFurniture } from '../render/render-furniture.js';
+import { renderFurnitureCards } from '../render/render-furniture.js';
 import { refs } from '../utils/selectors.js';
 import { state } from '../utils/state.js';
 import { showLoader, hideLoader } from '../utils/loader.js';
@@ -22,8 +22,8 @@ async function loadFurniture({ append = false } = {}) {
     });
 
     refs.furnitureList.innerHTML = append
-      ? refs.furnitureList.innerHTML + renderFurniture(items)
-      : renderFurniture(items);
+      ? refs.furnitureList.innerHTML + renderFurnitureCards(items)
+      : renderFurnitureCards(items);
 
     const shownItems = state.page * state.limit;
     if (shownItems >= total) {
