@@ -314,49 +314,44 @@
       aria-label="Закрити модальне вікно"
       data-modal-close
     >
-      ×
+     <svg class="order-btn-x" width="32" height="32">
+       <use  href="../icons/icons.svg#icon-x"></use>
+     </svg>
     </button>
 
     <div class="order-modal__content">
       <h2 class="order-modal__title" id="order-modal-title">
-        Оформлення замовлення
+        Замовити зворотний зв’язок
       </h2>
-
-      <p class="order-modal__text">
-        Залиште свої дані, і ми зв’яжемося з вами для уточнення деталей
-        замовлення.
-      </p>
-
       <form class="order-form" data-order-form>
         <label class="order-form__label">
-          <span class="order-form__label-text">Ім’я</span>
+          <span class="order-form__label-text">Ім’я*</span>
           <input
             class="order-form__input"
             type="text"
             name="name"
-            placeholder="Ваше ім’я"
+            placeholder="Дмитро"
             required
           />
         </label>
 
         <label class="order-form__label">
-          <span class="order-form__label-text">Телефон</span>
+          <span class="order-form__label-text">Телефон*</span>
           <input
             class="order-form__input"
             type="tel"
             name="phone"
-            placeholder="+380XXXXXXXXX"
+            placeholder="38 099 123 22 11"
             required
           />
         </label>
-
         <label class="order-form__label">
           <span class="order-form__label-text">Коментар</span>
           <textarea
             class="order-form__textarea"
             name="comment"
             rows="4"
-            placeholder="Ваш коментар"
+            placeholder="Введіть ваш коментар"
           ></textarea>
         </label>
 
