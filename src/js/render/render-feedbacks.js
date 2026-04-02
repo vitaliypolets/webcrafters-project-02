@@ -9,7 +9,7 @@ export function renderFeedbacks(feedbacks) {
       const { name, descr, rate } = feedback;
       return `<li class ="feedback-item">
     ${renderStars(rate)}
-    <p class="feedback-descr">${descr}</p>
+    <p class="feedback-descr">"${descr}"</p>
     <p class="feedback-name">${name}</p></li>`;
     })
     .join('');

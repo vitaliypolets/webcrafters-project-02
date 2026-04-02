@@ -11,15 +11,13 @@ export function renderStars(rate) {
 
   for (let i = 1; i <= 5; i++) {
     if (rounded >= i) {
-      markup += `<svg class="star"><use href="${starIcons}#star-filled"></use></svg>`;
+      markup += `<li><svg class="star"><use href="${starIcons}#star-filled"></use></svg></li>`;
     } else if (rounded >= i - 0.5) {
-      markup += `<svg class="star"><use href="${starIcons}#star-half"></use></svg>`;
+      markup += `<li><svg class="star"><use href="${starIcons}#star-half"></use></svg></li>`;
     } else {
-      markup += `<svg class="star"><use href="${starIcons}#star-empty"></use></svg>`;
+      markup += `<li><svg class="star"><use href="${starIcons}#star-empty"></use></svg></li>`;
     }
   }
 
-  return `<ul class="rating value-1 half">
-  <div class="star-container">${markup}</div>
-  </ul>`;
+  return `<ul class="star-container" aria-label="Рейтинг ${rounded} з 5">${markup}</ul>`;
 }
