@@ -10,7 +10,7 @@ function getFurnitureImage(item) {
   if (item.image) return item.image;
   if (item.img) return item.img;
 
-  return './images/placeholder-furniture.jpg';
+  return '/src/images/placeholder-furniture.jpg';
 }
 
 function getFurnitureTitle(item) {
