@@ -1,6 +1,18 @@
 .feedback-section {
   padding: 64px 0px;
-  background: #fff;
+  background-color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  .feedback-section {
+    padding: 32px 0px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .feedback-section {
+    padding: 64px 0px;
+  }
 }
 
 .feedback-title {
@@ -13,6 +25,12 @@
   margin-bottom: 24px;
 }
 
+@media only screen and (min-width: 1440px) {
+  .feedback-title {
+    font-size: 48px;
+  }
+}
+
 .feedback-description {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -22,14 +40,15 @@
   margin-bottom: 80px;
 }
 
+.feedback-list {
+  margin-bottom: 48px;
+}
+
 .star-container {
   display: flex;
   gap: 4px;
   list-style: none;
   padding: 0;
-}
-
-.star-container {
   margin-bottom: 24px;
 }
 
@@ -38,22 +57,52 @@
   height: 20px;
 }
 
-.feedback-descr {
+.feedback-comment {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #080c09;
   margin-bottom: 24px;
+}
+
+.feedback-name {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  margin-top: auto;
+}
+
+.swiper-pagination-dots,
+.swiper-next-button,
+.swiper-prev-button {
+  display: none;
 }
 
 .swiper-control-panel {
   display: flex;
   align-items: center;
-  margin: 20px 0px;
 }
 
 .swiper-pagination {
   padding-top: 20px;
   padding-bottom: 20px;
-  display: flex;
   width: auto;
   align-items: center;
+}
+
+.swiper .swiper-control-panel .swiper-pagination-bullet {
+  background-color: #080c09;
+  opacity: 0.2;
+  width: 8px;
+  height: 8px;
+}
+
+.swiper .swiper-control-panel .swiper-pagination-bullet-active {
+  background-color: #080c09;
+  opacity: 1;
 }
 
 .swiper-prev-button,
@@ -63,23 +112,30 @@
   padding: 12px;
   width: 48px;
   height: 48px;
-  background: #f2f2f2;
+  background-color: #f2f2f2;
+  fill: #080c09;
+}
+
+.swiper-button-disabled {
+  opacity: 0.3;
+}
+
+.swiper-prev-button:hover,
+.swiper-prev-button:focus,
+.swiper-next-button:hover,
+.swiper-next-button:focus {
+  background-color: #975052;
+  fill: #fff;
+}
+
+.swiper-prev-button:active,
+.swiper-next-button:active {
+  background: #6b0609;
+  fill: #fff;
 }
 
 .arrows {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.feedback-swiper .swiper-button-next,
-.feedback-swiper .swiper-button-prev {
-  position: static;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border-radius: 50%;
-}
-
-.feedback-swiper .swiper-pagination {
-  position: static;
+  gap: 16px;
 }
