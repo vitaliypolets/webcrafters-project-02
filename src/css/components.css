@@ -16,7 +16,11 @@
   padding: 12px 24px;
   border-radius: 999px;
   font-weight: 600;
-  transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .btn:hover,
@@ -31,7 +35,10 @@
 
 .btn--primary:hover,
 .btn--primary:focus-visible {
-  background: var(--color-accent-dark);
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05), inset 0 0 0 1px rgba(8, 12, 9, 0.05);
+  background: rgba(8, 12, 9, 0.05);
+  opacity: 0.5;
+  /* background: var(--color-accent-dark); */
 }
 
 .btn--secondary {
@@ -109,16 +116,29 @@
   inset: 0;
   z-index: 40;
   background: rgba(36, 27, 23, 0.45);
-  transition: opacity var(--transition), visibility var(--transition);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
+}
+
+.mobile-menu__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .mobile-menu__inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* .mobile-menu__inner {
   margin-left: auto;
   width: min(100%, 360px);
   min-height: 100%;
   padding: 24px;
   background: var(--color-surface);
-}
+} */
 
 .mobile-menu__close {
   display: block;
@@ -159,6 +179,13 @@
 
 .furniture__categories {
   margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.furniture__head {
+  display: grid;
+  gap: 16px;
+
 }
 
 .furniture__categories-list {
@@ -277,7 +304,6 @@
   margin-bottom: 32px;
 }
 
-
 .furniture-card,
 .feedback-card {
   display: flex;
@@ -299,13 +325,12 @@
   color: var(--color-muted);
 }
 
-
 .product-card {
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-sm);
+  /* border: 1px solid var(--color-border); */
+  /* border-radius: var(--radius-md); */
+  /* background-color: var(--color-surface); */
+
 }
 
 .product-card__image-wrap {
@@ -317,18 +342,23 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: var(--radius-s);
+
 }
 
 .product-card__content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 20px;
+  gap: 16px;
+  padding-top: 16px;
 }
 
 .product-card__title {
-  font-size: 20px;
-  font-weight: 600;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #080c09;
 }
 
 .product-card__color {
@@ -336,14 +366,25 @@
 }
 
 .product-card__price {
-  font-size: 18px;
-  font-weight: 700;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #080c09;
 }
 
 .product-card__btn {
   margin-top: auto;
-}
 
+font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05), inset 0 0 0 1px rgba(8, 12, 9, 0.05);
+  background: rgba(8, 12, 9, 0.05);
+
+}
 
 .furniture-card__body,
 .feedback-card__body {
@@ -355,9 +396,12 @@
 
 .furniture-card__title,
 .feedback-card__author {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #080c09;
 }
 
 .furniture-card__meta,
@@ -365,6 +409,14 @@
   margin: 0;
   color: var(--color-muted);
   line-height: 1.7;
+}
+
+.furniture__subtitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #080c09;
 }
 
 .furniture-card__price {
@@ -399,7 +451,6 @@
   }
 }
 
-
 .stars {
   letter-spacing: 0.15em;
   color: #d9a441;
@@ -432,7 +483,9 @@
   position: fixed;
   inset: 0;
   z-index: 50;
-  transition: opacity var(--transition), visibility var(--transition);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
 }
 
 .modal__backdrop {
@@ -521,7 +574,6 @@
 }
 
 @media (min-width: 768px) {
-
   .furniture-grid,
   .feedback-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -529,7 +581,6 @@
 }
 
 @media (min-width: 1440px) {
-
   .nav,
   .header__cta {
     display: block;
@@ -588,7 +639,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-
 }
 
 .order-form__label-text {
@@ -620,7 +670,8 @@
   padding: 10px 24px;
   margin: 0 auto;
   height: 46px;
-  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
     inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
     inset 0 0 0 1px rgba(8, 12, 9, 0.15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
