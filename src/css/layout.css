@@ -109,6 +109,136 @@
   color: var(--color-muted);
 }
 
+
+
+.footer {
+  padding: 0px 20px 32px;
+  height: 447px;
+  background-color: #6b0609;
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  width: 335px;
+  height: 415px;
+  max-width: 1318px;
+}
+
+.footer-div-logo,
+.footer-div-nav,
+.footer-div-socials,
+.footer-div-mobile {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logo {
+  width: 228px;
+  height: 97px;
+}
+
+.footer-svg {
+  fill: #fff;
+}
+
+.footer__nav {
+  width: 105px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer__link {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__socials {
+  width: 120px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.footer-div-desk {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 0px 32px 32px;
+    height: 273px;
+  }
+
+  .footer__container {
+    width: 704px;
+    height: 241px;
+  }
+
+  .footer__nav {
+    width: 409px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    padding: 0px 64px;
+    height: 97px;
+  }
+
+  .footer__container {
+    width: 1312px;
+    height: 97px;
+    max-width: 1318px;
+    flex-direction: row;
+    gap: 80px;
+  }
+
+  .footer-div-mobile {
+    display: none;
+  }
+
+  .footer-div-desk {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+
+/* 
+
 .footer {
   padding: 32px 0;
   background: var(--color-dark);
@@ -147,4 +277,4 @@
   :root {
     --container-padding: 64px;
   }
-}
+} */

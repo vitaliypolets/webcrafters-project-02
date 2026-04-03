@@ -28,6 +28,7 @@
     --container-padding: 16px;
     --radius-md: 16px;
     --radius-lg: 24px;
+    --radius-s: 8px;
     --shadow-sm: 0 10px 30px rgba(36, 27, 23, 0.08);
     --transition: 250ms ease;
     --font-family: "Raleway", sans-serif;
@@ -36,7 +37,7 @@
     /* Глобальні стилі для тега body  */
     --font-base: 16px;
     --text-main: #030a06;
-    --bg-body: #ebf8ed;
+    --bg-body: #fff;
 }
 
 body {
