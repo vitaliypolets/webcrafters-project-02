@@ -1,47 +1,62 @@
-import { fetchCategories, fetchFurniture } from '../api/furniture-api.js';
+import { refs } from '../utils/selectors.js';
 import { renderCategories } from '../render/render-categories.js';
 import { renderFurnitureCards } from '../render/render-furniture.js';
-import { refs } from '../utils/selectors.js';
-import { state } from '../utils/state.js';
-import { showLoader, hideLoader } from '../utils/loader.js';
-import { showToast } from '../utils/toast.js';
 
-async function loadCategories() {
-  const categories = await fetchCategories();
-  state.categories = categories;
-  refs.categoriesList.innerHTML = renderCategories(categories);
-}
 
-async function loadFurniture({ append = false } = {}) {
-  showLoader();
-  try {
-    const { items, total } = await fetchFurniture({
-      category: state.activeCategory,
-      page: state.page,
-      limit: state.limit,
-    });
-
-    refs.furnitureList.innerHTML = append
-      ? refs.furnitureList.innerHTML + renderFurnitureCards(items)
-      : renderFurnitureCards(items);
-
-    const shownItems = state.page * state.limit;
-    if (shownItems >= total) {
-      refs.loadMoreBtn?.classList.add('is-hidden');
-    } else {
-      refs.loadMoreBtn?.classList.remove('is-hidden');
-    }
-  } catch (error) {
-    showToast('Не вдалося завантажити меблі');
-  } finally {
-    hideLoader();
-  }
-}
-
-export function initFurnitureSection() {
-  if (!refs.categoriesContainer || !refs.furnitureContainer) return;
-
-  const mockCategories = ['Дивани', 'Стільці', 'Столи'];
+const mockCategories = [
+  {
+    name: 'Всі товари',
+    image: '/categories/categories_all.jpg',
+  },
+  {
+    name: 'Мякі меблі',
+    image: '/categories/categories1.jpg',
+  },
+  {
+    name: 'Шафи та системи зберігання',
+    image: '/categories/categories2.jpg',
+  },
+  {
+    name: 'Ліжка та матраци',
+    image: '/categories/categories3.jpg',
+  },
+  {
+    name: 'Столи',
+    image: '/categories/categories4.jpg',
+  },
+   {
+    name: 'Стільці та табурети',
+    image: '/categories/categories5.jpg',
+  },
+    {
+    name: 'Кухні',
+    image: '/categories/categories6.jpg',
+  },
+     {
+    name: 'Меблі для дитячої',
+    image: '/categories/categories7.jpg',
+  },
+      {
+    name: 'Меблі для офісу',
+    image: '/categories/categories8.jpg',
+  },
+    {
+    name: 'Меблі для передпокою',
+    image: '/categories/categories9.jpg',
+  },   
+     {
+    name: 'Меблі для ванної кімнати',
+    image: '/categories/categories10.jpg',
+  },
+     {
+    name: 'Садові та вуличні меблі',
+    image: '/categories/categories11.jpg',
+  },
+      {
+    name: 'Декор та аксесуари',
+    image: '/categories/categories12.jpg',
+  },
+];
 
 const mockFurniture = [
   {
@@ -49,53 +64,65 @@ const mockFurniture = [
     name: 'Сучасний диван',
     price: 12500,
     colors: ['Бежевий'],
-    images: ['/src/images/placeholder-furniture.jpg'],
+    images: ['/images/furniture1.jpg'],
   },
   {
     _id: '2',
-    name: 'Дерев’яний стілець',
+    name: 'Деревʼяний стілець',
     price: 3200,
     colors: ['Горіх'],
-    images: ['/src/images/placeholder-furniture.jpg'],
+    images: ['/images/furniture2.jpg'],
   },
   {
     _id: '3',
     name: 'Журнальний столик',
     price: 5400,
     colors: ['Дуб'],
-    images: ['/src/images/placeholder-furniture.jpg'],
+    images: ['/images/furniture3.jpg'],
+  },
+  {
+    _id: '4',
+    name: 'М’яке ліжко',
+    price: 18900,
+    colors: ['Сірий'],
+    images: ['/images/furniture4.jpg'],
+  },
+  {
+    _id: '5',
+    name: 'М’яке ліжко',
+    price: 18900,
+    colors: ['Сірий'],
+    images: ['/images/furniture5.jpg'],
+  },
+  {
+    _id: '6',
+    name: 'М’яке ліжко',
+    price: 18900,
+    colors: ['Сірий'],
+    images: ['/images/furniture6.jpg'],
+  },
+  {
+    _id: '7',
+    name: 'М’яке ліжко',
+    price: 18900,
+    colors: ['Сірий'],
+    images: ['/images/furniture7.jpg'],
+  },
+  {
+    _id: '8',
+    name: 'М’яке ліжко',
+    price: 18900,
+    colors: ['Сірий'],
+    images: ['/images/furniture8.jpg'],
   },
 ];
 
-  refs.categoriesContainer.innerHTML = renderCategories(mockCategories);
-  refs.furnitureContainer.innerHTML = renderFurnitureCards(mockFurniture);
-}
+export function initFurnitureSection() {
+  if (refs.categoriesContainer) {
+    refs.categoriesContainer.innerHTML = renderCategories(mockCategories);
+  }
 
-
-
-
-export async function initFurniture() {
-  if (!refs.categoriesList || !refs.furnitureList) return;
-
-  await loadCategories();
-  await loadFurniture();
-
-  refs.categoriesList.addEventListener('click', async event => {
-    const btn = event.target.closest('[data-category]');
-    if (!btn) return;
-
-    state.activeCategory = btn.dataset.category;
-    state.page = 1;
-
-    refs.categoriesList
-      .querySelectorAll('.category-btn')
-      .forEach(button => button.classList.toggle('is-active', button === btn));
-
-    await loadFurniture();
-  });
-
-  refs.loadMoreBtn?.addEventListener('click', async () => {
-    state.page += 1;
-    await loadFurniture({ append: true });
-  });
+  if (refs.furnitureContainer) {
+    refs.furnitureContainer.innerHTML = renderFurnitureCards(mockFurniture);
+  }
 }
