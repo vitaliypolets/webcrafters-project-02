@@ -1,39 +1,35 @@
-export function renderCategories(categories = [], activeCategory = '') {
+export function renderCategories(categories = [], activeCategory = 'Усі') {
   if (!Array.isArray(categories) || categories.length === 0) {
     return '<p class="furniture__empty">Категорії не знайдено.</p>';
   }
 
-  const allButton = `
-    <button
-      class="category-btn ${activeCategory === '' ? 'is-active' : ''}"
-      type="button"
-      data-category=""
-    >
-      Усі
-    </button>
-  `;
-
-  const categoryButtons = categories
-    .map(category => {
-      const value = category.name ?? category.category ?? category;
-      const label = category.label ?? category.name ?? category.category ?? category;
-
-      return `
-        <button
-          class="category-btn ${activeCategory === value ? 'is-active' : ''}"
-          type="button"
-          data-category="${value}"
-        >
-          ${label}
-        </button>
-      `;
-    })
-    .join('');
-
   return `
     <div class="furniture__categories-list">
-      ${allButton}
-      ${categoryButtons}
+      ${categories
+        .map(category => {
+          const name = category.name ?? 'Категорія';
+          const image = category.image ?? './categories/categories_all.jpg';
+          const isActive = activeCategory === name;
+
+          return `
+            <button
+              class="category-card ${isActive ? 'is-active' : ''}"
+              type="button"
+              data-category="${name === 'Усі' ? '' : name}"
+            >
+              <div class="category-card__image-wrap">
+                <img
+                  class="category-card__image"
+                  src="${image}"
+                  alt="${name}"
+                  loading="lazy"
+                />
+              </div>
+              <span class="category-card__title">${name}</span>
+            </button>
+          `;
+        })
+        .join('')}
     </div>
   `;
 }

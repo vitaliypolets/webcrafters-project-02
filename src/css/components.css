@@ -141,18 +141,128 @@
 }
 
 .category-btn {
-  flex: 0 0 auto;
   padding: 10px 18px;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
-  background: var(--color-surface);
-  transition: border-color var(--transition), color var(--transition), background-color var(--transition);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  transition:
+    background-color var(--transition-main),
+    color var(--transition-main),
+    border-color var(--transition-main);
 }
 
 .category-btn.is-active {
+  color: var(--color-white);
+  background-color: var(--color-accent);
   border-color: var(--color-accent);
-  background: rgba(143, 75, 53, 0.08);
-  color: var(--color-accent);
+}
+
+.furniture__categories {
+  margin-bottom: 40px;
+}
+
+.furniture__categories-list {
+  display: grid;
+  gap: 20px;
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .furniture__categories-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .furniture__categories-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
+  .furniture__categories-list {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+  }
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 122px;
+  width: 100%;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background-color: transparent;
+  transition:
+    border-color var(--transition-main),
+    box-shadow var(--transition-main),
+    transform var(--transition-main);
+}
+
+.category-card:hover,
+.category-card:focus-visible {
+  transform: translateY(-2px);
+}
+
+.category-card.is-active {
+  border-color: #8b0000;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.category-card__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 122px;
+}
+
+.category-card__image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 24, 40, 0.34);
+}
+
+.category-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 122px;
+  object-fit: cover;
+}
+
+.category-card__title {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 14px;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  text-align: center;
+}
+@media screen and (min-width: 1440px) {
+  .category-card {
+    min-height: 108px;
+  }
+
+  .category-card__image-wrap,
+  .category-card__image {
+    min-height: 108px;
+  }
+
+  .category-card__title {
+    font-size: 18px;
+  }
 }
 
 .furniture-grid,
@@ -160,6 +270,13 @@
   display: grid;
   gap: 20px;
 }
+
+.furniture__list {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
 
 .furniture-card,
 .feedback-card {
@@ -181,6 +298,52 @@
   background: #f2ebe5;
   color: var(--color-muted);
 }
+
+
+.product-card {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.product-card__image-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.product-card__title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.product-card__color {
+  color: var(--color-muted);
+}
+
+.product-card__price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.product-card__btn {
+  margin-top: auto;
+}
+
 
 .furniture-card__body,
 .feedback-card__body {
@@ -214,6 +377,28 @@
 .furniture-card__actions {
   margin-top: auto;
 }
+
+.furniture__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.furniture__empty {
+  color: var(--color-muted);
+}
+
+@media screen and (min-width: 768px) {
+  .furniture__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .furniture__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 
 .stars {
   letter-spacing: 0.15em;
@@ -336,6 +521,7 @@
 }
 
 @media (min-width: 768px) {
+
   .furniture-grid,
   .feedback-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -343,6 +529,7 @@
 }
 
 @media (min-width: 1440px) {
+
   .nav,
   .header__cta {
     display: block;
@@ -355,5 +542,114 @@
   .furniture-grid,
   .feedback-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ++++++++++ */
+
+.order-modal__dialog {
+  border-radius: 8px;
+  padding: 64px 20px;
+  background: var(--color-white);
+}
+
+.modal__close {
+  position: absolute;
+  top: 32px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.order-modal__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #080c09;
+  margin-bottom: 48px;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.order-form__label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+.order-form__label-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  width: 100%;
+}
+
+.order-form__input {
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: rgba(8, 12, 9, 0.05);
+  width: 100%;
+}
+
+.order-form__textarea {
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(8, 12, 9, 0.05);
+  height: 180px;
+}
+
+.order-form__submit {
+  border-radius: 100px;
+  padding: 10px 24px;
+  margin: 0 auto;
+  height: 46px;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  transition: opacity 300ms ease;
+}
+
+@media (min-width: 768px) {
+  .order-modal__dialog {
+    padding: 64px 32px;
+  }
+
+  .order-form__submit:hover,
+  .order-form__submit:focus {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 1440px) {
+  .order-modal__dialog {
+    padding: 64px 64px;
+  }
+
+  .order-modal__title {
+    font-size: 48px;
   }
 }
