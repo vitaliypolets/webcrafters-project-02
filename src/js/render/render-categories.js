@@ -8,7 +8,7 @@ export function renderCategories(categories = [], activeCategory = 'Усі') {
       ${categories
         .map(category => {
           const name = category.name ?? 'Категорія';
-          const image = category.image ?? '/categories/categories_all.jpg';
+          const image = category.image ?? './categories/categories_all.jpg';
           const isActive = activeCategory === name;
 
           return `
