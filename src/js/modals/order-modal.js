@@ -38,7 +38,7 @@ export function initOrderModal() {
     };
 
     if (!payload.name || !payload.phone) {
-      showToast("Заповни обовʼязкові поля");
+      showToast("Заповни обовʼязкові поля: імʼя та телефон");
       return;
     };
 
