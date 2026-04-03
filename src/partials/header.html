@@ -1,8 +1,10 @@
 <header class="header" id="top">
   <div class="container header__container">
     <!-- Логотип -->
-    <a href="#index" class="logo" aria-label="Меблерія — на головну">
-      Меблерія
+    <a href="#top" class="logo" aria-label="Меблерія — на головну">
+      <svg class="logo__icon" width="84" height="36">
+        <use href="./icons/icons.svg#icon-logo"></use>
+      </svg>
     </a>
 
     <!-- Навігація (desktop) -->
@@ -18,14 +20,7 @@
     <a href="#furniture" class="btn btn--primary header__cta"> До покупок </a>
 
     <!-- Бургер -->
-    <button
-      class="header__burger"
-      type="button"
-      aria-label="Відкрити меню"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      data-menu-open
-    >
+    <button class="burger" type="button" aria-expanded="false" data-menu-open>
       <span class="header__burger-line"></span>
       <span class="header__burger-line"></span>
       <span class="header__burger-line"></span>
@@ -33,25 +28,28 @@
   </div>
 
   <!-- Mobile menu -->
-  <div class="mobile-menu is-hidden" data-menu>
-    <div class="mobile-menu__overlay"></div>
+  <div class="mobile-menu is-hidden" data-mobile-menu>
+    <div class="mobile-menu__overlay" data-menu-overlay></div>
 
     <div class="mobile-menu__inner">
-      <!-- Верх -->
-      <div class="mobile-menu__top">
-        <a href="#index" class="logo">Меблерія</a>
-
-        <button
-          class="mobile-menu__close"
-          type="button"
-          aria-label="Закрити меню"
-          data-menu-close
-        >
-          ×
-        </button>
-      </div>
+      <button
+        data-menu-close
+        class="mobile-menu__close"
+        type="button"
+        aria-label="Закрити меню"
+        data-menu-close
+      >
+        ×
+      </button>
 
       <!-- Навігація -->
+      <div>
+        <a href="#top" class="logo" aria-label="Меблерія — на головну">
+          <svg class="logo__icon" width="84" height="36">
+            <use href="./icons/icons.svg#icon-logo"></use>
+          </svg>
+        </a>
+      </div>
       <nav class="mobile-menu__nav">
         <ul class="mobile-menu__list">
           <li><a href="#furniture" class="mobile-menu__link">Наші меблі</a></li>

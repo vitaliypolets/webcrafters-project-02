@@ -16,7 +16,11 @@
   padding: 12px 24px;
   border-radius: 999px;
   font-weight: 600;
-  transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .btn:hover,
@@ -109,7 +113,9 @@
   inset: 0;
   z-index: 40;
   background: rgba(36, 27, 23, 0.45);
-  transition: opacity var(--transition), visibility var(--transition);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
 }
 
 .mobile-menu__inner {
@@ -277,7 +283,6 @@
   margin-bottom: 32px;
 }
 
-
 .furniture-card,
 .feedback-card {
   display: flex;
@@ -298,7 +303,6 @@
   background: #f2ebe5;
   color: var(--color-muted);
 }
-
 
 .product-card {
   overflow: hidden;
@@ -343,7 +347,6 @@
 .product-card__btn {
   margin-top: auto;
 }
-
 
 .furniture-card__body,
 .feedback-card__body {
@@ -399,7 +402,6 @@
   }
 }
 
-
 .stars {
   letter-spacing: 0.15em;
   color: #d9a441;
@@ -432,7 +434,9 @@
   position: fixed;
   inset: 0;
   z-index: 50;
-  transition: opacity var(--transition), visibility var(--transition);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
 }
 
 .modal__backdrop {
@@ -521,7 +525,6 @@
 }
 
 @media (min-width: 768px) {
-
   .furniture-grid,
   .feedback-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -529,7 +532,6 @@
 }
 
 @media (min-width: 1440px) {
-
   .nav,
   .header__cta {
     display: block;
@@ -588,7 +590,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-
 }
 
 .order-form__label-text {
@@ -620,7 +621,8 @@
   padding: 10px 24px;
   margin: 0 auto;
   height: 46px;
-  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
     inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
     inset 0 0 0 1px rgba(8, 12, 9, 0.15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
