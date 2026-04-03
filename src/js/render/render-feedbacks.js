@@ -7,7 +7,7 @@ export function renderFeedbacks(feedbacks) {
   const markup = feedbacks
     .map(feedback => {
       const { name, descr, rate } = feedback;
-      return `<li class ="feedback-item">
+      return `<li class ="swiper-slide feedback-item">
     ${renderStars(rate)}
     <p class="feedback-descr">"${descr}"</p>
     <p class="feedback-name">${name}</p></li>`;

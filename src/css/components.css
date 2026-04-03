@@ -16,7 +16,11 @@
   padding: 12px 24px;
   border-radius: 999px;
   font-weight: 600;
-  transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .btn:hover,
@@ -109,7 +113,9 @@
   inset: 0;
   z-index: 40;
   background: rgba(36, 27, 23, 0.45);
-  transition: opacity var(--transition), visibility var(--transition);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
 }
 
 .mobile-menu__inner {
@@ -146,7 +152,10 @@
   border: 1px solid var(--color-border);
   border-radius: 999px;
   background: var(--color-surface);
-  transition: border-color var(--transition), color var(--transition), background-color var(--transition);
+  transition:
+    border-color var(--transition),
+    color var(--transition),
+    background-color var(--transition);
 }
 
 .category-btn.is-active {
@@ -155,8 +164,7 @@
   color: var(--color-accent);
 }
 
-.furniture-grid,
-.feedback-list {
+.furniture-grid {
   display: grid;
   gap: 20px;
 }
@@ -247,7 +255,9 @@
   position: fixed;
   inset: 0;
   z-index: 50;
-  transition: opacity var(--transition), visibility var(--transition);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
 }
 
 .modal__backdrop {

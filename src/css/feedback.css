@@ -1,5 +1,6 @@
 .feedback-section {
   padding: 64px 0px;
+  background: #fff;
 }
 
 .feedback-title {
@@ -21,19 +22,6 @@
   margin-bottom: 80px;
 }
 
-.stars {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  gap: 4px;
-  margin-bottom: 24px;
-}
-
-.feedback-descr {
-  margin-bottom: 24px;
-}
-
 .star-container {
   display: flex;
   gap: 4px;
@@ -48,4 +36,50 @@
 .star {
   width: 20px;
   height: 20px;
+}
+
+.feedback-descr {
+  margin-bottom: 24px;
+}
+
+.swiper-control-panel {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.swiper-pagination {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  width: auto;
+  align-items: center;
+}
+
+.swiper-prev-button,
+.swiper-next-button {
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  border-radius: 100px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background: #f2f2f2;
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feedback-swiper .swiper-button-next,
+.feedback-swiper .swiper-button-prev {
+  position: static;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 50%;
+}
+
+.feedback-swiper .swiper-pagination {
+  position: static;
 }
