@@ -36,9 +36,14 @@
 
 .btn--primary:hover,
 .btn--primary:focus-visible {
-  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-    background: #6b0609;
-    opacity: 0.5;
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  opacity: 0.5;
 }
 
 .btn--secondary {
@@ -48,10 +53,13 @@
 
 .btn--secondary:hover,
 .btn--secondary:focus-visible {
-box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05), inset 0 0 0 1px rgba(8, 12, 9, 0.05);
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.05);
   background: rgba(8, 12, 9, 0.05);
   opacity: 0.5;
-  }
+}
 
 .btn--block {
   width: 100%;
@@ -192,7 +200,6 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
 .furniture__head {
   display: grid;
   gap: 16px;
-
 }
 
 .furniture__categories-list {
@@ -334,7 +341,6 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
   /* border: 1px solid var(--color-border); */
   /* border-radius: var(--radius-md); */
   /* background-color: var(--color-surface); */
-
 }
 
 .product-card__image-wrap {
@@ -347,7 +353,6 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-s);
-
 }
 
 .product-card__content {
@@ -358,11 +363,13 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
 }
 
 .product-card__title {
+
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 18px;
     line-height: 1.6;
     color: #080c09;
+
 }
 
 .product-card__color {
@@ -370,11 +377,13 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
 }
 
 .product-card__price {
+
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 20px;
     line-height: 1.6;
     color: #080c09;
+
 }
 
 .product-card__btn {
@@ -384,9 +393,11 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
   font-size: 16px;
   line-height: 1.6;
   color: #080c09;
-  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05), inset 0 0 0 1px rgba(8, 12, 9, 0.05);
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.05);
   background: rgba(8, 12, 9, 0.05);
-
 }
 
 .furniture-card__body {
@@ -412,7 +423,7 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
 }
 
 .furniture__subtitle {
-  font-family: var(--font-family);
+ font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
@@ -860,19 +871,19 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
   .order-modal__dialog {
     padding: 64px 32px;
   }
-    .order-form__submit {
-      padding: 10px 31.5px;
-    }
+  .order-form__submit {
+    padding: 10px 31.5px;
+  }
 
   .order-form__submit:hover,
   .order-form__submit:focus {
-  background: rgba(107, 6, 9, 0.5);
-  box-shadow:
-    0 1px 2px 0 rgba(8, 12, 9, 0.05),
-    inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05),
-    inset 0 0 0 1px rgba(8, 12, 9, 0.05);
-  opacity: 0.5;
-}
+    background: rgba(107, 6, 9, 0.5);
+    box-shadow:
+      0 1px 2px 0 rgba(8, 12, 9, 0.05),
+      inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05),
+      inset 0 0 0 1px rgba(8, 12, 9, 0.05);
+    opacity: 0.5;
+  }
 }
 
 @media (min-width: 1440px) {
