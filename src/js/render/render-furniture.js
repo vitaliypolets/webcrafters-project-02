@@ -69,7 +69,7 @@ export function renderFurnitureCards(items = []) {
             <p class="product-card__price">${price}</p>
 
             <button
-              class="product-card__btn btn btn--primary"
+              class="product-card__btn btn btn--secondary"
               type="button"
               data-furniture-details
               data-id="${id}"
