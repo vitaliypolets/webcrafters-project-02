@@ -1,9 +1,6 @@
 .logo {
   width: 228px;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
+ }
 
 .logo--light {
   color: #fff;
@@ -146,14 +143,6 @@
   position: relative;
   z-index: 2;
 }
-
-/* .mobile-menu__inner {
-  margin-left: auto;
-  width: min(100%, 360px);
-  min-height: 100%;
-  padding: 24px;
-  background: var(--color-surface);
-} */
 
 .mobile-menu__close {
   display: block;
@@ -816,6 +805,10 @@
   flex-direction: column;
   gap: 24px;
   width: 100%;
+}
+
+.order-btn-x {
+  fill: #080C09;
 }
 
 .order-form__label {
