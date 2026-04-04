@@ -299,8 +299,7 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
   }
 }
 
-.furniture-grid,
-.feedback-list {
+.furniture-grid {
   display: grid;
   gap: 20px;
 }
@@ -311,8 +310,7 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
   margin-bottom: 32px;
 }
 
-.furniture-card,
-.feedback-card {
+.furniture-card {
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -323,8 +321,7 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
   overflow: hidden;
 }
 
-.furniture-card__image,
-.feedback-card__image {
+.furniture-card__image {
   aspect-ratio: 4 / 3;
   display: grid;
   place-items: center;
@@ -361,7 +358,7 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
 }
 
 .product-card__title {
-    font-family: "Raleway", sans-serif;
+    font-family: var(--font-family);
     font-weight: 600;
     font-size: 18px;
     line-height: 1.6;
@@ -373,7 +370,7 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
 }
 
 .product-card__price {
-    font-family: "Raleway", sans-serif;
+    font-family: var(--font-family);
     font-weight: 600;
     font-size: 20px;
     line-height: 1.6;
@@ -382,8 +379,7 @@ box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 
 
 .product-card__btn {
   margin-top: auto;
-
-font-family: "Raleway", sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
@@ -393,17 +389,15 @@ font-family: "Raleway", sans-serif;
 
 }
 
-.furniture-card__body,
-.feedback-card__body {
+.furniture-card__body {
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 20px;
 }
 
-.furniture-card__title,
-.feedback-card__author {
-  font-family: "Raleway", sans-serif;
+.furniture-card__title {
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 48px;
   line-height: 1.2;
@@ -411,15 +405,14 @@ font-family: "Raleway", sans-serif;
   color: #080c09;
 }
 
-.furniture-card__meta,
-.feedback-card__text {
+.furniture-card__meta {
   margin: 0;
   color: var(--color-muted);
   line-height: 1.7;
 }
 
 .furniture__subtitle {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
@@ -458,10 +451,10 @@ font-family: "Raleway", sans-serif;
   }
 }
 
-.stars {
+/* .stars {
   letter-spacing: 0.15em;
   color: #d9a441;
-}
+} */
 
 .faq__list {
   display: grid;
@@ -581,8 +574,7 @@ font-family: "Raleway", sans-serif;
 }
 
 @media (min-width: 768px) {
-  .furniture-grid,
-  .feedback-list {
+  .furniture-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -597,11 +589,183 @@ font-family: "Raleway", sans-serif;
     display: none;
   }
 
-  .furniture-grid,
-  .feedback-list {
+  .furniture-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+
+/* =========================
+   5. FEEDBACK SECTION
+   ========================= */
+
+.feedback-section {
+  padding: 64px 0px;
+  background-color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  .feedback-section {
+    padding: 32px 0px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .feedback-section {
+    padding: 64px 0px;
+  }
+}
+
+.feedback-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #080c09;
+  margin-bottom: 24px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .feedback-title {
+    font-size: 48px;
+  }
+}
+
+.feedback-description {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #080c09;
+  margin-bottom: 80px;
+}
+
+.feedback-list {
+  margin-bottom: 48px;
+  align-items: stretch;
+}
+
+.feedback-list .feedback-item {
+  display: flex;
+  height: auto;
+}
+
+.feedback-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.star-container {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+}
+
+.feedback-comment {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #080c09;
+  margin-bottom: 24px;
+}
+
+.feedback-name {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  margin-top: auto;
+}
+
+.swiper-pagination-dots,
+.swiper-next-button,
+.swiper-prev-button {
+  display: none;
+}
+
+.swiper-control-panel {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-pagination {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: auto;
+  align-items: center;
+}
+
+.swiper .swiper-control-panel .swiper-pagination-bullet {
+  background-color: #080c09;
+  opacity: 0.2;
+  width: 8px;
+  height: 8px;
+}
+
+.swiper .swiper-control-panel .swiper-pagination-bullet-active {
+  background-color: #080c09;
+  opacity: 1;
+}
+
+.swiper-prev-button,
+.swiper-next-button {
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  border-radius: 100px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background-color: #f2f2f2;
+}
+
+.swiper-button-disabled {
+  opacity: 0.3;
+}
+
+.swiper-prev-button:hover,
+.swiper-prev-button:focus,
+.swiper-next-button:hover,
+.swiper-next-button:focus,
+.left-arrow:hover,
+.left-arrow:focus,
+.right-arrow:hover,
+.right-arrow:focus {
+  background-color: #975052;
+  fill: #fff;
+}
+
+.swiper-prev-button:active,
+.swiper-next-button:active,
+.left-arrow:active,
+.right-arrow:active {
+  background: #6b0609;
+  fill: #fff;
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  fill: #080c09;
+}
+
+.left-arrow,
+.right-arrow {
+  width: 24px;
+  height: 24px;
+}
+
+
 
 /* ++++++++++ */
 
