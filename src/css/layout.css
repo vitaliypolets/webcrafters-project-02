@@ -112,169 +112,129 @@
 
 
 .footer {
-  padding: 0px 20px 32px;
-  height: 447px;
+  padding: 20px 0;
   background-color: #6b0609;
 }
 
 .footer__container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 24px;
-  width: 335px;
-  height: 415px;
-  max-width: 1318px;
 }
 
-.footer-div-logo,
-.footer-div-nav,
-.footer-div-socials,
-.footer-div-mobile {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  flex-direction: column;
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #fff;
+  text-decoration: none;
 }
 
-.logo {
-  width: 228px;
-  height: 97px;
-}
-
-.footer-svg {
+.footer__logo-icon {
   fill: #fff;
+ }
+
+.footer__copy {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  white-space: nowrap;
 }
 
 .footer__nav {
-  width: 105px;
-  height: 200px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__nav-list {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
   gap: 32px;
 }
 
-.footer__link {
-  font-family: "Raleway", sans-serif;
+.footer__nav-link {
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
   color: #fff;
   text-decoration: none;
+  transition: opacity 250ms ease;
 }
 
-.footer-text {
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #fff;
-  text-decoration: none;
+.footer__nav-link:hover,
+.footer__nav-link:focus-visible {
+  opacity: 0.8;
 }
 
 .footer__socials {
-  width: 120px;
-  height: 24px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  gap: 24px;
+  gap: 16px;
+  flex-shrink: 0;
 }
 
-.footer-div-desk {
-  display: none;
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: opacity 250ms ease, transform 250ms ease;
 }
 
-@media (min-width: 768px) {
-  .footer {
-    padding: 0px 32px 32px;
-    height: 273px;
-  }
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
 
+.footer__social-icon {
+  fill: currentColor;
+}
+
+/* Tablet */
+@media screen and (max-width: 1439px) {
   .footer__container {
-    width: 704px;
-    height: 241px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 
   .footer__nav {
-    width: 409px;
-    height: 26px;
-    display: flex;
-    align-items: center;
+    order: 3;
+    flex: 0 0 100%;
+  }
+
+  .footer__nav-list {
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: row;
-    gap: 32px;
+    gap: 20px;
   }
 }
 
-@media (min-width: 1440px) {
+/* Mobile */
+@media screen and (max-width: 767px) {
   .footer {
-    padding: 0px 64px;
-    height: 97px;
+    padding: 24px 0;
   }
 
   .footer__container {
-    width: 1312px;
-    height: 97px;
-    max-width: 1318px;
-    flex-direction: row;
-    gap: 80px;
+    flex-direction: column;
   }
 
-  .footer-div-mobile {
-    display: none;
+  .footer__copy {
+    white-space: normal;
+    text-align: center;
   }
 
-  .footer-div-desk {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-direction: row;
+  .footer__nav-list {
+    flex-direction: column;
+    gap: 16px;
   }
 }
-
-/* 
-
-.footer {
-  padding: 32px 0;
-  background: var(--color-dark);
-  color: #fff;
-}
-
-.footer__container {
-  display: grid;
-  gap: 20px;
-}
-
-.footer__nav,
-.footer__socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-@media (min-width: 768px) {
-  :root {
-    --container-padding: 32px;
-  }
-
-  .section {
-    padding: 96px 0;
-  }
-
-  .about__container,
-  .footer__container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-  }
-}
-
-@media (min-width: 1440px) {
-  :root {
-    --container-padding: 64px;
-  }
-} */

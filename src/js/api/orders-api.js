@@ -1,4 +1,15 @@
 export async function submitOrder(payload) {
-  console.log('Order payload:', payload);
-  return Promise.resolve({ success: true, message: 'Замовлення успішно надіслано' });
+  const response = await fetch('/orders', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to submit order');
+  }
+
+  return response.json();
 }

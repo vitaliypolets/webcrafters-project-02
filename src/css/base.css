@@ -21,11 +21,11 @@
     --color-bg: #fcfaf7;
     --color-surface: #ffffff;
     --color-border: #e8dfd7;
-    --color-accent: #8f4b35;
+    --color-accent: #6b0609;
     --color-accent-dark: #733926;
     --color-dark: #241b17;
     --container-width: 1440px;
-    --container-padding: 16px;
+    --container-padding: 64px;
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-s: 8px;
@@ -36,14 +36,14 @@
 
     /* Глобальні стилі для тега body  */
     --font-base: 16px;
-    --text-main: #030a06;
+    --text-main: #080c09;
     --bg-body: #fff;
 }
 
 body {
     font-family: var(--font-primary);
     font-size: var(--font-base);
-    color: var(--color-neutral-darkest);
+    color: var(--text-main);
     background-color: var(--bg-body);
     margin: 0;
     padding: 0;
@@ -68,13 +68,6 @@ body {
 
 html {
     scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: var(--font-main);
-    color: var(--color-text);
-    background-color: var(--color-bg);
 }
 
 h1,
