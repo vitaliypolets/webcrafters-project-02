@@ -160,23 +160,6 @@
   margin-bottom: 24px;
 }
 
-.category-btn {
-  padding: 10px 18px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  background-color: var(--color-surface);
-  transition:
-    background-color var(--transition-main),
-    color var(--transition-main),
-    border-color var(--transition-main);
-}
-
-.category-btn.is-active {
-  color: var(--color-white);
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-}
-
 .furniture__categories {
   margin-bottom: 40px;
   margin-top: 40px;
@@ -354,7 +337,7 @@
 }
 
 .product-card__title {
-    font-family: "Raleway", sans-serif;
+    font-family: var(--font-family);
     font-weight: 600;
     font-size: 18px;
     line-height: 1.6;
@@ -366,7 +349,7 @@
 }
 
 .product-card__price {
-    font-family: "Raleway", sans-serif;
+    font-family: var(--font-family);
     font-weight: 600;
     font-size: 20px;
     line-height: 1.6;
@@ -375,8 +358,7 @@
 
 .product-card__btn {
   margin-top: auto;
-
-font-family: "Raleway", sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
@@ -396,7 +378,7 @@ font-family: "Raleway", sans-serif;
 
 .furniture-card__title,
 .feedback-card__author {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 48px;
   line-height: 1.2;
@@ -412,7 +394,7 @@ font-family: "Raleway", sans-serif;
 }
 
 .furniture__subtitle {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
