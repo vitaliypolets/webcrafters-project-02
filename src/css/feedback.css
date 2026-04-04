@@ -42,6 +42,18 @@
 
 .feedback-list {
   margin-bottom: 48px;
+  align-items: stretch;
+}
+
+.feedback-list .feedback-item {
+  display: flex;
+  height: auto;
+}
+
+.feedback-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .star-container {
