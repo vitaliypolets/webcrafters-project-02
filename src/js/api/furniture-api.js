@@ -1,29 +1,31 @@
-const categories = ['all', 'sofas', 'chairs', 'tables', 'beds'];
-
-const furniture = Array.from({ length: 12 }, (_, index) => ({
-  id: index + 1,
-  name: `Модель ${index + 1}`,
-  category: categories[(index % (categories.length - 1)) + 1],
-  color: ['Горіх', 'Бежевий', 'Графіт'][index % 3],
-  price: `${12000 + index * 850} грн`,
-  rating: (4 + (index % 10) / 10).toFixed(1),
-  description: 'Комфортні сучасні меблі для щоденного використання.',
-  sizes: '180 x 90 x 85 см',
-  colors: ['Бежевий', 'Графіт', 'Коричневий'],
-}));
+import axios from 'axios';
 
 export async function fetchCategories() {
-  return Promise.resolve(categories);
+  const BASE_URL = 'https://furniture-store-v2.b.goit.study';
+  const END_POINT = '/api/categories';
+  const url = BASE_URL + END_POINT;
+  const res = await axios.get(url);
+  res.data.unshift({ id: 'all', name: 'Всі товари' });
+  return res.data;
 }
 
-export async function fetchFurniture({ category = 'all', page = 1, limit = 8 } = {}) {
-  const normalized = category === 'all' ? furniture : furniture.filter(item => item.category === category);
-  const start = (page - 1) * limit;
-  const end = start + limit;
-  return Promise.resolve({ items: normalized.slice(start, end), total: normalized.length });
+export async function fetchFurniture(userParams) {
+  const BASE_URL = 'https://furniture-store-v2.b.goit.study';
+  const END_POINT = '/api/furnitures';
+  const url = BASE_URL + END_POINT;
+  const params = {
+    page: 1,
+    limit: 8,
+    ...userParams,
+  };
+  const res = await axios.get(url, { params });
+  return res.data;
 }
 
 export async function fetchFurnitureById(id) {
-  const item = furniture.find(entry => String(entry.id) === String(id));
-  return Promise.resolve(item);
+  const BASE_URL = 'https://furniture-store-v2.b.goit.study';
+  const END_POINT = `/api/furnitures/${id}`;
+  const url = BASE_URL + END_POINT;
+  const res = await axios.get(url);
+  return res.data;
 }
