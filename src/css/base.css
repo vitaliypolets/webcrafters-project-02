@@ -36,14 +36,14 @@
 
     /* Глобальні стилі для тега body  */
     --font-base: 16px;
-    --text-main: #030a06;
+    --text-main: #080c09;
     --bg-body: #fff;
 }
 
 body {
     font-family: var(--font-primary);
     font-size: var(--font-base);
-    color: var(--color-neutral-darkest);
+    color: var(--text-main);
     background-color: var(--bg-body);
     margin: 0;
     padding: 0;
@@ -68,13 +68,6 @@ body {
 
 html {
     scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: var(--font-main);
-    color: var(--color-text);
-    background-color: var(--color-bg);
 }
 
 h1,
