@@ -1,107 +1,69 @@
-<header class="header" id="top">
+<div id="top"></div>
+<header class="header">
   <div class="container header__container">
-    <a class="logo" href="#top" aria-label="Меблерія — на початок сторінки">Меблерія</a>
+    <!-- Логотип -->
+    <a href="#top" class="logo" aria-label="Меблерія — на головну">
+      <svg class="logo__icon" width="135" height="36">
+        <use href="./icons/icons.svg#icon-logo"></use>
+      </svg>
+    </a>
 
-    
-
-    <a class="header__cta btn btn--primary" href="#furniture">До покупок</a>
-
-    <button
-      class="header__burger"
-      type="button"
-      aria-label="Відкрити меню"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      data-menu-open
-    >
-      <span class="header__burger-line"></span>
-      <span class="header__burger-line"></span>
-      <span class="header__burger-line"></span>
-    </button>
-  </div>
-
-  <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
-    <div class="mobile-menu__overlay" data-menu-overlay></div>
-
-    <div class="mobile-menu__panel">
-      <div class="mobile-menu__top">
-        <a class="mobile-menu__logo" href="#top">Меблерія</a>
-
-        <button
-          class="mobile-menu__close"
-          type="button"
-          aria-label="Закрити меню"
-          data-menu-close
-        >
-          ×
-        </button>
-      </div>
-
-      <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
-        <ul class="mobile-menu__list">
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#hero">Головна</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#furniture">Каталог</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#about">Про нас</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#faq">FAQ</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#feedback">Відгуки</a>
-          </li>
-        </ul>
-      </nav>
-
-      <a class="mobile-menu__cta btn btn--primary" href="#furniture">
-        До покупок
-      </a>
-    </div>
-  </div>
-</header>
-
-
-
-
-
-
-
-
+    <!-- Навігація (desktop) -->
     <nav class="nav" aria-label="Основна навігація">
       <ul class="nav__list">
-        <li><a class="nav__link" href="#top">Головна</a></li>
-        <li><a class="nav__link" href="#furniture">Каталог</a></li>
+        <li><a class="nav__link" href="#furniture">Наші меблі</a></li>
         <li><a class="nav__link" href="#about">Про нас</a></li>
-        <li><a class="nav__link" href="#faq">FAQ</a></li>
+        <li><a class="nav__link" href="#faq">Часті питання</a></li>
         <li><a class="nav__link" href="#feedback">Відгуки</a></li>
       </ul>
     </nav>
 
-    <a class="btn btn--primary header__cta" href="#furniture">До покупок</a>
+    <a href="#furniture" class="btn btn--primary header__cta"> До покупок </a>
 
-    <button class="burger" type="button" aria-label="Відкрити меню" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+    <!-- Бургер -->
+    <button class="burger" type="button" aria-expanded="false" data-menu-open>
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
     </button>
   </div>
 
-  <div class="mobile-menu is-hidden" data-menu>
+  <!-- Mobile menu -->
+  <div class="mobile-menu is-hidden" data-mobile-menu>
+    <div class="mobile-menu__overlay" data-menu-overlay></div>
+
     <div class="mobile-menu__inner">
-      <button class="mobile-menu__close" type="button" aria-label="Закрити меню">×</button>
-      <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
+      <button
+        data-menu-close
+        class="mobile-menu__close"
+        type="button"
+        aria-label="Закрити меню"
+        data-menu-close
+      >
+        ×
+      </button>
+
+      <!-- Навігація -->
+      <div>
+        <a href="#top" class="logo" aria-label="Меблерія — на головну">
+          <svg class="logo__icon" width="84" height="36">
+            <use href="./icons/icons.svg#icon-logo"></use>
+          </svg>
+        </a>
+      </div>
+      <nav class="mobile-menu__nav">
         <ul class="mobile-menu__list">
-          <li><a class="mobile-menu__link" href="#top">Головна</a></li>
-          <li><a class="mobile-menu__link" href="#furniture">Каталог</a></li>
-          <li><a class="mobile-menu__link" href="#about">Про нас</a></li>
-          <li><a class="mobile-menu__link" href="#faq">FAQ</a></li>
-          <li><a class="mobile-menu__link" href="#feedback">Відгуки</a></li>
+          <li><a href="#furniture" class="mobile-menu__link">Наші меблі</a></li>
+          <li><a href="#about" class="mobile-menu__link">Про нас</a></li>
+          <li><a href="#faq" class="mobile-menu__link">Часті питання</a></li>
+          <li><a href="#feedback" class="mobile-menu__link">Відгуки</a></li>
         </ul>
       </nav>
+
+      <!-- Кнопка -->
+      <a href="#furniture" class="btn btn--primary mobile-menu__cta">
+        До покупок
+      </a>
     </div>
   </div>
 </header>
