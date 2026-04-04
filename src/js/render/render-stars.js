@@ -1,4 +1,4 @@
-import starIcons from 'css-star-rating/images/star-rating.icons.svg';
+import starIcons from '/icons/star-rating.icons.svg';
 
 function roundRating(rate) {
   return Math.round(Number(rate) * 2) / 2;
