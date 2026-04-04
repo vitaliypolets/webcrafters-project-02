@@ -16,10 +16,25 @@ export function initHeader() {
     unlockScroll();
   };
 
+  const logoLinks = document.querySelectorAll('a[href="#top"]');
+
+  logoLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+
+      closeMenu();
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+
+      history.replaceState(null, '', '#top');
+    });
+  });
+
   refs.menuOpenBtn.addEventListener('click', openMenu);
-
   refs.menuCloseBtn?.addEventListener('click', closeMenu);
-
   refs.mobileMenuOverlay?.addEventListener('click', closeMenu);
 
   refs.mobileMenu
