@@ -1,4 +1,5 @@
 .logo {
+  width: 228px;
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -12,7 +13,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
+  /* min-height: 52px; */
   padding: 12px 24px;
   border-radius: 999px;
   font-weight: 600;
@@ -35,16 +36,25 @@
 
 .btn--primary:hover,
 .btn--primary:focus-visible {
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  opacity: 0.5;
+}
+
+
+.btn--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: inherit;
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
   box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05), inset 0 0 0 1px rgba(8, 12, 9, 0.05);
   background: rgba(8, 12, 9, 0.05);
   opacity: 0.5;
   /* background: var(--color-accent-dark); */
 }
 
-.btn--secondary {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: inherit;
-}
 
 .btn--block {
   width: 100%;

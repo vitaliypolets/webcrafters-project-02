@@ -7,7 +7,7 @@ import { openModal, closeModal } from './modal-base.js';
 export function initOrderModal() {
   document.addEventListener('click', event => {
     const openBtn = event.target.closest('[data-open-order-modal]');
-    const closeBtn = event.target.closest('[data-close-order-modal]');
+    const closeBtn = event.target.closest('[data-modal-close]');
     const backdrop = refs.orderModal && event.target === refs.orderModal.querySelector('[data-modal-backdrop]');
 
     if (openBtn) {
@@ -20,7 +20,7 @@ export function initOrderModal() {
   });
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && state.isOrderModalOpen) {
       closeModal(refs.orderModal);
     }
   });
