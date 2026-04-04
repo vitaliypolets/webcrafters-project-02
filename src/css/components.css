@@ -291,6 +291,7 @@
   color: #fff;
   text-align: center;
 }
+
 @media screen and (min-width: 1440px) {
   .category-card {
     min-height: 108px;
@@ -364,11 +365,11 @@
 
 .product-card__title {
 
-    font-family: var(--font-family);
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #080c09;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #080c09;
 
 }
 
@@ -378,11 +379,11 @@
 
 .product-card__price {
 
-    font-family: var(--font-family);
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.6;
-    color: #080c09;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #080c09;
 
 }
 
@@ -423,7 +424,7 @@
 }
 
 .furniture__subtitle {
- font-family: var(--font-family);
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
@@ -591,6 +592,7 @@
 }
 
 @media (min-width: 1440px) {
+
   .nav,
   .header__cta {
     display: block;
@@ -871,6 +873,7 @@
   .order-modal__dialog {
     padding: 64px 32px;
   }
+
   .order-form__submit {
     padding: 10px 31.5px;
   }
