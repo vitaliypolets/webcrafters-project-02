@@ -3,6 +3,7 @@ import { refs } from '../utils/selectors.js';
 import { state } from '../utils/state.js';
 import { openModal, closeModal } from './modal-base.js';
 import { lockScroll, unlockScroll } from '../utils/scroll-lock.js';
+import {renderStars} from '../render/render-stars.js'
 
 export async function openFurnitureModal(id) {
   const item = await fetchFurnitureById(id);
@@ -15,12 +16,21 @@ export async function openFurnitureModal(id) {
   state.selectedColor = item.color ? item.color[0] : null;
 
   const gallery = refs.furnitureModal.querySelector('[data-furniture-gallery]');
-  if (gallery && item.images && item.images.length > 0) {
-    gallery.innerHTML = item.images
+  const placeholdList = {
+    name: "Сучасний інтер'єр вітальні",
+    images: [
+      "https://images.unsplash.com/photo-1761839259946-2d80f8e72e18?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1761839259946-2d80f8e72e18?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1761839259946-2d80f8e72e18?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ]
+  };
+  if (gallery && placeholdList.images && placeholdList.images.length > 0) {
+    // gallery.innerHTML = item.images
+    gallery.innerHTML = placeholdList.images
       .map(
         imgUrl => `
       <div class="furniture-modal__img-wrapper">
-        <img src="${imgUrl}" alt="${item.name}" class="furniture-modal__img">
+        <img src="${imgUrl}" alt="${placeholdList.name}" class="furniture-modal__img">
       </div>
     `).join('');
   };
@@ -29,11 +39,14 @@ export async function openFurnitureModal(id) {
   const category = refs.furnitureModal.querySelector('[data-furniture-category]');
   const price = refs.furnitureModal.querySelector('[data-furniture-price]');
   const rating = refs.furnitureModal.querySelector('[data-furniture-rating]');
+  if (rating) {
+    rating.innerHTML = renderStars(item.rate);
+  }
 
   const colorsList = refs.furnitureModal.querySelector('[data-furniture-colors]');
   if (colorsList) {
 
-    const defaultColors = ['#000000', '#757575', '#D3D3D3']; // Твої кольори на випадок порожнечі
+    const defaultColors = ['#000000', '#757575', '#D3D3D3']; // Кольори на випадок порожнечі
     const actualColors = (Array.isArray(item.color) && item.color.length > 0) 
     ? item.color 
       : defaultColors;
@@ -64,11 +77,9 @@ export async function openFurnitureModal(id) {
   const desc = refs.furnitureModal.querySelector('[data-furniture-description]');
   const dimensions = refs.furnitureModal.querySelector('[data-furniture-dimensions]');
 
-  if (gallery) gallery.textContent = item.images;
   if (title) title.textContent = item.name;
-  if (category) category.textContent = item.category.name;
+  // if (category) category.textContent = item.type;
   if (price) price.textContent = `${item.price} грн`;
-  if (rating) rating.textContent = item.rate;
   if (desc) desc.textContent = item.description;
   if (dimensions) dimensions.textContent = item.sizes;
 
