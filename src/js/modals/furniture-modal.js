@@ -29,14 +29,43 @@ export async function openFurnitureModal(id) {
   const category = refs.furnitureModal.querySelector('[data-furniture-category]');
   const price = refs.furnitureModal.querySelector('[data-furniture-price]');
   const rating = refs.furnitureModal.querySelector('[data-furniture-rating]');
+ const desc = refs.furnitureModal.querySelector('[data-furniture-description]');
+  const dimensions = refs.furnitureModal.querySelector('[data-furniture-dimensions]');
 
   const colorsList = refs.furnitureModal.querySelector('[data-furniture-colors]');
   if (colorsList) {
 
-    const defaultColors = ['#000000', '#757575', '#D3D3D3']; // Твої кольори на випадок порожнечі
-    const actualColors = (Array.isArray(item.color) && item.color.length > 0) 
-    ? item.color 
-      : defaultColors;
+    const actualColors = Array.isArray(item.color) ? item.color : [];
+    
+
+if (actualColors.length === 0) {
+  colorsList.innerHTML = '<li>Кольори недоступні</li>';
+  state.selectedColor = null;
+} else {
+  colorsList.innerHTML = actualColors
+    .map((hex, index) => `
+      <li class="color-item">
+        <label class="color-label">
+          <input
+            type="radio"
+            name="furniture-color"
+            value="${hex}"
+            class="color-input"
+            ${index === 0 ? 'checked' : ''}
+          >
+          <span class="color-marker" style="background-color: ${hex}"></span>
+        </label>
+      </li>
+    `).join('');
+
+  state.selectedColor = actualColors[0];
+
+  colorsList.onchange = (e) => {
+    if (e.target.classList.contains('color-input')) {
+      state.selectedColor = e.target.value;
+    }
+  };
+}
     
     
     colorsList.innerHTML = actualColors
@@ -61,8 +90,6 @@ export async function openFurnitureModal(id) {
   };
   }
 
-  const desc = refs.furnitureModal.querySelector('[data-furniture-description]');
-  const dimensions = refs.furnitureModal.querySelector('[data-furniture-dimensions]');
 
   if (gallery) gallery.textContent = item.images;
   if (title) title.textContent = item.name;
