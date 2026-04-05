@@ -307,7 +307,10 @@
 </footer>
 
     <div class="modal furniture-modal is-hidden" data-furniture-modal>
-  <div class="modal__backdrop" data-modal-backdrop></div>
+  <div
+    class="modal__backdrop furniture-modal__backdrop"
+    data-modal-backdrop
+  ></div>
 
   <div
     class="modal__dialog furniture-modal__dialog"
@@ -321,7 +324,9 @@
       aria-label="Закрити модальне вікно"
       data-modal-close
     >
-      х
+      <svg class="modal__close-icon" width="32" height="32">
+        <use href="../icons/icons.svg#icon-x"></use>
+      </svg>
     </button>
 
     <div class="furniture-modal__body">
@@ -336,7 +341,7 @@
           data-furniture-title
         ></h2>
 
-        <p class="furniture-modal__category" data-furniture-category></p>
+        <p class="furniture-modal__category" data-furniture-category>Sofa</p>
 
         <p class="furniture-modal__price" data-furniture-price></p>
 
@@ -352,7 +357,6 @@
         </div>
 
         <div class="furniture-modal__description-block">
-          <p class="furniture-modal__label">Опис</p>
           <p
             class="furniture-modal__description"
             data-furniture-description
@@ -360,7 +364,7 @@
         </div>
 
         <div class="furniture-modal__dimensions-block">
-          <p class="furniture-modal__label">Розміри</p>
+          <p class="furniture-modal__label">Розміри:</p>
           <p class="furniture-modal__dimensions" data-furniture-dimensions></p>
         </div>
 
