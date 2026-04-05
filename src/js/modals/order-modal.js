@@ -28,10 +28,12 @@ export function initOrderModal() {
   refs.orderForm?.addEventListener('submit', async event => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
+   const formData = new FormData(event.currentTarget);
+   const rawPhone = formData.get('phone');
+   const cleanedPhone = rawPhone.replace(/\D/g, '');
    const payload = {
   name: formData.get('name'),
-  phone: formData.get('phone'),
+  phone: cleanedPhone,
   comment: formData.get('comment') || 'Без коментаря',
   modelId: state.selectedFurnitureId,
   color: state.selectedColor,
