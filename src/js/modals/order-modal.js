@@ -7,7 +7,7 @@ import { openModal, closeModal } from './modal-base.js';
 export function initOrderModal() {
   document.addEventListener('click', event => {
     const openBtn = event.target.closest('[data-open-order-modal]');
-    const closeBtn = event.target.closest('[data-close-order-modal]');
+    const closeBtn = event.target.closest('[data-modal-close]');
     const backdrop = refs.orderModal && event.target === refs.orderModal.querySelector('[data-modal-backdrop]');
 
     if (openBtn) {
@@ -20,7 +20,7 @@ export function initOrderModal() {
   });
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && state.isOrderModalOpen) {
       closeModal(refs.orderModal);
     }
   });
@@ -28,32 +28,44 @@ export function initOrderModal() {
   refs.orderForm?.addEventListener('submit', async event => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const payload = {
-      name: formData.get('name'),
-      phone: formData.get('phone'),
-      comment: formData.get('comment'),
-      furnitureId: state.selectedFurnitureId,
-      color: state.selectedColor,
-    };
+   const formData = new FormData(event.currentTarget);
+   const rawPhone = formData.get('phone');
+   const cleanedPhone = rawPhone.replace(/\D/g, '');
+   const payload = {
+  name: formData.get('name'),
+  phone: cleanedPhone,
+  comment: formData.get('comment') || 'Без коментаря',
+  modelId: state.selectedFurnitureId,
+  color: state.selectedColor,
+};
+    console.log(payload);
+    
+      if (!/^\d{12}$/.test(payload.phone)) {
+    showToast('Телефон має містити 12 цифр (наприклад: 380XXXXXXXXX)');
+    return;
+  }
 
     if (!payload.name || !payload.phone) {
       showToast("Заповни обовʼязкові поля: імʼя та телефон");
       return;
     };
 
-    if (!payload.furnitureId || !payload.color) {
+    if (!payload.modelId || !payload.color) {
       showToast("Не обрано товар або колір");
       return;
     };
 
-    try {
-      await submitOrder(payload);
-      showToast('Замовлення успішно надіслано');
-      event.currentTarget.reset();
-      closeModal(refs.orderModal);
-    } catch (error) {
-      showToast('Помилка при відправці');
-    }
+try {
+  const data = await submitOrder(payload);
+  console.log('Order success:', data);
+  if (refs.orderForm) refs.orderForm.reset();
+  showToast('Замовлення успішно надіслано');
+
+
+  closeModal(refs.orderModal);
+} catch (error) {
+  console.error('Order error:', error);
+  showToast('Помилка при відправці');
+}
   });
 };
