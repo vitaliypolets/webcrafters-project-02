@@ -40,12 +40,9 @@
   margin-top: 32px;
 }
 
-
-
 .hero {
   padding: 136px 0;
-  background-image:
-    url(../images/hero-section/hero-bg-mob.webp);
+  background-image: url(../images/hero-section/hero-bg-mob.webp);
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -54,8 +51,7 @@
 
 @media (min-resolution: 192dpi) {
   .hero {
-    background-image:
-      url(../images/hero-section/hero-bg-mob@2x.webp);
+    background-image: url(../images/hero-section/hero-bg-mob@2x.webp);
   }
 }
 
@@ -81,7 +77,6 @@
   color: #fff;
 }
 
-
 .hero__text {
   max-width: 335px;
   height: 145px;
@@ -96,8 +91,7 @@
 @media screen and (min-width: 768px) {
   .hero {
     padding: 80px 0;
-    background-image:
-      url(../images/hero-section/hero-bg-tab.webp);
+    background-image: url(../images/hero-section/hero-bg-tab.webp);
   }
 
   .hero__container {
@@ -116,22 +110,20 @@
     margin: 0 auto;
   }
 
-  .btn--secondary {
+  .btn--primary {
     width: 209px;
   }
 }
 
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .hero {
-    background-image:
-      url(../images/hero-section/hero-bg-tab@2x.webp);
+    background-image: url(../images/hero-section/hero-bg-tab@2x.webp);
   }
 }
 
 @media screen and (min-width: 1440px) {
   .hero {
-    background-image:
-      url(../images/hero-section/hero-bg-desk.webp);
+    background-image: url(../images/hero-section/hero-bg-desk.webp);
   }
 
   .hero__container {
@@ -159,8 +151,7 @@
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
   .hero {
     padding: 92px 0;
-    background-image:
-      url(../images/hero-section/hero-bg-desk@2x.webp);
+    background-image: url(../images/hero-section/hero-bg-desk@2x.webp);
   }
 }
 
@@ -170,8 +161,6 @@
   gap: 16px;
   margin-top: 32px;
 }
-
-
 
 .about__section {
   background-color: #f0e6e6;
@@ -195,8 +184,6 @@
   gap: 0;
   max-width: 335px;
 }
-
-
 
 @media (min-width: 375px) {
   .about__title {
@@ -262,19 +249,17 @@
     font: 400 18px / 1.6 var(--font-family);
     color: var(--color-scheme-2-text);
   }
-
 }
-
 
 /* Mobile */
 .footer {
   padding: 0px 20px 32px;
-    height: 447px;
+  height: 447px;
   background-color: #6b0609;
 }
 
 .footer__container {
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -293,32 +278,32 @@ display: flex;
 }
 
 .footer__copy-desk {
- display: none;
+  display: none;
 }
 
 .footer__logo {
   width: 228px;
   height: 97px;
   display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    color: #fff;
-    text-decoration: none;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #fff;
+  text-decoration: none;
 }
 
 .footer__logo-icon {
   fill: #fff;
- }
+}
 
 .footer__nav-list {
   width: 105px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 32px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .footer__nav-link {
@@ -337,14 +322,14 @@ display: flex;
 }
 
 .footer__socials {
-    width: 120px;
-      height: 24px;
-      display: flex;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-direction: row;
-      gap: 24px;
+  width: 120px;
+  height: 24px;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 24px;
 }
 
 .footer__social-link {
@@ -352,7 +337,9 @@ display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  transition: opacity 250ms ease, transform 250ms ease;
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease;
 }
 
 .footer__social-link:hover,
@@ -367,8 +354,7 @@ display: flex;
 
 /* Tablet */
 @media (min-width: 767px) {
- 
-.footer {
+  .footer {
     padding: 0px 32px 32px;
     height: 273px;
   }
@@ -377,7 +363,7 @@ display: flex;
     height: 241px;
   }
 
-  .footer__nav-list{
+  .footer__nav-list {
     width: 409px;
     height: 26px;
     display: flex;
@@ -402,19 +388,17 @@ display: flex;
     flex-direction: row;
     gap: 80px;
   }
-    .footer__copy-mobi {
-      display: none;
-    }
+  .footer__copy-mobi {
+    display: none;
+  }
 
-        .footer__copy-desk {
-          display: block;
-          font-family: var(--font-family);
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 1.6;
-          color: #fff;
-          text-decoration: none;
-        }
-
+  .footer__copy-desk {
+    display: block;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    text-decoration: none;
+  }
 }
-
