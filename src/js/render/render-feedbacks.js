@@ -1,19 +1,18 @@
 import { renderStars } from './render-stars.js';
 
-export function renderFeedbacks(items = []) {
-  return items
-    .map(
-      item => `
-        <li>
-          <article class="feedback-card">
-            <div class="feedback-card__body">
-              <p class="feedback-card__author">${item.author}</p>
-              ${renderStars(item.rating)}
-              <p class="feedback-card__text">${item.text}</p>
-            </div>
-          </article>
-        </li>
-      `
-    )
+export function renderFeedbacks(feedbacks) {
+  const feedbacksList = document.querySelector('.feedback-list');
+  if (!feedbacksList) return;
+
+  const markup = feedbacks
+    .map(feedback => {
+      const { name, descr, rate } = feedback;
+      return `<li class ="swiper-slide feedback-item">
+    ${renderStars(rate)}
+    <p class="feedback-comment">"${descr}"</p>
+    <p class="feedback-name">${name}</p></li>`;
+    })
     .join('');
+
+  feedbacksList.innerHTML = markup;
 }

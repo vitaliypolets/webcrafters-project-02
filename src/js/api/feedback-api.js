@@ -1,10 +1,9 @@
-const feedbacks = Array.from({ length: 6 }, (_, index) => ({
-  id: index + 1,
-  author: ['Ірина', 'Олександр', 'Марія', 'Тетяна', 'Андрій', 'Світлана'][index],
-  rating: 4 + (index % 2 ? 0.5 : 0),
-  text: 'Дуже сподобалась якість меблів, сервіс і швидка доставка. Будемо замовляти ще.',
-}));
+import axios from 'axios';
 
-export async function fetchFeedbacks() {
-  return Promise.resolve(feedbacks);
+axios.defaults.baseURL = 'https://furniture-store-v2.b.goit.study/api/';
+axios.defaults.params = { limit: 10, page: 1 };
+
+export async function getFeedbacks() {
+  const res = await axios.get('feedbacks');
+  return res.data;
 }
