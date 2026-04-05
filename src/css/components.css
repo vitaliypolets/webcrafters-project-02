@@ -1085,8 +1085,3 @@
   .furniture-modal__action {
     width: 310px;
   }
-
-  .color-label:hover .color-marker {
-    border: 2px solid #838584;
-  }
-}
