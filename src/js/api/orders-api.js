@@ -1,15 +1,11 @@
+import axios from 'axios';
+
+const API = axios.create({
+  baseURL: 'https://furniture-store-v2.b.goit.study/api/',
+  headers: { 'Content-Type': 'application/json' },
+});
+
 export async function submitOrder(payload) {
-  const response = await fetch('/orders', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!response.ok) {
-    throw new Error('Failed to submit order');
+    const res = await API.post('orders', payload);
+    return res.data;
   }
-
-  return response.json();
-}
