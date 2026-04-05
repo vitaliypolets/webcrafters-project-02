@@ -20,7 +20,7 @@ export function initOrderModal() {
   });
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && state.isOrderModalOpen) {
+    if (event.key === 'Escape') {
       closeModal(refs.orderModal);
     }
   });
