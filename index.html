@@ -24,7 +24,7 @@
     <script type="module" crossorigin src="/webcrafters-project-02/index.js"></script>
     <link rel="modulepreload" crossorigin href="/webcrafters-project-02/assets/vendor-C6jGGvC7.js">
     <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/vendor-XYtvLfmp.css">
-    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-BEdEKb1S.css">
+    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-DIJLBhRM.css">
   </head>
   <body>
     <div id="top"></div>
@@ -102,10 +102,10 @@
   <div class="container hero__container">
     <div class="hero__content">
       <h1 class="hero__title">Створіть свій ідеальний дім</h1>
-      <p class="hero__text">
+      <h2 class="hero__text">
         Відкрийте для себе колекцію стильних та комфортних меблів, які перетворять ваш простір. Наша продукція поєднує в собі
         елегантність та функціональність.
-      </p>
+      </h2>
       <div class="hero__actions">        
         <a class="btn btn--secondary" href="#feedback">Що про нас думають</a>
       </div>
@@ -143,25 +143,26 @@
   </div>
 </section>
 
-      <section class="about section" id="about">
+      <section class="about__section" id="about">
   <div class="container about__container">
     <div class="about__content">
-      <p class="section-head__eyebrow">Про бренд</p>
-      <h2 class="section-head__title">Про Меблерію</h2>
+      <h2 class="about__title">Про Меблерію</h2>
       <p class="about__text">
-        Ми створюємо простір, у якому поєднуються естетика, функціональність і
-        відчуття дому. Добираємо рішення для сучасних інтер’єрів і допомагаємо
-        знайти меблі, які служать роками.
+        У Меблерії ми прагнемо створювати затишок та функціональність у кожному
+        домі. Наша місія - пропонувати високоякісні меблі, що поєднують у собі
+        сучасний дизайн, довговічність та доступність. Ми віримо, що ідеальний
+        інтер'єр починається з правильних меблів.
       </p>
-      <a class="btn btn--secondary" href="#feedback">Переглянути відгуки</a>
     </div>
+    <picture>
+      <source media="(min-width: 1440px)" srcset="/webcrafters-project-02/assets/about-desk-CwvZx_AE.webp 1x, /webcrafters-project-02/assets/about-desk@2x-CsOqHO7E.webp 2x" />
+      <source media="(min-width: 768px)" srcset="/webcrafters-project-02/assets/about-tablet-l9_uBNaq.webp 1x, /webcrafters-project-02/assets/about-tablet@2x-rv4fRaJF.webp 2x" />
 
-    <div class="about__media">
-      <div class="about__image-placeholder">Image / Team photo</div>
-    </div>
+      <source media="(max-width: 767px)" srcset="/webcrafters-project-02/assets/about-mob-nZDhFZql.webp 1x, /webcrafters-project-02/assets/about-mob@2x-DzAXmxWr.webp 2x" />
+      <img src="/webcrafters-project-02/assets/about-mob-nZDhFZql.webp" alt="Команда Меблерії" />
+    </picture>
   </div>
 </section>
-
       <section class="faq section" id="faq">
   <div class="container">
     <div class="section-head">
@@ -323,7 +324,7 @@
       data-modal-close
     >
       <svg class="modal__close-icon" width="32" height="32">
-        <use href="../icons/icons.svg#icon-x"></use>
+        <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-x"></use>
       </svg>
     </button>
 
