@@ -233,10 +233,12 @@ display: flex;
 }
 
 /* Desktop */
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .footer {
     padding: 0px 64px;
     height: 97px;
+    display: block;
+    place-items: center;
   }
 
   .footer__container {
