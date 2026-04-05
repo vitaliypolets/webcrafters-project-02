@@ -16,21 +16,13 @@ export async function openFurnitureModal(id) {
   state.selectedColor = item.color ? item.color[0] : null;
 
   const gallery = refs.furnitureModal.querySelector('[data-furniture-gallery]');
-  const placeholdList = {
-    name: "Сучасний інтер'єр вітальні",
-    images: [
-      "https://images.unsplash.com/photo-1761839259946-2d80f8e72e18?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1761839259946-2d80f8e72e18?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1761839259946-2d80f8e72e18?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    ]
-  };
-  if (gallery && placeholdList.images && placeholdList.images.length > 0) {
-    // gallery.innerHTML = item.images
-    gallery.innerHTML = placeholdList.images
+  
+  if (gallery && item.images && item.images.length > 0) {
+    gallery.innerHTML = item.images
       .map(
         imgUrl => `
       <div class="furniture-modal__img-wrapper">
-        <img src="${imgUrl}" alt="${placeholdList.name}" class="furniture-modal__img">
+        <img src="${imgUrl}" alt="${item.name}" class="furniture-modal__img">
       </div>
     `).join('');
   };
@@ -45,19 +37,12 @@ export async function openFurnitureModal(id) {
 
   const colorsList = refs.furnitureModal.querySelector('[data-furniture-colors]');
   if (colorsList) {
-
-    const defaultColors = ['#000000', '#757575', '#D3D3D3']; // Кольори на випадок порожнечі
-    const actualColors = (Array.isArray(item.color) && item.color.length > 0) 
-    ? item.color 
-      : defaultColors;
-    
-    
-    colorsList.innerHTML = actualColors
+    colorsList.innerHTML = item.color
       .map((hex, index) => `
         <li class="color-item">
           <label class="color-label">
             <input
-              type="radio"
+              type="checkbox"
               name="furniture-color"
               value="${hex}"
               class="color-input"
@@ -68,8 +53,17 @@ export async function openFurnitureModal(id) {
       `).join('');
     
     colorsList.onchange = (e) => {
-    if (e.target.classList.contains('color-input')) {
-      state.selectedColor = e.target.value;
+      const target = e.target;
+      if (e.target.classList.contains('color-input')) {
+        if (!target.checked) {
+          target.checked = true;
+          return;
+        };
+
+        colorsList.querySelectorAll('.color-input')
+          .forEach(checkbox => { checkbox.checked = (checkbox === target); });
+        
+        state.selectedColor = e.target.value;
     }
   };
   }
@@ -78,7 +72,7 @@ export async function openFurnitureModal(id) {
   const dimensions = refs.furnitureModal.querySelector('[data-furniture-dimensions]');
 
   if (title) title.textContent = item.name;
-  // if (category) category.textContent = item.type;
+  if (category) category.textContent = item.type;
   if (price) price.textContent = `${item.price} грн`;
   if (desc) desc.textContent = item.description;
   if (dimensions) dimensions.textContent = item.sizes;
@@ -111,7 +105,7 @@ export function initFurnitureModal() {
   });
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && !refs.furnitureModal.classList.contains('is-hidden')) {
       closeModal(refs.furnitureModal);
       unlockScroll();
     }
