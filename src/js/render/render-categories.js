@@ -16,6 +16,7 @@ export function renderCategories(categories = [], activeCategory = 'Усі') {
               class="category-card ${isActive ? 'is-active' : ''}"
               type="button"
               data-category="${name === 'Усі' ? '' : name}"
+              data-category-id="${category._id || ''}"
             >
               <div class="category-card__image-wrap">
                 <img
