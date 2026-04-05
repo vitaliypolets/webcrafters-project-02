@@ -173,8 +173,6 @@
 
 
 
-
-
 .about__section {
   background-color: #f0e6e6;
   padding: 64px 20px;
@@ -265,7 +263,7 @@
     color: var(--color-scheme-2-text);
   }
 
-
+}
 
 
 /* Mobile */
@@ -417,6 +415,6 @@ display: flex;
           color: #fff;
           text-decoration: none;
         }
-    
+
 }
 
