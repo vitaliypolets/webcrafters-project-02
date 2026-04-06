@@ -223,7 +223,6 @@
   }
 }
 
-/* Mobile */
 .faq-section {
   padding: 48px 20px;
   height: 635px;
@@ -309,6 +308,7 @@
 
 @media screen and (min-width: 1158px) {
 }
+
 @media (min-width: 1440px) {
   .about__section {
     padding: 64px;
