@@ -233,7 +233,7 @@
   min-height: 122px;
   width: 100%;
   padding: 0;
-  border: 2px solid transparent;
+  border: 4px solid transparent;
   border-radius: 16px;
   background-color: transparent;
   transition:
