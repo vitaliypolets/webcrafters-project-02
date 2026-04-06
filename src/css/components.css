@@ -864,6 +864,7 @@
 .error-text.active {
   visibility: visible;
   opacity: 1;
+}
 
 .error-text {
   font-weight: 400;

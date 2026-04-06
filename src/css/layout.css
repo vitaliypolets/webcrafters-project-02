@@ -87,6 +87,24 @@
   line-height: 1.6;
   color: #fff;
 }
+.btn--hero {
+  width: 335px;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  color: #fff;
+}
+
+.btn--hero:hover,
+.btn--hero:focus-visible {
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  opacity: 0.5;
+}
 
 @media screen and (min-width: 768px) {
   .hero {
@@ -110,15 +128,17 @@
     margin: 0 auto;
   }
 
-  .btn--primary {
-    width: 209px;
-  }
+    .btn--hero {
+      width: 209px;
+    }
+  
 }
 
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .hero {
     background-image: url(../images/hero-section/hero-bg-tab@2x.webp);
   }
+    
 }
 
 @media screen and (min-width: 1440px) {
