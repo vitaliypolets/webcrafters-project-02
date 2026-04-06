@@ -466,8 +466,6 @@
   color: #d9a441;
 } */
 
-
-
 .modal {
   position: fixed;
   inset: 0;
@@ -828,7 +826,7 @@
   background: rgba(8, 12, 9, 0.05);
   min-height: 180px;
   height: auto;
-   height: auto;
+  height: auto;
 }
 
 .order-form__submit {
@@ -861,21 +859,20 @@
   color: #6b0609;
 }
 
-
 .error-text {
-    font-weight: 400;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #6b0609;
-height: 19px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6b0609;
+  height: 19px;
   visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
 
 .error-text.active {
   visibility: visible;
-    opacity: 1;
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
@@ -906,7 +903,6 @@ height: 19px;
   .order-modal__title {
     font-size: 48px;
   }
-  
 }
 
 /* ++++--------++++++ */
