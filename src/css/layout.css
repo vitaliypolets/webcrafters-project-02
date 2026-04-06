@@ -141,12 +141,12 @@
 }
 
 .faq__list {
-  height: 464px;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .faq__item {
   border-top: 1px solid var(--color-border);
-    padding: 20px 0px;
+    padding: 20px 10px;
       width: 335px;
 }
 
@@ -157,25 +157,11 @@
   line-height: 160%;
   color: var(--color-text);
   display: flex;
-  gap: 24px;
-}
-.faq__item .summary {
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  list-style: none;
 }
 
-.faq-icon {
-  transition: transform 0.3s ease;
-}
 .faq-text {
   width: 279px;
 }
-.faq__item[open] .faq-icon {
-  transform: rotate (180deg);
-}
-
 .faq__answer {
   margin: 16px 0 0;
   font-family: var(--font-family);
@@ -185,11 +171,91 @@
   color: var(--color-text);
 }
 
+.icon-up {
+  display: none;
+}
 
-@media screen and (min-width: 768px) {}
+.faq__item[open] .faq-icon-down {
+  display: none;
+}
 
+.faq__item[open] .faq-icon-up {
+  display: block;
+}
 
-@media screen and (min-width: 1158px) {}
+.faq__icons svg {
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.faq__item:not([open]) .faq-icon-up {
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+.faq__item[open] .faq-icon-down {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .faq-section {
+    padding: 48px 32px;
+    height: 531px;
+  }
+
+  .faq-container {
+    height: 435px;
+    max-width: 1318px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .faq__list {
+    width: 705px;
+  }
+
+  .faq__item {
+    width: 705px;
+  }
+
+  .faq-text {
+    width: 649px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1158px) {
+  .faq-section {
+    padding: 80px 64px;
+    height: 610px;
+    display: block;
+      place-items: center;
+  }
+
+  .faq-container {
+    height: 450px;
+    max-width: 1318px;
+    justify-content: center;
+  }
+
+  .section-faq__title {
+    font-size: 48px;
+  }
+
+  .faq__list {
+    width: 865px;
+  }
+
+  .faq__item {
+    width: 865px;
+  }
+
+  .faq-text {
+    width: 809px;
+  }
+}
 
 /* Mobile */
 .footer {
