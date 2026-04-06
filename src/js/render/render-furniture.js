@@ -18,13 +18,23 @@ function getFurnitureTitle(item) {
 }
 
 function getFurnitureColor(item) {
-  if (Array.isArray(item.colors) && item.colors.length > 0) {
-    return item.colors[0];
+  console.log(item);
+  let colors;
+  if (Array.isArray(item.color) && item.color.length > 0) {
+    colors = item.color;
+  } else {
+    colors = [item.color];
   }
 
-  return item.color ?? 'Не вказано';
+  return colors
+    .map(color => {
+      return (
+        `<div class="item-color" style = "background-color:${color}"></div>` ??
+        'Не вказано'
+      );
+    })
+    .join('');
 }
-
 function getFurniturePrice(item) {
   const price = item.price ?? item.currentPrice ?? 0;
 
@@ -65,7 +75,10 @@ export function renderFurnitureCards(items = []) {
 
           <div class="product-card__content">
             <h3 class="product-card__title">${title}</h3>
-            <p class="product-card__color">Колір: ${color}</p>
+            <div class="product-card__color">
+            ${color}
+            </div>
+
             <p class="product-card__price">${price}</p>
 
             <button
