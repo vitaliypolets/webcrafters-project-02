@@ -30,27 +30,24 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu is-hidden" data-mobile-menu>
-    <div class="mobile-menu__overlay" data-menu-overlay></div>
-
     <div class="mobile-menu__inner">
-      <button
-        data-menu-close
-        class="mobile-menu__close"
-        type="button"
-        aria-label="Закрити меню"
-        data-menu-close
-      >
-        ×
-      </button>
-
-      <!-- Навігація -->
-      <div>
+      <div class="mobile-menu__top">
         <a href="#top" class="logo" aria-label="Меблерія — на головну">
           <svg class="logo__icon" width="84" height="36">
             <use href="./icons/icons.svg#icon-logo"></use>
           </svg>
         </a>
+
+        <button
+          class="mobile-menu__close"
+          type="button"
+          aria-label="Закрити меню"
+          data-menu-close
+        >
+          ×
+        </button>
       </div>
+
       <nav class="mobile-menu__nav">
         <ul class="mobile-menu__list">
           <li><a href="#furniture" class="mobile-menu__link">Наші меблі</a></li>
@@ -60,7 +57,6 @@
         </ul>
       </nav>
 
-      <!-- Кнопка -->
       <a href="#furniture" class="btn btn--primary mobile-menu__cta">
         До покупок
       </a>
