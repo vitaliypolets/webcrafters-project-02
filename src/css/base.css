@@ -113,6 +113,7 @@ body.is-locked {
     overflow: hidden;
 }
 
+
 .is-hidden {
     opacity: 0;
     visibility: hidden;
