@@ -48,6 +48,6 @@ export function renderCategories(
           <span class="category-card__title">${name}</span>
         </button>`;
       })
-      .join('')}
-  </div>`;
+      .join('')} 
+      </div>`;
 }

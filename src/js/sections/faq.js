@@ -6,10 +6,11 @@ export function initFaq() {
       if (!item.open) return;
 
       items.forEach(other => {
-        if (other !== item) {
-          other.open = false;
+        if (other !== item && other.open) {
+          other.open = false; 
         }
       });
     });
   });
 }
+

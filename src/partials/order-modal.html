@@ -20,7 +20,7 @@
 
     <div class="order-modal__content">
       <h2 class="order-modal__title" id="order-modal-title">
-        Замовити зворотний зв’язок
+         Замовити
       </h2>
       <form class="order-form" data-order-form>
         <label class="order-form__label">
@@ -32,6 +32,7 @@
             placeholder="Дмитро"
             required
           />
+          <p class="error-text" id="name-error"></p>
         </label>
 
         <label class="order-form__label">
@@ -43,6 +44,7 @@
             placeholder="38 099 123 22 11"
             required
           />
+          <p class="error-text" id="phone-error"></p>
         </label>
         <label class="order-form__label">
           <span class="order-form__label-text">Коментар</span>

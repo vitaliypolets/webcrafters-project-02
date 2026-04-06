@@ -233,7 +233,7 @@
   min-height: 122px;
   width: 100%;
   padding: 0;
-  border: 4px solid transparent;
+  border: 2px solid transparent;
   border-radius: 16px;
   background-color: transparent;
   transition:
@@ -334,9 +334,6 @@
 
 .product-card {
   overflow: hidden;
-  /* border: 1px solid var(--color-border); */
-  /* border-radius: var(--radius-md); */
-  /* background-color: var(--color-surface); */
 }
 
 .product-card__image-wrap {
@@ -459,34 +456,6 @@
   .furniture__list {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-
-/* .stars {
-  letter-spacing: 0.15em;
-  color: #d9a441;
-} */
-
-.faq__list {
-  display: grid;
-  gap: 16px;
-}
-
-.faq__item {
-  padding: 20px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
-}
-
-.faq__question {
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.faq__answer {
-  margin: 16px 0 0;
-  color: var(--color-muted);
-  line-height: 1.7;
 }
 
 .modal {
@@ -849,7 +818,7 @@
   background: rgba(8, 12, 9, 0.05);
   min-height: 180px;
   height: auto;
-}
+  }
 
 .order-form__submit {
   border-radius: 50px;
@@ -869,6 +838,47 @@
   transition: all 300ms ease;
   cursor: pointer;
   outline: none;
+}
+
+.input-error {
+  border: 2px solid #6b0609;
+  color: #6b0609;
+}
+
+.input-error {
+  border: 2px solid #6b0609;
+  color: #6b0609;
+}
+
+.error-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6b0609;
+  height: 19px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.error-text.active {
+  visibility: visible;
+  opacity: 1;
+
+.error-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6b0609;
+  height: 19px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.error-text.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
@@ -899,7 +909,10 @@
   .order-modal__title {
     font-size: 48px;
   }
+  
 }
+
+/* ++++--------++++++ */
 
 .furniture-modal {
   top: 0;
@@ -1069,6 +1082,12 @@
     width: 358px;
   }
 
+  .furniture-modal__content-text {
+    height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 24px;
+  }
   .furniture-modal__title {
     font-size: 40px;
   }
@@ -1089,8 +1108,12 @@
   .furniture-modal__description-block {
     width: 358px;
   }
+  .furniture-modal__dimensions-block {
+    margin-bottom: 0;
+  }
 
   .furniture-modal__action {
     width: 310px;
   }
 }
+
