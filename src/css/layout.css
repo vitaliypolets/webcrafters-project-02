@@ -4,7 +4,7 @@
   padding-inline: var(--container-padding);
 } */
 
-'/* Styles for Mobile devices */
+/* Styles for Mobile devices */
 
 .container {
   width: 100%;
@@ -12,6 +12,22 @@
   padding: 0 16px;
   margin: 0 auto;
   box-sizing: border-box;
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 64px;
+  }
 }
 
 /* Styles for Tablet devices */
@@ -485,7 +501,6 @@
 .footer__socials {
   width: 120px;
   height: 24px;
-  display: flex;
   display: flex;
   align-items: center;
   justify-content: flex-start;
