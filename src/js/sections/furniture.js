@@ -8,7 +8,15 @@ import { showToast } from '../utils/toast.js'; // <- додано
 let currentPage = 1;
 let currentCategoryId = '';
 let furnitureCategories = [];
-
+let totalPages = 1;
+const loadMoreBtn = document.querySelector('[data-load-more]');
+function checkButtonStatus() {
+  if (currentPage < totalPages) {
+    loadMoreBtn.disabled = false;
+  } else {
+    loadMoreBtn.disabled = true;
+  }
+}
 export async function initFurnitureSection() {
   if (refs.categoriesContainer) {
     try {
@@ -28,8 +36,9 @@ export async function initFurnitureSection() {
     try {
       showLoader('Завантаження меблів...');
       const res = await fetchFurniture({ page: currentPage });
+      totalPages = Math.ceil(res.totalItems / res.limit);
       refs.furnitureContainer.innerHTML = renderFurnitureCards(res.furnitures);
-
+      checkButtonStatus();
       if (res.furnitures.length === 0) {
         showToast('Товарів поки немає');
       }
@@ -59,16 +68,15 @@ export async function initFurnitureSection() {
             ? { category: currentCategoryId, page: currentPage }
             : { page: currentPage }
         );
-
+        totalPages = Math.ceil(res.totalItems / res.limit);
         refs.furnitureContainer.innerHTML = renderFurnitureCards(
           res.furnitures
         );
-
+        checkButtonStatus();
         if (res.furnitures.length === 0) {
           showToast('Товарів у цій категорії немає');
         }
 
-        const loadMoreBtn = document.querySelector('[data-load-more]');
         if (loadMoreBtn) loadMoreBtn.style.display = 'block';
       } catch (error) {
         console.error('Помилка завантаження меблів:', error);
@@ -91,12 +99,12 @@ export async function initFurnitureSection() {
             ? { category: currentCategoryId, page: currentPage }
             : { page: currentPage }
         );
-
+        totalPages = Math.ceil(res.totalItems / res.limit);
         refs.furnitureContainer.insertAdjacentHTML(
           'beforeend',
           renderFurnitureCards(res.furnitures)
         );
-
+        checkButtonStatus();
         if (res.furnitures.length === 0) {
           loadMoreBtn.style.display = 'none';
           showToast('Більше товарів немає');

@@ -195,6 +195,12 @@
   display: grid;
   gap: 20px;
 }
+.item-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #080c09;
+}
 
 /* Mobile */
 @media screen and (max-width: 767px) {
@@ -362,6 +368,10 @@
 
 .product-card__color {
   color: var(--color-muted);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
 }
 
 .product-card__price {
@@ -371,7 +381,10 @@
   line-height: 1.6;
   color: #080c09;
 }
-
+.furniture__load-more:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .product-card__btn {
   margin-top: auto;
   font-family: var(--font-family);
@@ -814,7 +827,7 @@
   padding: 12px;
   background: rgba(8, 12, 9, 0.05);
   min-height: 180px;
-   height: auto;
+  height: auto;
 }
 
 .order-form__submit {
