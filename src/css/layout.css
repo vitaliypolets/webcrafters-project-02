@@ -30,7 +30,22 @@
   }
 }
 
-.section {
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 64px;
+  }
+}'
+  .section {
   padding: 72px 0;
 }
 
