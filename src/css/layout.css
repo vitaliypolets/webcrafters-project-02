@@ -42,8 +42,8 @@
 
 .hero {
   padding: 136px 0;
-  background-image: url(../images/hero-section/hero-bg-mob.webp);
-
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2)), url(../images/hero-section/hero-bg-mob.webp);
+background-color: rgba(217, 217, 217, 1);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -51,7 +51,8 @@
 
 @media (min-resolution: 192dpi) {
   .hero {
-    background-image: url(../images/hero-section/hero-bg-mob@2x.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2)), url(../images/hero-section/hero-bg-mob@2x.webp);
+  background-color: rgba(217, 217, 217, 1);
   }
 }
 
@@ -87,11 +88,30 @@
   line-height: 1.6;
   color: #fff;
 }
+.btn--hero {
+  width: 335px;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  color: #fff;
+}
+
+.btn--hero:hover,
+.btn--hero:focus-visible {
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  opacity: 0.5;
+}
 
 @media screen and (min-width: 768px) {
   .hero {
     padding: 80px 0;
-    background-image: url(../images/hero-section/hero-bg-tab.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2)), url(../images/hero-section/hero-bg-tab.webp);
+    background-color: rgba(217, 217, 217, 1);
   }
 
   .hero__container {
@@ -110,20 +130,24 @@
     margin: 0 auto;
   }
 
-  .btn--primary {
-    width: 209px;
-  }
+    .btn--hero {
+      width: 209px;
+    }
+  
 }
 
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .hero {
-    background-image: url(../images/hero-section/hero-bg-tab@2x.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2)), url(../images/hero-section/hero-bg-tab@2x.webp);
+    background-color: rgba(217, 217, 217, 1);
   }
+    
 }
 
 @media screen and (min-width: 1440px) {
   .hero {
-    background-image: url(../images/hero-section/hero-bg-desk.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2)), url(../images/hero-section/hero-bg-desk.webp);
+    background-color: rgba(217, 217, 217, 1);
   }
 
   .hero__container {
@@ -151,7 +175,8 @@
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
   .hero {
     padding: 92px 0;
-    background-image: url(../images/hero-section/hero-bg-desk@2x.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2)), url(../images/hero-section/hero-bg-desk@2x.webp);
+    background-color: rgba(217, 217, 217, 1);
   }
 }
 
