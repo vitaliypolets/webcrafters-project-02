@@ -815,7 +815,10 @@
   background: rgba(8, 12, 9, 0.05);
   min-height: 180px;
   height: auto;
+<<<<<<< feature/tl-integration2
   height: auto;
+=======
+>>>>>>> main
 }
 
 .order-form__submit {
@@ -863,6 +866,24 @@
   visibility: visible;
   opacity: 1;
 }
+<<<<<<< feature/tl-integration2
+=======
+.error-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6b0609;
+  height: 19px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.error-text.active {
+  visibility: visible;
+  opacity: 1;
+}
+>>>>>>> main
 
 @media (min-width: 768px) {
   .order-modal__dialog {
@@ -893,6 +914,8 @@
     font-size: 48px;
   }
 }
+
+/* ++++--------++++++ */
 
 .furniture-modal {
   top: 0;
