@@ -828,8 +828,7 @@
   background: rgba(8, 12, 9, 0.05);
   min-height: 180px;
   height: auto;
-   height: auto;
-}
+  }
 
 .order-form__submit {
   border-radius: 50px;
@@ -861,6 +860,20 @@
   color: #6b0609;
 }
 
+.error-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6b0609;
+  height: 19px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.error-text.active {
+  visibility: visible;
+  opacity: 1;
 
 .error-text {
     font-weight: 400;
@@ -1113,4 +1126,4 @@ height: 19px;
     width: 310px;
   }
 }
-}
+
