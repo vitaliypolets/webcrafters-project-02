@@ -864,6 +864,21 @@
 .error-text.active {
   visibility: visible;
   opacity: 1;
+
+.error-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6b0609;
+  height: 19px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.error-text.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
