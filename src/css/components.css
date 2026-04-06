@@ -862,6 +862,33 @@
   outline: none;
 }
 
+.input-error {
+  border: 2px solid #6b0609;
+  color: #6b0609;
+}
+
+.input-error {
+  border: 2px solid #6b0609;
+  color: #6b0609;
+}
+
+
+.error-text {
+    font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #6b0609;
+height: 19px;
+  visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+.error-text.active {
+  visibility: visible;
+    opacity: 1;
+}
+
 @media (min-width: 768px) {
   .order-modal__dialog {
     padding: 64px 32px;
@@ -890,9 +917,10 @@
   .order-modal__title {
     font-size: 48px;
   }
+  
 }
 
-
+/* ++++--------++++++ */
 
 .furniture-modal {
   top: 0;
@@ -1085,3 +1113,4 @@
   .furniture-modal__action {
     width: 310px;
   }
+}
