@@ -775,6 +775,9 @@
   border-radius: 8px;
   padding: 64px 20px;
   background: var(--color-white);
+  max-height: none;
+  overflow: visible;
+  margin: 48px auto;
 }
 
 .modal__close {
@@ -839,7 +842,8 @@
   border-radius: 12px;
   padding: 12px;
   background: rgba(8, 12, 9, 0.05);
-  height: 180px;
+  min-height: 180px;
+   height: auto;
 }
 
 .order-form__submit {
