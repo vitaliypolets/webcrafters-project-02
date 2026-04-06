@@ -288,19 +288,21 @@
 }
 
 .faq-container {
-    height: 539px;
-    max-width: 1318px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
+  height: 539px;
+  max-width: 1318px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
 }
+
 .section-faq {
   width: 335px;
   height: 43px;
   max-width: 768px;
 }
+
 .section-faq__title {
   font-family: var(--font-family);
   font-weight: 700;
@@ -567,6 +569,7 @@
     flex-direction: row;
     gap: 80px;
   }
+  
   .footer__copy-mobi {
     display: none;
   }
