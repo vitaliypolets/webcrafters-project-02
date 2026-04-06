@@ -828,6 +828,7 @@
   background: rgba(8, 12, 9, 0.05);
   min-height: 180px;
   height: auto;
+   height: auto;
 }
 
 .order-form__submit {
