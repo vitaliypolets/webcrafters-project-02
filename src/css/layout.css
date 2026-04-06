@@ -187,7 +187,7 @@
 
 @media (min-width: 375px) {
   .about__title {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--font-family);
     font-size: 36px;
     font-weight: 700;
     color: #080c09;
