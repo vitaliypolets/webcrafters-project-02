@@ -1008,7 +1008,7 @@ body.no-scroll {
   border-radius: 8px;
   padding: 64px 20px;
   background: var(--color-white);
-  max-height: none;
+max-width: 335px;
   overflow: visible;
   margin: 48px auto;
 }
@@ -1123,6 +1123,7 @@ body.no-scroll {
 @media (min-width: 768px) {
   .order-modal__dialog {
     padding: 64px 32px;
+    max-width: 704px;
   }
 
   .order-form__submit {
@@ -1143,6 +1144,7 @@ body.no-scroll {
 @media (min-width: 1440px) {
   .order-modal__dialog {
     padding: 64px 64px;
+    max-width: 886px;
   }
 
   .order-modal__title {
