@@ -8,31 +8,48 @@
       </svg>
     </a>
 
-    <!-- Навігація (desktop) -->
-    <nav class="nav" aria-label="Основна навігація">
+    <nav class="header__nav nav" aria-label="Основна навігація">
       <ul class="nav__list">
-        <li><a class="nav__link" href="#furniture">Наші меблі</a></li>
-        <li><a class="nav__link" href="#about">Про нас</a></li>
-        <li><a class="nav__link" href="#faq">Часті питання</a></li>
-        <li><a class="nav__link" href="#feedback">Відгуки</a></li>
+        <li class="nav__item">
+          <a class="nav__link" href="#furniture">Наші меблі</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#about">Про нас</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#faq">Часті питання</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#feedback">Відгуки</a>
+        </li>
       </ul>
     </nav>
 
-    <a href="#furniture" class="btn btn--primary header__cta"> До покупок </a>
+    <a class="header__cta btn btn--primary" href="#furniture">До покупок</a>
 
-    <!-- Бургер -->
-    <button class="burger" type="button" aria-expanded="false" data-menu-open>
-      <span class="header__burger-line"></span>
-      <span class="header__burger-line"></span>
-      <span class="header__burger-line"></span>
+    <button
+      class="burger"
+      type="button"
+      aria-label="Відкрити меню"
+      aria-expanded="false"
+      data-menu-open
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 
-  <!-- Mobile menu -->
   <div class="mobile-menu is-hidden" data-mobile-menu>
-    <div class="mobile-menu__inner">
+    <div class="mobile-menu__overlay" data-menu-overlay></div>
+
+    <div class="mobile-menu__panel">
       <div class="mobile-menu__top">
-        <a href="#top" class="logo" aria-label="Меблерія — на головну">
+        <a
+          href="#top"
+          class="mobile-menu__logo logo"
+          aria-label="Меблерія — на головну"
+        >
           <svg class="logo__icon" width="84" height="36">
             <use href="./icons/icons.svg#icon-logo"></use>
           </svg>
@@ -48,16 +65,24 @@
         </button>
       </div>
 
-      <nav class="mobile-menu__nav">
+      <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
         <ul class="mobile-menu__list">
-          <li><a href="#furniture" class="mobile-menu__link">Наші меблі</a></li>
-          <li><a href="#about" class="mobile-menu__link">Про нас</a></li>
-          <li><a href="#faq" class="mobile-menu__link">Часті питання</a></li>
-          <li><a href="#feedback" class="mobile-menu__link">Відгуки</a></li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#furniture">Наші меблі</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#about">Про нас</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#faq">Часті питання</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#feedback">Відгуки</a>
+          </li>
         </ul>
       </nav>
 
-      <a href="#furniture" class="btn btn--primary mobile-menu__cta">
+      <a class="mobile-menu__cta btn btn--primary" href="#furniture">
         До покупок
       </a>
     </div>
