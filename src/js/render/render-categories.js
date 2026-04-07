@@ -16,7 +16,7 @@ export function renderCategories(
       const isActive = activeCategory === name;
       return `<button
     class="category-card ${isActive ? 'is-active' : ''}"
-    type = "buton"
+    type="button"
     data-category="${name === 'Всі товари' ? '' : name}"
     data-category-id="${category._id || ''}">
     <div class="category-card__image-wrap">
