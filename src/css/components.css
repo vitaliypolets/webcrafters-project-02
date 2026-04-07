@@ -6,6 +6,13 @@
   color: #fff;
 }
 
+.logo img,
+.logo svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -39,8 +46,7 @@
     inset 0 0 0 1px rgba(8, 12, 9, 0.15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
     inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-  background: #6b0609;
-  opacity: 0.5;
+  background: #4a0406;
 }
 
 .btn--secondary {
@@ -105,6 +111,12 @@
 
 .header__cta {
   display: none;
+}
+
+.burger,
+.modal__close,
+.category-card {
+  cursor: pointer;
 }
 
 .burger {
@@ -586,7 +598,7 @@
    ========================= */
 
 .feedback-section {
-  padding: 64px 0px;
+  padding: 16px 0px;
   background-color: #fff;
 }
 
@@ -826,7 +838,6 @@
   background: rgba(8, 12, 9, 0.05);
   min-height: 180px;
   height: auto;
-  height: auto;
 }
 
 .order-form__submit {
@@ -847,11 +858,6 @@
   transition: all 300ms ease;
   cursor: pointer;
   outline: none;
-}
-
-.input-error {
-  border: 2px solid #6b0609;
-  color: #6b0609;
 }
 
 .input-error {
@@ -917,6 +923,7 @@
 
 .furniture-modal__backdrop {
   position: fixed;
+  inset: 0;
 }
 
 .furniture-modal__dialog {
@@ -1109,4 +1116,3 @@
     width: 310px;
   }
 }
-
