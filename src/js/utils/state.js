@@ -20,3 +20,7 @@ export const state = {
 export function setCurrentCategory(category) {
   state.currentCategory = category;
 }
+
+export function setMobileMenuOpen(value) {
+  state.isMobileMenuOpen = value;
+}
