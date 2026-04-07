@@ -788,7 +788,7 @@ max-width: 335px;
 .order-form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 5px;
   width: 100%;
 }
 
