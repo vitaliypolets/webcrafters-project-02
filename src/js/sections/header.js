@@ -13,6 +13,11 @@ function openMobileMenu() {
 
   lockScroll();
   setMobileMenuOpen(true);
+
+  const burger = document.querySelector('.burger');
+  if (burger) {
+    burger.classList.add('is-hidden');
+  }
 }
 
 function closeMobileMenu() {
@@ -25,6 +30,11 @@ function closeMobileMenu() {
 
   unlockScroll();
   setMobileMenuOpen(false);
+
+  const burger = document.querySelector('.burger');
+  if (burger) {
+    burger.classList.remove('is-hidden');
+  }
 }
 
 function handleEscClose(event) {
@@ -45,7 +55,6 @@ function handleMenuLinkClick(event) {
 
   closeMobileMenu();
 }
-
 
 export function initHeader() {
   refs.menuOpenBtn?.addEventListener('click', openMobileMenu);
