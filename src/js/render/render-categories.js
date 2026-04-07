@@ -12,7 +12,7 @@ export function renderCategories(
       const image =
         index === 0
           ? './categories/categories_all.jpg'
-          : './categories/categories${index}.jpg';
+          : `./categories/categories${index}.jpg`;
       const isActive = activeCategory === name;
       return `<button
     class="category-card ${isActive ? 'is-active' : ''}"
