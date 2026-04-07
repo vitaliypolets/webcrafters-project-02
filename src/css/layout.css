@@ -1,3 +1,5 @@
+/* Styles for Mobile devices */
+
 .container {
   width: 100%;
   max-width: 320px;
@@ -21,8 +23,7 @@
     padding: 0 64px;
   }
 }
-.section {
-
+  .section {
   padding: 72px 0;
 }
 
