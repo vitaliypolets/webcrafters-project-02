@@ -13,3 +13,4 @@ export function lockScroll() {
 export function unlockScroll() {
   document.body.classList.remove('no-scroll');
 }
+

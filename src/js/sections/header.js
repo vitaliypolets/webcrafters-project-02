@@ -9,6 +9,7 @@ function openMobileMenu() {
   refs.mobileMenu.classList.add('is-open');
 
   refs.menuOpenBtn?.setAttribute('aria-expanded', 'true');
+  refs.mobileMenu?.addEventListener('click', handleMenuLinkClick);
 
   lockScroll();
   setMobileMenuOpen(true);
@@ -39,11 +40,12 @@ function handleMenuOverlayClick(event) {
 }
 
 function handleMenuLinkClick(event) {
-  const link = event.target.closest('.mobile-menu__link');
+  const link = event.target.closest('.mobile-menu__link, .mobile-menu__cta');
   if (!link) return;
 
   closeMobileMenu();
 }
+
 
 export function initHeader() {
   refs.menuOpenBtn?.addEventListener('click', openMobileMenu);
