@@ -1,89 +1,69 @@
-<div id="top"></div>
-<header class="header">
-  <div class="container header__container">
-    <a href="#top" class="logo" aria-label="Меблерія — на головну">
-      <svg class="logo__icon" width="163" height="36">
-        <use href="./icons/icons.svg#icon-logo"></use>
-      </svg>
-    </a>
+<div class="modal order-modal is-hidden" data-order-modal>
+  <div class="modal__backdrop" data-modal-backdrop></div>
 
-    <nav class="header__nav nav" aria-label="Основна навігація">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a class="nav__link" href="#furniture">Наші меблі</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#about">Про нас</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#faq">Часті питання</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#feedback">Відгуки</a>
-        </li>
-      </ul>
-    </nav>
-
-    <a class="header__cta btn btn--primary" href="#furniture">До покупок</a>
-
+  <div
+    class="modal__dialog order-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="order-modal-title"
+  >
     <button
-      class="burger"
+      class="modal__close"
       type="button"
-      aria-label="Відкрити меню"
-      aria-expanded="false"
-      data-menu-open
+      aria-label="Закрити модальне вікно"
+      data-modal-close
     >
-      <span></span>
-      <span></span>
-      <span></span>
+      <svg class="order-btn-x" width="32" height="32" aria-hidden="true">
+        <use href="./icons/icons.svg#icon-x"></use>
+      </svg>
     </button>
-  </div>
 
-  <div class="mobile-menu is-hidden" data-mobile-menu>
-    <div class="mobile-menu__overlay" data-menu-overlay></div>
+    <div class="order-modal__content">
+      <h2 class="order-modal__title" id="order-modal-title">Замовити</h2>
 
-    <div class="mobile-menu__panel">
-      <div class="mobile-menu__top">
-        <a
-          href="#top"
-          class="mobile-menu__logo logo"
-          aria-label="Меблерія — на головну"
-        >
-          <svg class="logo__icon" width="84" height="36">
-            <use href="./icons/icons.svg#icon-logo"></use>
-          </svg>
-        </a>
+      <form class="order-form" data-order-form>
+        <label class="order-form__label">
+          <span class="order-form__label-text">Ім'я*</span>
+          <input
+            class="order-form__input"
+            type="text"
+            name="name"
+            placeholder="Дмитро"
+            autocomplete="name"
+            required
+          />
+          <p class="error-text" id="name-error"></p>
+        </label>
 
-        <button
-          class="mobile-menu__close"
-          type="button"
-          aria-label="Закрити меню"
-          data-menu-close
-        >
-          ×
+        <label class="order-form__label">
+          <span class="order-form__label-text">Телефон*</span>
+          <input
+            class="order-form__input"
+            type="tel"
+            name="phone"
+            placeholder="380991232211"
+            autocomplete="tel"
+            required
+          />
+          <p class="error-text" id="phone-error"></p>
+        </label>
+
+        <label class="order-form__label">
+          <span class="order-form__label-text">Коментар</span>
+          <textarea
+            class="order-form__textarea"
+            name="comment"
+            rows="4"
+            placeholder="Введіть ваш коментар"
+            autocomplete="off"
+          ></textarea>
+          <p class="error-text" id="comment-error"></p>
+        </label>
+
+        <button class="order-form__submit btn btn--primary" type="submit">
+          Надіслати заявку
         </button>
-      </div>
-
-      <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
-        <ul class="mobile-menu__list">
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#furniture">Наші меблі</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#about">Про нас</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#faq">Часті питання</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#feedback">Відгуки</a>
-          </li>
-        </ul>
-      </nav>
-
-      <a class="mobile-menu__cta btn btn--primary" href="#furniture">
-        До покупок
-      </a>
+      </form>
     </div>
   </div>
-</header>
+</div>
