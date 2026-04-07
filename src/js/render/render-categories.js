@@ -17,19 +17,20 @@ export function renderCategories(
     'Садові та вуличні меблі': '/categories/categories9.jpg',
     'Декор та аксесуари': '/categories/categories10.jpg',
   };
+
   if (!Array.isArray(categories) || categories.length === 0) {
     return `<p class="furniture__empty">Категорії не знайдено.</p>`;
   }
 
   return `<div class="furniture__categories-list">
-  ${categories
-    .map(category => {
-      const name = category.name ?? 'Категорія';
-      const image = categoryImages[name] || './categories/default.jpg';
+    ${categories
+      .map(category => {
+        const name = category.name ?? 'Категорія';
+        const image = categoryImages[name] || './categories/default.jpg';
 
-      const isActive = activeCategory === name;
+        const isActive = activeCategory === name;
 
-      return `<button
+        return `<button
           class="category-card ${isActive ? 'is-active' : ''}"
           type="button"
           data-category="${name === 'Всі товари' ? '' : name}"
@@ -46,7 +47,7 @@ export function renderCategories(
 
           <span class="category-card__title">${name}</span>
         </button>`;
-    })
-    .join('')}
+      })
+      .join('')}
   </div>`;
 }
