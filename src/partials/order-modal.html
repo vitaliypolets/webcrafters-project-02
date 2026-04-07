@@ -1,4 +1,4 @@
-<div class="modal order-modal is-hidden" data-order-modal>
+<div class="modal order-modal is-hidden" data-order-modal aria-hidden="true">
   <div class="modal__backdrop" data-modal-backdrop></div>
 
   <div
@@ -13,26 +13,27 @@
       aria-label="Закрити модальне вікно"
       data-modal-close
     >
-     <svg class="order-btn-x" width="32" height="32">
-       <use  href="/icons/icons.svg#icon-x"></use>
-     </svg>
+      <svg class="order-btn-x" width="32" height="32" aria-hidden="true">
+        <use href="./icons/icons.svg#icon-x"></use>
+      </svg>
     </button>
 
     <div class="order-modal__content">
-      <h2 class="order-modal__title" id="order-modal-title">
-         Замовити
-      </h2>
-      <form class="order-form" data-order-form>
+      <h2 class="order-modal__title" id="order-modal-title">Замовити</h2>
+
+      <form class="order-form" data-order-form novalidate>
         <label class="order-form__label">
-          <span class="order-form__label-text">Ім’я*</span>
+          <span class="order-form__label-text">Ім'я*</span>
           <input
             class="order-form__input"
             type="text"
             name="name"
             placeholder="Дмитро"
+            autocomplete="name"
+            aria-describedby="name-error"
             required
           />
-          <p class="error-text" id="name-error"></p>
+          <p class="error-text" id="name-error" aria-live="polite"></p>
         </label>
 
         <label class="order-form__label">
@@ -41,11 +42,18 @@
             class="order-form__input"
             type="tel"
             name="phone"
-            placeholder="38 099 123 22 11"
+            placeholder="380991232211"
+            autocomplete="tel"
+            inputmode="numeric"
+            pattern="[0-9]{12}"
+            maxlength="12"
+            aria-describedby="phone-error"
+            title="Введіть 12 цифр (наприклад, 380991232211)"
             required
           />
-          <p class="error-text" id="phone-error"></p>
+          <p class="error-text" id="phone-error" aria-live="polite"></p>
         </label>
+
         <label class="order-form__label">
           <span class="order-form__label-text">Коментар</span>
           <textarea
@@ -53,7 +61,9 @@
             name="comment"
             rows="4"
             placeholder="Введіть ваш коментар"
+            aria-describedby="comment-error"
           ></textarea>
+          <p class="error-text" id="comment-error" aria-live="polite"></p>
         </label>
 
         <button class="order-form__submit btn btn--primary" type="submit">
