@@ -1,14 +1,12 @@
 <div id="top"></div>
 <header class="header">
   <div class="container header__container">
-    <!-- Логотип -->
     <a href="#top" class="logo" aria-label="Меблерія — на головну">
       <svg class="logo__icon" width="135" height="36">
         <use href="./icons/icons.svg#icon-logo"></use>
       </svg>
     </a>
 
-    <!-- Навігація (desktop) -->
     <nav class="nav" aria-label="Основна навігація">
       <ul class="nav__list">
         <li><a class="nav__link" href="#furniture">Наші меблі</a></li>
@@ -20,7 +18,6 @@
 
     <a href="#furniture" class="btn btn--primary header__cta"> До покупок </a>
 
-    <!-- Бургер -->
     <button class="burger" type="button" aria-expanded="false" data-menu-open>
       <span class="header__burger-line"></span>
       <span class="header__burger-line"></span>
@@ -30,27 +27,24 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu is-hidden" data-mobile-menu>
-    <div class="mobile-menu__overlay" data-menu-overlay></div>
-
     <div class="mobile-menu__inner">
-      <button
-        data-menu-close
-        class="mobile-menu__close"
-        type="button"
-        aria-label="Закрити меню"
-        data-menu-close
-      >
-        ×
-      </button>
-
-      <!-- Навігація -->
-      <div>
+      <div class="mobile-menu__top">
         <a href="#top" class="logo" aria-label="Меблерія — на головну">
           <svg class="logo__icon" width="84" height="36">
             <use href="./icons/icons.svg#icon-logo"></use>
           </svg>
         </a>
+
+        <button
+          class="mobile-menu__close"
+          type="button"
+          aria-label="Закрити меню"
+          data-menu-close
+        >
+          ×
+        </button>
       </div>
+
       <nav class="mobile-menu__nav">
         <ul class="mobile-menu__list">
           <li><a href="#furniture" class="mobile-menu__link">Наші меблі</a></li>
@@ -60,7 +54,6 @@
         </ul>
       </nav>
 
-      <!-- Кнопка -->
       <a href="#furniture" class="btn btn--primary mobile-menu__cta">
         До покупок
       </a>
