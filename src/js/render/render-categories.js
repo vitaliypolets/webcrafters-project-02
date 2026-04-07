@@ -3,19 +3,19 @@ export function renderCategories(
   activeCategory = 'Всі товари'
 ) {
   const categoryImages = {
-    'Всі товари': '/categories/categories_all.jpg',
-    "М'які меблі": '/categories/categories2.jpg',
-    'Шафи та системи зберігання': '/categories/categories3.jpg',
-    'Ліжка та матраци': '/categories/categories1.jpg',
-    Столи: '/categories/categories4.jpg',
-    'Стільці та табурети': '/categories/categories12.jpg',
-    Кухні: '/categories/categories11.jpg',
-    'Меблі для дитячої': '/categories/categories5.jpg',
-    'Меблі для офісу': '/categories/categories6.jpg',
-    'Меблі для передпокою': '/categories/categories7.jpg',
-    'Меблі для ванної кімнати': '/categories/categories8.jpg',
-    'Садові та вуличні меблі': '/categories/categories9.jpg',
-    'Декор та аксесуари': '/categories/categories10.jpg',
+    'Всі товари': './categories/categories_all.jpg',
+    "М'які меблі": './categories/categories2.jpg',
+    'Шафи та системи зберігання': './categories/categories3.jpg',
+    'Ліжка та матраци': './categories/categories1.jpg',
+    Столи: './categories/categories4.jpg',
+    'Стільці та табурети': './categories/categories12.jpg',
+    Кухні: './categories/categories11.jpg',
+    'Меблі для дитячої': './categories/categories5.jpg',
+    'Меблі для офісу': './categories/categories6.jpg',
+    'Меблі для передпокою': './categories/categories7.jpg',
+    'Меблі для ванної кімнати': './categories/categories8.jpg',
+    'Садові та вуличні меблі': './categories/categories9.jpg',
+    'Декор та аксесуари': './categories/categories10.jpg',
   };
 
   if (!Array.isArray(categories) || categories.length === 0) {
