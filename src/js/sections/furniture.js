@@ -80,10 +80,11 @@ async function loadFurniture({ append = false } = {}) {
         showToast(
           currentCategoryId
             ? 'Товарів у цій категорії немає'
-            : 'Товарів поки немає'
+            : 'Товарів поки немає',
+          'info'
         );
       } else {
-        showToast('Більше товарів немає');
+        showToast('Більше товарів немає', 'info');
       }
 
       return;
@@ -98,7 +99,7 @@ async function loadFurniture({ append = false } = {}) {
     }
 
     hideLoadMoreButton();
-    showToast('Помилка завантаження товарів');
+    showToast('Помилка завантаження товарів', 'error');
   } finally {
     hideLoader();
   }
@@ -145,11 +146,10 @@ async function loadCategories() {
     refs.categoriesContainer.innerHTML = renderCategories(categories);
 
     furnitureCategories = document.querySelectorAll('.category-card');
-
     bindCategoryEvents();
   } catch (error) {
     console.error('Помилка завантаження категорій:', error);
-    showToast('Не вдалося завантажити категорії');
+    showToast('Не вдалося завантажити категорії', 'error');
   } finally {
     hideLoader();
   }
