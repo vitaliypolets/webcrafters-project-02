@@ -297,7 +297,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center; /* ← ДОДАНО: центрування по горизонталі */
+  align-items: center;
   gap: 32px;
 }
 
@@ -305,7 +305,7 @@
   width: 100%;
   max-width: 768px;
   margin: 0 auto;
-  text-align: center; /* ← ДОДАНО: центрування тексту */
+  text-align: center;
 }
 
 .section-faq__title {
@@ -321,8 +321,8 @@
 .faq__list {
   border-bottom: 1px solid var(--color-border);
   width: 100%; /* ← ДОДАНО */
-  display: flex; /* ← ДОДАНО */
-  flex-direction: column; /* ← ДОДАНО */
+  display: flex;
+  flex-direction: column;
   align-items: center; /* ← ДОДАНО: центрування елементів списку */
 }
 
