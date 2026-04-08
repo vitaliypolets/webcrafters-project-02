@@ -3,110 +3,170 @@ import { renderCategories } from '../render/render-categories.js';
 import { renderFurnitureCards } from '../render/render-furniture.js';
 import { fetchCategories, fetchFurniture } from '../api/furniture-api.js';
 import { showLoader, hideLoader } from '../utils/loader.js';
-import { showToast } from '../utils/toast.js'; // <- додано
+import { showToast } from '../utils/toast.js';
 
 let currentPage = 1;
 let currentCategoryId = '';
+let totalPages = 1;
 let furnitureCategories = [];
 
-export async function initFurnitureSection() {
-  if (refs.categoriesContainer) {
-    try {
-      showLoader('Завантаження категорій...');
-      const categories = await fetchCategories();
-      refs.categoriesContainer.innerHTML = renderCategories(categories);
-      furnitureCategories = document.querySelectorAll('.category-card');
-    } catch (error) {
-      console.error('Помилка завантаження категорій:', error);
-      showToast('Не вдалося завантажити категорії');
-    } finally {
-      hideLoader();
-    }
+function showLoadMoreButton() {
+  refs.loadMoreBtn?.classList.remove('is-hidden');
+}
+
+function hideLoadMoreButton() {
+  refs.loadMoreBtn?.classList.add('is-hidden');
+}
+
+function updateLoadMoreButtonVisibility() {
+  if (!refs.loadMoreBtn) return;
+
+  if (totalPages <= 1 || currentPage >= totalPages) {
+    hideLoadMoreButton();
+  } else {
+    showLoadMoreButton();
+  }
+}
+
+function getRequestParams() {
+  if (currentCategoryId) {
+    return {
+      category: currentCategoryId,
+      page: currentPage,
+    };
   }
 
-  if (refs.furnitureContainer) {
-    try {
-      showLoader('Завантаження меблів...');
-      const res = await fetchFurniture({ page: currentPage });
-      refs.furnitureContainer.innerHTML = renderFurnitureCards(res.furnitures);
+  return {
+    page: currentPage,
+  };
+}
 
-      if (res.furnitures.length === 0) {
-        showToast('Товарів поки немає');
+function updatePaginationData(response) {
+  const totalItems = Number(response?.totalItems) || 0;
+  const limit = Number(response?.limit) || 1;
+
+  totalPages = Math.ceil(totalItems / limit);
+
+  if (totalItems === 0) {
+    totalPages = 0;
+  }
+}
+
+async function loadFurniture({ append = false } = {}) {
+  try {
+    showLoader(append ? 'Завантажуємо ще...' : 'Завантаження меблів...');
+
+    const response = await fetchFurniture(getRequestParams());
+
+    const furnitures = Array.isArray(response?.furnitures)
+      ? response.furnitures
+      : [];
+
+    updatePaginationData(response);
+
+    if (!append) {
+      refs.furnitureContainer.innerHTML = renderFurnitureCards(furnitures);
+    } else if (furnitures.length > 0) {
+      refs.furnitureContainer.insertAdjacentHTML(
+        'beforeend',
+        renderFurnitureCards(furnitures)
+      );
+    }
+
+    if (furnitures.length === 0) {
+      hideLoadMoreButton();
+
+      if (!append) {
+        showToast(
+          currentCategoryId
+            ? 'Товарів у цій категорії немає'
+            : 'Товарів поки немає',
+          'info'
+        );
+      } else {
+        showToast('Більше товарів немає', 'info');
       }
-    } catch (error) {
-      console.error('Помилка завантаження меблів:', error);
-      showToast('Помилка завантаження товарів');
-    } finally {
-      hideLoader();
-    }
-  }
 
-  furnitureCategories.forEach(element => {
-    element.addEventListener('click', async e => {
-      e.preventDefault();
+      return;
+    }
+
+    updateLoadMoreButtonVisibility();
+  } catch (error) {
+    console.error('Помилка завантаження меблів:', error);
+
+    if (append) {
+      currentPage -= 1;
+    }
+
+    hideLoadMoreButton();
+    showToast('Помилка завантаження товарів', 'error');
+  } finally {
+    hideLoader();
+  }
+}
+
+function bindCategoryEvents() {
+  furnitureCategories.forEach(categoryBtn => {
+    categoryBtn.addEventListener('click', async event => {
+      event.preventDefault();
 
       furnitureCategories.forEach(btn => btn.classList.remove('is-active'));
-      element.classList.add('is-active');
+      categoryBtn.classList.add('is-active');
 
-      const categoryId = element.dataset.categoryId;
-      currentCategoryId = categoryId || '';
+      currentCategoryId = categoryBtn.dataset.categoryId || '';
       currentPage = 1;
+      totalPages = 1;
 
-      try {
-        showLoader('Завантаження меблів...');
-        const res = await fetchFurniture(
-          currentCategoryId
-            ? { category: currentCategoryId, page: currentPage }
-            : { page: currentPage }
-        );
-
-        refs.furnitureContainer.innerHTML = renderFurnitureCards(
-          res.furnitures
-        );
-
-        if (res.furnitures.length === 0) {
-          showToast('Товарів у цій категорії немає');
-        }
-
-        const loadMoreBtn = document.querySelector('[data-load-more]');
-        if (loadMoreBtn) loadMoreBtn.style.display = 'block';
-      } catch (error) {
-        console.error('Помилка завантаження меблів:', error);
-        showToast('Помилка завантаження товарів');
-      } finally {
-        hideLoader();
-      }
+      await loadFurniture({ append: false });
     });
   });
+}
 
-  const loadMoreBtn = document.querySelector('[data-load-more]');
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', async () => {
-      currentPage += 1;
+function bindLoadMoreEvent() {
+  if (!refs.loadMoreBtn) return;
 
-      try {
-        showLoader('Завантажуємо ще...');
-        const res = await fetchFurniture(
-          currentCategoryId
-            ? { category: currentCategoryId, page: currentPage }
-            : { page: currentPage }
-        );
+  refs.loadMoreBtn.addEventListener('click', async () => {
+    if (currentPage >= totalPages) {
+      hideLoadMoreButton();
+      return;
+    }
 
-        refs.furnitureContainer.insertAdjacentHTML(
-          'beforeend',
-          renderFurnitureCards(res.furnitures)
-        );
+    currentPage += 1;
+    await loadFurniture({ append: true });
+  });
+}
 
-        if (res.furnitures.length === 0) {
-          loadMoreBtn.style.display = 'none';
-          showToast('Більше товарів немає');
-        }
-      } catch (error) {
-        console.error('Помилка завантаження меблів:', error);
-        showToast('Помилка завантаження товарів');
-      } finally {
-        hideLoader();
-      }
-    });
+async function loadCategories() {
+  if (!refs.categoriesContainer) return;
+
+  try {
+    showLoader('Завантаження категорій...');
+
+    const categories = await fetchCategories();
+    refs.categoriesContainer.innerHTML = renderCategories(categories);
+
+    furnitureCategories = document.querySelectorAll('.category-card');
+    bindCategoryEvents();
+  } catch (error) {
+    console.error('Помилка завантаження категорій:', error);
+    showToast('Не вдалося завантажити категорії', 'error');
+  } finally {
+    hideLoader();
   }
+}
+
+export async function initFurnitureSection() {
+  hideLoadMoreButton();
+
+  await loadCategories();
+
+  if (refs.furnitureContainer) {
+    currentPage = 1;
+    currentCategoryId = '';
+    totalPages = 1;
+
+    await loadFurniture({ append: false });
+  }
+
+  bindLoadMoreEvent();
 }

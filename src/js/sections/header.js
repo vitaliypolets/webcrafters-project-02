@@ -1,49 +1,66 @@
 import { refs } from '../utils/selectors.js';
 import { lockScroll, unlockScroll } from '../utils/scroll-lock.js';
+import { setMobileMenuOpen } from '../utils/state.js';
+
+function openMobileMenu() {
+  if (!refs.mobileMenu) return;
+
+  refs.mobileMenu.classList.remove('is-hidden');
+  refs.mobileMenu.classList.add('is-open');
+
+  refs.menuOpenBtn?.setAttribute('aria-expanded', 'true');
+  refs.mobileMenu?.addEventListener('click', handleMenuLinkClick);
+
+  lockScroll();
+  setMobileMenuOpen(true);
+
+  const burger = document.querySelector('.burger');
+  if (burger) {
+    burger.classList.add('is-hidden');
+  }
+}
+
+function closeMobileMenu() {
+  if (!refs.mobileMenu) return;
+
+  refs.mobileMenu.classList.add('is-hidden');
+  refs.mobileMenu.classList.remove('is-open');
+
+  refs.menuOpenBtn?.setAttribute('aria-expanded', 'false');
+
+  unlockScroll();
+  setMobileMenuOpen(false);
+
+  const burger = document.querySelector('.burger');
+  if (burger) {
+    burger.classList.remove('is-hidden');
+  }
+}
+
+function handleEscClose(event) {
+  if (event.key === 'Escape') {
+    closeMobileMenu();
+  }
+}
+
+function handleMenuOverlayClick(event) {
+  if (event.target === refs.mobileMenuOverlay) {
+    closeMobileMenu();
+  }
+}
+
+function handleMenuLinkClick(event) {
+  const link = event.target.closest('.mobile-menu__link, .mobile-menu__cta');
+  if (!link) return;
+
+  closeMobileMenu();
+}
 
 export function initHeader() {
-  if (!refs.menuOpenBtn || !refs.mobileMenu) return;
+  refs.menuOpenBtn?.addEventListener('click', openMobileMenu);
+  refs.menuCloseBtn?.addEventListener('click', closeMobileMenu);
+  refs.mobileMenuOverlay?.addEventListener('click', handleMenuOverlayClick);
+  refs.mobileMenu?.addEventListener('click', handleMenuLinkClick);
 
-  const openMenu = () => {
-    refs.mobileMenu.classList.remove('is-hidden');
-    refs.menuOpenBtn.setAttribute('aria-expanded', 'true');
-    lockScroll();
-  };
-
-  const closeMenu = () => {
-    refs.mobileMenu.classList.add('is-hidden');
-    refs.menuOpenBtn.setAttribute('aria-expanded', 'false');
-    unlockScroll();
-  };
-
-  const logoLinks = document.querySelectorAll('a[href="#top"]');
-
-  logoLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-
-      closeMenu();
-
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-
-      history.replaceState(null, '', '#top');
-    });
-  });
-
-  refs.menuOpenBtn.addEventListener('click', openMenu);
-  refs.menuCloseBtn?.addEventListener('click', closeMenu);
-  refs.mobileMenuOverlay?.addEventListener('click', closeMenu);
-
-  refs.mobileMenu
-    .querySelectorAll('a')
-    .forEach(link => link.addEventListener('click', closeMenu));
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closeMenu();
-    }
-  });
+  document.addEventListener('keydown', handleEscClose);
 }

@@ -1,4 +1,4 @@
-<div class="modal order-modal is-hidden" data-order-modal>
+<div class="modal order-modal is-hidden" data-order-modal aria-hidden="true">
   <div class="modal__backdrop" data-modal-backdrop></div>
 
   <div
@@ -13,46 +13,67 @@
       aria-label="Закрити модальне вікно"
       data-modal-close
     >
-     <svg class="order-btn-x" width="32" height="32">
-       <use  href="/icons/icons.svg#icon-x"></use>
-     </svg>
+      <svg class="order-btn-x" width="32" height="32" aria-hidden="true">
+        <use href="./icons/icons.svg#icon-x"></use>
+      </svg>
     </button>
 
     <div class="order-modal__content">
-      <h2 class="order-modal__title" id="order-modal-title">
-        Замовити зворотний зв’язок
-      </h2>
-      <form class="order-form" data-order-form>
-        <label class="order-form__label">
-          <span class="order-form__label-text">Ім’я*</span>
+      <h2 class="order-modal__title" id="order-modal-title">Замовити</h2>
+
+      <form class="order-form" data-order-form novalidate>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">
+            <span class="order-form__label-text">Ім'я*</span>
+          </label>
           <input
             class="order-form__input"
+            id="order-name"
             type="text"
             name="name"
             placeholder="Дмитро"
+            autocomplete="name"
+            aria-describedby="name-error"
             required
           />
-        </label>
+          <p class="error-text" id="name-error" aria-live="polite"></p>
+        </div>
 
-        <label class="order-form__label">
-          <span class="order-form__label-text">Телефон*</span>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">
+            <span class="order-form__label-text">Телефон*</span>
+          </label>
           <input
             class="order-form__input"
+            id="order-phone"
             type="tel"
             name="phone"
-            placeholder="38 099 123 22 11"
+            placeholder="380991232211"
+            autocomplete="tel"
+            inputmode="numeric"
+            pattern="[0-9]{12}"
+            maxlength="12"
+            aria-describedby="phone-error"
+            title="Введіть 12 цифр (наприклад, 380991232211)"
             required
           />
-        </label>
-        <label class="order-form__label">
-          <span class="order-form__label-text">Коментар</span>
+          <p class="error-text" id="phone-error" aria-live="polite"></p>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-comment">
+            <span class="order-form__label-text">Коментар</span>
+          </label>
           <textarea
             class="order-form__textarea"
+            id="order-comment"
             name="comment"
             rows="4"
             placeholder="Введіть ваш коментар"
+            aria-describedby="comment-error"
           ></textarea>
-        </label>
+          <p class="error-text" id="comment-error" aria-live="polite"></p>
+        </div>
 
         <button class="order-form__submit btn btn--primary" type="submit">
           Надіслати заявку
