@@ -18,7 +18,7 @@
   <script type="module" crossorigin src="/webcrafters-project-02/index.js"></script>
   <link rel="modulepreload" crossorigin href="/webcrafters-project-02/assets/vendor-C6jGGvC7.js">
   <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/vendor-XYtvLfmp.css">
-  <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-gisQpW2j.css">
+  <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-BFpFc-zM.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 <header class="header">
   <div class="container header__container">
     <a href="#top" class="logo" aria-label="Меблерія — на головну">
-      <svg class="logo__icon" width="163" height="36">
+      <svg class="logo__icon" width="163" height="63">
         <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-logo"></use>
       </svg>
     </a>
@@ -64,50 +64,52 @@
   </div>
 
   <div class="mobile-menu is-hidden" data-mobile-menu>
-    <div class="mobile-menu__overlay" data-menu-overlay></div>
+    <div class="mobile-menu__overlay" data-menu-overlay>
+      <div class="container mobile-menu__panel">
+        <div class="mobile-menu__top">
+          <a
+            href="#top"
+            class="mobile-menu__logo logo"
+            aria-label="Меблерія — на головну"
+          >
+            <svg class="logo__icon log-mobile-menu" width="163" height="63">
+              <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-logo"></use>
+            </svg>
+          </a>
 
-    <div class="mobile-menu__panel">
-      <div class="mobile-menu__top">
-        <a
-          href="#top"
-          class="mobile-menu__logo logo"
-          aria-label="Меблерія — на головну"
-        >
-          <svg class="logo__icon" width="84" height="36">
-            <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-logo"></use>
-          </svg>
+          <button
+            class="mobile-menu__close"
+            type="button"
+            aria-label="Закрити меню"
+            data-menu-close
+          >
+            <svg class="close-x">
+              <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-x"></use>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#furniture">Наші меблі</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#about">Про нас</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#faq">Часті питання</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#feedback">Відгуки</a>
+            </li>
+          </ul>
+        </nav>
+
+        <a class="mobile-menu__cta btn btn--primary" href="#furniture">
+          До покупок
         </a>
-
-        <button
-          class="mobile-menu__close"
-          type="button"
-          aria-label="Закрити меню"
-          data-menu-close
-        >
-          ×
-        </button>
       </div>
-
-      <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
-        <ul class="mobile-menu__list">
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#furniture">Наші меблі</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#about">Про нас</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#faq">Часті питання</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#feedback">Відгуки</a>
-          </li>
-        </ul>
-      </nav>
-
-      <a class="mobile-menu__cta btn btn--primary" href="#furniture">
-        До покупок
-      </a>
     </div>
   </div>
 </header>
@@ -186,109 +188,131 @@
       <h2 class="section-faq__title">Часті питання</h2>
     </div>
 
-    <div class="faq__list">
-      <details class="faq__item">
-        <summary class="faq__question">
-          <p class="faq-text">Як здійснюється доставка меблів?</p>
-          <div class="faq__icons">
-            <svg
-              class="faq-icon-down"
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-            >
-              <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
-            </svg>
-          </div>
-        </summary>
-        <p class="faq__answer">
-          Ми доставляємо замовлення по всій Україні через надійні служби. Термін
-          доставки зазвичай складає 3 7 днів залежно від регіону.
-        </p>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__question">
-          <p class="faq-text">Чи є можливість вибрати колір або матеріал?</p>
-          <div class="faq__icons">
-            <svg
-              class="faq-icon-down"
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-            >
-              <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
-            </svg>
-          </div>
-        </summary>
-        <p class="faq__answer">
-          Так, у багатьох моделях доступні варіанти оббивки та кольорів. Усі
-          доступні опції вказані на сторінці товару.
-        </p>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__question">
-          <p class="faq-text">
-            Чи можна повернути товар, якщо він не підійшов?
+    <ul class="faq__list">
+      <li class="faq__list-item">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq-text">Як здійснюється доставка меблів?</span>
+            <span class="faq__icons" aria-hidden="true">
+              <svg
+                class="faq-icon-down"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
+              </svg>
+            </span>
+          </summary>
+          <p class="faq__answer">
+            Ми доставляємо замовлення по всій Україні через надійні служби.
+            Термін доставки зазвичай складає 3–7 днів залежно від регіону.
           </p>
-          <div class="faq__icons">
-            <svg
-              class="faq-icon-down"
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-            >
-              <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
-            </svg>
-          </div>
-        </summary>
-        <p class="faq__answer">
-          Так, ви можете повернути товар протягом 14 днів, якщо він не був у
-          користуванні та збережений у первинному вигляді.
-        </p>
-      </details>
+        </details>
+      </li>
 
-      <details class="faq__item">
-        <summary class="faq__question">
-          <p class="faq-text">Чи надаєте ви послугу збирання меблів?</p>
-          <div class="faq__icons">
-            <svg
-              class="faq-icon-down"
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
+      <li class="faq__list-item">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq-text"
+              >Чи є можливість вибрати колір або матеріал?</span
             >
-              <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
-            </svg>
-          </div>
-        </summary>
-        <p class="faq__answer">
-          Так, під час оформлення замовлення можна обрати послугу збирання. Наші
-          майстри зберуть меблі у зручний для вас час.
-        </p>
-      </details>
+            <span class="faq__icons" aria-hidden="true">
+              <svg
+                class="faq-icon-down"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
+              </svg>
+            </span>
+          </summary>
+          <p class="faq__answer">
+            Так, у багатьох моделях доступні варіанти оббивки та кольорів. Усі
+            доступні опції вказані на сторінці товару.
+          </p>
+        </details>
+      </li>
 
-      <details class="faq__item">
-        <summary class="faq__question">
-          <p class="faq-text">Як здійснити оплату?</p>
-          <div class="faq__icons">
-            <svg
-              class="faq-icon-down"
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
+      <li class="faq__list-item">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq-text"
+              >Чи можна повернути товар, якщо він не підійшов?</span
             >
-              <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
-            </svg>
-          </div>
-        </summary>
-        <p class="faq__answer">
-          Ми приймаємо оплату карткою онлайн, банківським переказом або
-          післяплатою при отриманні.
-        </p>
-      </details>
-    </div>
+            <span class="faq__icons" aria-hidden="true">
+              <svg
+                class="faq-icon-down"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
+              </svg>
+            </span>
+          </summary>
+          <p class="faq__answer">
+            Так, ви можете повернути товар протягом 14 днів, якщо він не був у
+            користуванні та збережений у первинному вигляді.
+          </p>
+        </details>
+      </li>
+
+      <li class="faq__list-item">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq-text">Чи надаєте ви послугу збирання меблів?</span>
+            <span class="faq__icons" aria-hidden="true">
+              <svg
+                class="faq-icon-down"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
+              </svg>
+            </span>
+          </summary>
+          <p class="faq__answer">
+            Так, під час оформлення замовлення можна обрати послугу збирання.
+            Наші майстри зберуть меблі у зручний для вас час.
+          </p>
+        </details>
+      </li>
+
+      <li class="faq__list-item">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq-text">Як здійснити оплату?</span>
+            <span class="faq__icons" aria-hidden="true">
+              <svg
+                class="faq-icon-down"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-chevron-down"></use>
+              </svg>
+            </span>
+          </summary>
+          <p class="faq__answer">
+            Ми приймаємо оплату карткою онлайн, банківським переказом або
+            післяплатою при отриманні.
+          </p>
+        </details>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -482,7 +506,7 @@
   </div>
 </div>
 
-  <div class="modal order-modal is-hidden" data-order-modal>
+  <div class="modal order-modal is-hidden" data-order-modal aria-hidden="true">
   <div class="modal__backdrop" data-modal-backdrop></div>
 
   <div
@@ -497,26 +521,27 @@
       aria-label="Закрити модальне вікно"
       data-modal-close
     >
-     <svg class="order-btn-x" width="32" height="32">
-       <use  href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-x"></use>
-     </svg>
+      <svg class="order-btn-x" width="32" height="32" aria-hidden="true">
+        <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-x"></use>
+      </svg>
     </button>
 
     <div class="order-modal__content">
-      <h2 class="order-modal__title" id="order-modal-title">
-         Замовити
-      </h2>
-      <form class="order-form" data-order-form>
+      <h2 class="order-modal__title" id="order-modal-title">Замовити</h2>
+
+      <form class="order-form" data-order-form novalidate>
         <label class="order-form__label">
-          <span class="order-form__label-text">Ім’я*</span>
+          <span class="order-form__label-text">Ім'я*</span>
           <input
             class="order-form__input"
             type="text"
             name="name"
             placeholder="Дмитро"
+            autocomplete="name"
+            aria-describedby="name-error"
             required
           />
-          <p class="error-text" id="name-error"></p>
+          <p class="error-text" id="name-error" aria-live="polite"></p>
         </label>
 
         <label class="order-form__label">
@@ -525,11 +550,18 @@
             class="order-form__input"
             type="tel"
             name="phone"
-            placeholder="38 099 123 22 11"
+            placeholder="380991232211"
+            autocomplete="tel"
+            inputmode="numeric"
+            pattern="[0-9]{12}"
+            maxlength="12"
+            aria-describedby="phone-error"
+            title="Введіть 12 цифр (наприклад, 380991232211)"
             required
           />
-          <p class="error-text" id="phone-error"></p>
+          <p class="error-text" id="phone-error" aria-live="polite"></p>
         </label>
+
         <label class="order-form__label">
           <span class="order-form__label-text">Коментар</span>
           <textarea
@@ -537,7 +569,9 @@
             name="comment"
             rows="4"
             placeholder="Введіть ваш коментар"
+            aria-describedby="comment-error"
           ></textarea>
+          <p class="error-text" id="comment-error" aria-live="polite"></p>
         </label>
 
         <button class="order-form__submit btn btn--primary" type="submit">
