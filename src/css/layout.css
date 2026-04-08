@@ -141,6 +141,7 @@
       linear-gradient(rgba(0, 0, 0, 0.2)),
       url(../images/hero-section/hero-bg-tab.webp);
     background-color: rgba(217, 217, 217, 1);
+    fetchpriority="high";
   }
 
   .hero__container {
@@ -170,6 +171,7 @@
       linear-gradient(rgba(0, 0, 0, 0.2)),
       url(../images/hero-section/hero-bg-tab@2x.webp);
     background-color: rgba(217, 217, 217, 1);
+    fetchpriority="high";
   }
 }
 
@@ -179,6 +181,7 @@
       linear-gradient(rgba(0, 0, 0, 0.2)),
       url(../images/hero-section/hero-bg-desk.webp);
     background-color: rgba(217, 217, 217, 1);
+    fetchpriority="high";
   }
   .hero__container {
     padding: 0 64px;
@@ -209,6 +212,7 @@
       linear-gradient(rgba(0, 0, 0, 0.2)),
       url(../images/hero-section/hero-bg-desk@2x.webp);
     background-color: rgba(217, 217, 217, 1);
+    fetchpriority="high";
   }
 }
 
