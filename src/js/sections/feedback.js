@@ -1,5 +1,4 @@
 import { showLoader, hideLoader } from '../utils/loader.js';
-
 import { getFeedbacks } from '../api/feedback-api.js';
 import { renderFeedbacks } from '../render/render-feedbacks.js';
 import { showToast } from '../utils/toast.js';
@@ -12,12 +11,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export async function initFeedback() {
-  showLoader();
+  showLoader('Завантаження відгуків...');
 
   try {
     const { feedbacks } = await getFeedbacks();
+
     if (!feedbacks || feedbacks.length === 0) {
-      showToast('Не вдалося завантажити відгуки');
+      showToast('Не вдалося завантажити відгуки', 'error');
       return;
     }
 
@@ -72,7 +72,8 @@ export async function initFeedback() {
       swiperNextButton.disabled = swiper.isEnd;
     });
   } catch (err) {
-    console.error(err);
+    console.error('Помилка завантаження відгуків:', err);
+    showToast('Не вдалося завантажити відгуки', 'error');
   } finally {
     hideLoader();
   }

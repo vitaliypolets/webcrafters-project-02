@@ -8,8 +8,13 @@ import { initFooter } from './sections/footer.js';
 
 import { initFurnitureModal } from './modals/furniture-modal.js';
 import { initOrderModal } from './modals/order-modal.js';
+// import { showToast } from './utils/toast.js';
+
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // showToast('ТЕСТОВИЙ TOAST', 'error');
+
   initHeader();
   initHero();
   initFurnitureSection();
