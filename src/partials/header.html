@@ -2,7 +2,7 @@
 <header class="header">
   <div class="container header__container">
     <a href="#top" class="logo" aria-label="Меблерія — на головну">
-      <svg class="logo__icon" width="163" height="36">
+      <svg class="logo__icon" width="163" height="63">
         <use href="./icons/icons.svg#icon-logo"></use>
       </svg>
     </a>
@@ -40,50 +40,52 @@
   </div>
 
   <div class="mobile-menu is-hidden" data-mobile-menu>
-    <div class="mobile-menu__overlay" data-menu-overlay></div>
+    <div class="mobile-menu__overlay" data-menu-overlay>
+      <div class="container mobile-menu__panel">
+        <div class="mobile-menu__top">
+          <a
+            href="#top"
+            class="mobile-menu__logo logo"
+            aria-label="Меблерія — на головну"
+          >
+            <svg class="logo__icon log-mobile-menu" width="163" height="63">
+              <use href="./icons/icons.svg#icon-logo"></use>
+            </svg>
+          </a>
 
-    <div class="mobile-menu__panel">
-      <div class="mobile-menu__top">
-        <a
-          href="#top"
-          class="mobile-menu__logo logo"
-          aria-label="Меблерія — на головну"
-        >
-          <svg class="logo__icon" width="84" height="36">
-            <use href="./icons/icons.svg#icon-logo"></use>
-          </svg>
+          <button
+            class="mobile-menu__close"
+            type="button"
+            aria-label="Закрити меню"
+            data-menu-close
+          >
+            <svg class="close-x">
+              <use href="/icons/icons.svg#icon-x"></use>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#furniture">Наші меблі</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#about">Про нас</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#faq">Часті питання</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#feedback">Відгуки</a>
+            </li>
+          </ul>
+        </nav>
+
+        <a class="mobile-menu__cta btn btn--primary" href="#furniture">
+          До покупок
         </a>
-
-        <button
-          class="mobile-menu__close"
-          type="button"
-          aria-label="Закрити меню"
-          data-menu-close
-        >
-          ×
-        </button>
       </div>
-
-      <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
-        <ul class="mobile-menu__list">
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#furniture">Наші меблі</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#about">Про нас</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#faq">Часті питання</a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#feedback">Відгуки</a>
-          </li>
-        </ul>
-      </nav>
-
-      <a class="mobile-menu__cta btn btn--primary" href="#furniture">
-        До покупок
-      </a>
     </div>
   </div>
 </header>
