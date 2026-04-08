@@ -1,4 +1,5 @@
 import { fetchFurnitureById } from '../api/furniture-api.js';
+import { showToast } from '../utils/toast.js';
 import { refs } from '../utils/selectors.js';
 import { state } from '../utils/state.js';
 import { openModal, closeModal } from './modal-base.js';
@@ -6,7 +7,14 @@ import { lockScroll, unlockScroll } from '../utils/scroll-lock.js';
 import {renderStars} from '../render/render-stars.js'
 
 export async function openFurnitureModal(id) {
-  const item = await fetchFurnitureById(id);
+  let item;
+
+  try {
+    item = await fetchFurnitureById(id);
+  } catch (error) {
+    showToast(error.message || 'Не вдалося завантажити дані про товар');
+    return;
+  };
 
   if (!item || !refs.furnitureModal) {
     return;
