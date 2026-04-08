@@ -530,10 +530,13 @@
       <h2 class="order-modal__title" id="order-modal-title">Замовити</h2>
 
       <form class="order-form" data-order-form novalidate>
-        <label class="order-form__label">
-          <span class="order-form__label-text">Ім'я*</span>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">
+            <span class="order-form__label-text">Ім'я*</span>
+          </label>
           <input
             class="order-form__input"
+            id="order-name"
             type="text"
             name="name"
             placeholder="Дмитро"
@@ -542,12 +545,15 @@
             required
           />
           <p class="error-text" id="name-error" aria-live="polite"></p>
-        </label>
+        </div>
 
-        <label class="order-form__label">
-          <span class="order-form__label-text">Телефон*</span>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">
+            <span class="order-form__label-text">Телефон*</span>
+          </label>
           <input
             class="order-form__input"
+            id="order-phone"
             type="tel"
             name="phone"
             placeholder="380991232211"
@@ -560,19 +566,22 @@
             required
           />
           <p class="error-text" id="phone-error" aria-live="polite"></p>
-        </label>
+        </div>
 
-        <label class="order-form__label">
-          <span class="order-form__label-text">Коментар</span>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-comment">
+            <span class="order-form__label-text">Коментар</span>
+          </label>
           <textarea
             class="order-form__textarea"
+            id="order-comment"
             name="comment"
             rows="4"
             placeholder="Введіть ваш коментар"
             aria-describedby="comment-error"
           ></textarea>
           <p class="error-text" id="comment-error" aria-live="polite"></p>
-        </label>
+        </div>
 
         <button class="order-form__submit btn btn--primary" type="submit">
           Надіслати заявку
