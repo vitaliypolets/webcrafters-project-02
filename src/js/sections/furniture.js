@@ -28,7 +28,7 @@ export async function initFurnitureSection() {
       console.error('Помилка завантаження категорій:', error);
       showToast('Не вдалося завантажити категорії');
     } finally {
-      hideLoader();
+      hideLoader(); // <- додано
     }
   }
 
@@ -82,7 +82,7 @@ export async function initFurnitureSection() {
         console.error('Помилка завантаження меблів:', error);
         showToast('Помилка завантаження товарів');
       } finally {
-        hideLoader();
+        hideLoader(); // <- додано
       }
     });
   });
