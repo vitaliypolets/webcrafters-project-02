@@ -3,20 +3,31 @@ import { renderCategories } from '../render/render-categories.js';
 import { renderFurnitureCards } from '../render/render-furniture.js';
 import { fetchCategories, fetchFurniture } from '../api/furniture-api.js';
 import { showLoader, hideLoader } from '../utils/loader.js';
-import { showToast } from '../utils/toast.js'; // <- додано
+import { showToast } from '../utils/toast.js';
 
 let currentPage = 1;
 let currentCategoryId = '';
 let furnitureCategories = [];
 let totalPages = 1;
-const loadMoreBtn = document.querySelector('[data-load-more]');
+
+function showLoadMoreButton() {
+  refs.loadMoreBtn?.classList.remove('is-hidden');
+}
+
+function hideLoadMoreButton() {
+  refs.loadMoreBtn?.classList.add('is-hidden');
+}
+
 function checkButtonStatus() {
-  if (currentPage < totalPages) {
-    loadMoreBtn.disabled = false;
+  if (!refs.loadMoreBtn) return;
+
+  if (totalPages <= 1 || currentPage >= totalPages) {
+    hideLoadMoreButton();
   } else {
-    loadMoreBtn.disabled = true;
+    showLoadMoreButton();
   }
 }
+
 export async function initFurnitureSection() {
   if (refs.categoriesContainer) {
     try {
@@ -28,7 +39,7 @@ export async function initFurnitureSection() {
       console.error('Помилка завантаження категорій:', error);
       showToast('Не вдалося завантажити категорії');
     } finally {
-      hideLoader(); // <- додано
+      hideLoader();
     }
   }
 
@@ -36,14 +47,19 @@ export async function initFurnitureSection() {
     try {
       showLoader('Завантаження меблів...');
       const res = await fetchFurniture({ page: currentPage });
-      totalPages = Math.ceil(res.totalItems / res.limit);
+
+      totalPages = Math.ceil((res.totalItems || 0) / (res.limit || 1));
       refs.furnitureContainer.innerHTML = renderFurnitureCards(res.furnitures);
+
       checkButtonStatus();
+
       if (res.furnitures.length === 0) {
+        hideLoadMoreButton();
         showToast('Товарів поки немає');
       }
     } catch (error) {
       console.error('Помилка завантаження меблів:', error);
+      hideLoadMoreButton();
       showToast('Помилка завантаження товарів');
     } finally {
       hideLoader();
@@ -57,56 +73,61 @@ export async function initFurnitureSection() {
       furnitureCategories.forEach(btn => btn.classList.remove('is-active'));
       element.classList.add('is-active');
 
-      const categoryId = element.dataset.categoryId;
-      currentCategoryId = categoryId || '';
+      currentCategoryId = element.dataset.categoryId || '';
       currentPage = 1;
 
       try {
         showLoader('Завантаження меблів...');
+
         const res = await fetchFurniture(
           currentCategoryId
             ? { category: currentCategoryId, page: currentPage }
             : { page: currentPage }
         );
-        totalPages = Math.ceil(res.totalItems / res.limit);
-        refs.furnitureContainer.innerHTML = renderFurnitureCards(
-          res.furnitures
-        );
+
+        totalPages = Math.ceil((res.totalItems || 0) / (res.limit || 1));
+        refs.furnitureContainer.innerHTML = renderFurnitureCards(res.furnitures);
+
         checkButtonStatus();
+
         if (res.furnitures.length === 0) {
+          hideLoadMoreButton();
           showToast('Товарів у цій категорії немає');
         }
-
-        if (loadMoreBtn) loadMoreBtn.style.display = 'block';
       } catch (error) {
         console.error('Помилка завантаження меблів:', error);
+        hideLoadMoreButton();
         showToast('Помилка завантаження товарів');
       } finally {
-        hideLoader(); // <- додано
+        hideLoader();
       }
     });
   });
 
-  const loadMoreBtn = document.querySelector('[data-load-more]');
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', async () => {
+  if (refs.loadMoreBtn) {
+    refs.loadMoreBtn.addEventListener('click', async () => {
       currentPage += 1;
 
       try {
         showLoader('Завантажуємо ще...');
+
         const res = await fetchFurniture(
           currentCategoryId
             ? { category: currentCategoryId, page: currentPage }
             : { page: currentPage }
         );
-        totalPages = Math.ceil(res.totalItems / res.limit);
+
+        totalPages = Math.ceil((res.totalItems || 0) / (res.limit || 1));
+
         refs.furnitureContainer.insertAdjacentHTML(
           'beforeend',
           renderFurnitureCards(res.furnitures)
         );
+
         checkButtonStatus();
-        if (res.furnitures.length === 0) {
-          loadMoreBtn.style.display = 'none';
+
+        if (res.furnitures.length === 0 || currentPage >= totalPages) {
+          hideLoadMoreButton();
           showToast('Більше товарів немає');
         }
       } catch (error) {
