@@ -2,10 +2,6 @@
   width: 163px;
 }
 
-.logo--light {
-  color: #fff;
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -203,7 +199,7 @@ body.no-scroll {
 
   .mobile-menu {
     position: fixed;
-    top: 0px;
+    top: -65px;
     left: 0;
     width: 100%;
     height: 100%;
