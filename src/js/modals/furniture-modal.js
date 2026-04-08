@@ -4,90 +4,98 @@ import { refs } from '../utils/selectors.js';
 import { state } from '../utils/state.js';
 import { openModal, closeModal } from './modal-base.js';
 import { lockScroll, unlockScroll } from '../utils/scroll-lock.js';
-import {renderStars} from '../render/render-stars.js'
+import { renderStars } from '../render/render-stars.js';
+import { showToast } from '../utils/toast.js';
 
 export async function openFurnitureModal(id) {
-  let item;
-
   try {
-    item = await fetchFurnitureById(id);
-  } catch (error) {
-    showToast(error.message || 'Не вдалося завантажити дані про товар');
-    return;
-  };
+    const item = await fetchFurnitureById(id);
 
-  if (!item || !refs.furnitureModal) {
-    return;
-  };
-
-  state.selectedFurnitureId = item._id;
-  state.selectedColor = item.color ? item.color[0] : null;
-
-  const gallery = refs.furnitureModal.querySelector('[data-furniture-gallery]');
-  
-  if (gallery && item.images && item.images.length > 0) {
-    gallery.innerHTML = item.images
-      .map(
-        imgUrl => `
-      <div class="furniture-modal__img-wrapper">
-        <img src="${imgUrl}" alt="${item.name}" class="furniture-modal__img">
-      </div>
-    `).join('');
-  };
-
-  const title = refs.furnitureModal.querySelector('[data-furniture-title]');
-  const category = refs.furnitureModal.querySelector('[data-furniture-category]');
-  const price = refs.furnitureModal.querySelector('[data-furniture-price]');
-  const rating = refs.furnitureModal.querySelector('[data-furniture-rating]');
-  if (rating) {
-    rating.innerHTML = renderStars(item.rate);
-  }
-
-  const colorsList = refs.furnitureModal.querySelector('[data-furniture-colors]');
-  if (colorsList) {
-    colorsList.innerHTML = item.color
-      .map((hex, index) => `
-        <li class="color-item">
-          <label class="color-label">
-            <input
-              type="checkbox"
-              name="furniture-color"
-              value="${hex}"
-              class="color-input"
-              ${index === 0 ? 'checked' : ''}>
-            <span class="color-marker" style="background-color: ${hex}"></span>
-          </label>
-        </li>
-      `).join('');
-    
-    colorsList.onchange = (e) => {
-      const target = e.target;
-      if (e.target.classList.contains('color-input')) {
-        if (!target.checked) {
-          target.checked = true;
-          return;
-        };
-
-        colorsList.querySelectorAll('.color-input')
-          .forEach(checkbox => { checkbox.checked = (checkbox === target); });
-        
-        state.selectedColor = e.target.value;
+    if (!item || !refs.furnitureModal) {
+      showToast('Не вдалося завантажити товар', 'error');
+      return;
     }
-  };
+
+    state.selectedFurnitureId = item._id;
+    state.selectedColor = item.color ? item.color[0] : null;
+
+    const gallery = refs.furnitureModal.querySelector('[data-furniture-gallery]');
+
+    if (gallery && item.images && item.images.length > 0) {
+      gallery.innerHTML = item.images
+        .map(
+          imgUrl => `
+            <div class="furniture-modal__img-wrapper">
+              <img src="${imgUrl}" alt="${item.name}" class="furniture-modal__img">
+            </div>
+          `
+        )
+        .join('');
+    }
+
+    const title = refs.furnitureModal.querySelector('[data-furniture-title]');
+    const category = refs.furnitureModal.querySelector('[data-furniture-category]');
+    const price = refs.furnitureModal.querySelector('[data-furniture-price]');
+    const rating = refs.furnitureModal.querySelector('[data-furniture-rating]');
+
+    if (rating) {
+      rating.innerHTML = renderStars(item.rate);
+    }
+
+    const colorsList = refs.furnitureModal.querySelector('[data-furniture-colors]');
+
+    if (colorsList) {
+      colorsList.innerHTML = item.color
+        .map(
+          (hex, index) => `
+            <li class="color-item">
+              <label class="color-label">
+                <input
+                  type="checkbox"
+                  name="furniture-color"
+                  value="${hex}"
+                  class="color-input"
+                  ${index === 0 ? 'checked' : ''}>
+                <span class="color-marker" style="background-color: ${hex}"></span>
+              </label>
+            </li>
+          `
+        )
+        .join('');
+
+      colorsList.onchange = e => {
+        const target = e.target;
+
+        if (target.classList.contains('color-input')) {
+          if (!target.checked) {
+            target.checked = true;
+            return;
+          }
+
+          colorsList.querySelectorAll('.color-input').forEach(checkbox => {
+            checkbox.checked = checkbox === target;
+          });
+
+          state.selectedColor = target.value;
+        }
+      };
+    }
+
+    const desc = refs.furnitureModal.querySelector('[data-furniture-description]');
+    const dimensions = refs.furnitureModal.querySelector('[data-furniture-dimensions]');
+
+    if (title) title.textContent = item.name;
+    if (category) category.textContent = item.type;
+    if (price) price.textContent = `${item.price} грн`;
+    if (desc) desc.textContent = item.description;
+    if (dimensions) dimensions.textContent = item.sizes;
+
+    openModal(refs.furnitureModal);
+    lockScroll();
+  } catch (error) {
+    console.error('Помилка завантаження товару:', error);
+    showToast('Не вдалося завантажити товар', 'error');
   }
-
-  const desc = refs.furnitureModal.querySelector('[data-furniture-description]');
-  const dimensions = refs.furnitureModal.querySelector('[data-furniture-dimensions]');
-
-  if (title) title.textContent = item.name;
-  if (category) category.textContent = item.type;
-  if (price) price.textContent = `${item.price} грн`;
-  if (desc) desc.textContent = item.description;
-  if (dimensions) dimensions.textContent = item.sizes;
-
-
-  openModal(refs.furnitureModal);
-  lockScroll();
 }
 
 export function initFurnitureModal() {
@@ -107,7 +115,7 @@ export function initFurnitureModal() {
       unlockScroll();
     }
 
-    if (goToOrderBtn) { 
+    if (goToOrderBtn) {
       closeModal(refs.furnitureModal);
     }
   });
