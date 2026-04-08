@@ -18,7 +18,6 @@ function getFurnitureTitle(item) {
 }
 
 function getFurnitureColor(item) {
-  console.log(item);
   let colors;
   if (Array.isArray(item.color) && item.color.length > 0) {
     colors = item.color;

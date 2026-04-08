@@ -26,17 +26,17 @@ export function showToast(message = 'Щось пішло не так', type = 'e
   }
 
   activeToast = document.createElement('div');
-  activeToast.className = `toast toast--${currentType}`;
+  activeToast.className = `app-toast app-toast--${currentType}`;
   activeToast.setAttribute('role', 'alert');
   activeToast.setAttribute('aria-live', 'assertive');
 
   activeToast.innerHTML = `
-    <div class="toast__icon">${icon}</div>
-    <div class="toast__content">
-      <p class="toast__title">${title}</p>
-      <p class="toast__message">${message}</p>
+    <div class="app-toast__icon">${icon}</div>
+    <div class="app-toast__content">
+      <p class="app-toast__title">${title}</p>
+      <p class="app-toast__message">${message}</p>
     </div>
-    <button class="toast__close" type="button" aria-label="Закрити повідомлення">
+    <button class="app-toast__close" type="button" aria-label="Закрити повідомлення">
       ×
     </button>
   `;
@@ -47,7 +47,7 @@ export function showToast(message = 'Щось пішло не так', type = 'e
     activeToast.classList.add('is-visible');
   });
 
-  const closeBtn = activeToast.querySelector('.toast__close');
+  const closeBtn = activeToast.querySelector('.app-toast__close');
 
   closeBtn?.addEventListener('click', () => {
     clearTimeout(toastTimer);
