@@ -141,8 +141,7 @@
       linear-gradient(rgba(0, 0, 0, 0.2)),
       url(../images/hero-section/hero-bg-tab.webp);
     background-color: rgba(217, 217, 217, 1);
-    fetchpriority="high";
-  }
+    }
 
   .hero__container {
     padding: 0 31.5px;
@@ -171,8 +170,7 @@
       linear-gradient(rgba(0, 0, 0, 0.2)),
       url(../images/hero-section/hero-bg-tab@2x.webp);
     background-color: rgba(217, 217, 217, 1);
-    fetchpriority="high";
-  }
+    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -181,8 +179,7 @@
       linear-gradient(rgba(0, 0, 0, 0.2)),
       url(../images/hero-section/hero-bg-desk.webp);
     background-color: rgba(217, 217, 217, 1);
-    fetchpriority="high";
-  }
+      }
   .hero__container {
     padding: 0 64px;
     max-width: 1440px;
@@ -212,8 +209,7 @@
       linear-gradient(rgba(0, 0, 0, 0.2)),
       url(../images/hero-section/hero-bg-desk@2x.webp);
     background-color: rgba(217, 217, 217, 1);
-    fetchpriority="high";
-  }
+      }
 }
 
 .hero__actions {
