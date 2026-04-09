@@ -1,5 +1,4 @@
 import { fetchFurnitureById } from '../api/furniture-api.js';
-import { showToast } from '../utils/toast.js';
 import { refs } from '../utils/selectors.js';
 import { state } from '../utils/state.js';
 import { openModal, closeModal } from './modal-base.js';
