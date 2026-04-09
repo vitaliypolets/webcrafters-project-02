@@ -995,9 +995,12 @@ body.no-scroll {
   border-radius: 8px;
   padding: 64px 20px;
   background: var(--color-white);
-  max-width: 335px;
+  /* max-width: 335px; */
   overflow: visible;
   margin: 48px auto;
+  max-width: 90vw;  
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .modal__close {
@@ -1029,6 +1032,8 @@ body.no-scroll {
   gap: 5px;
   width: 100%;
   max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .order-btn-x {
@@ -1064,12 +1069,16 @@ body.no-scroll {
   border-radius: 12px;
   padding: 12px;
   background: rgba(8, 12, 9, 0.05);
-  min-height: 180px;
+  /* min-height: 180px; */
   height: auto;
   width: 100%;
   max-width: 100%;
+  min-width: 100%;
   resize: vertical;
   box-sizing: border-box;
+  word-wrap: break-word;  /* переносить довгі слова */
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .order-form__submit {
@@ -1120,7 +1129,7 @@ body.no-scroll {
   }
 
   .order-form__submit {
-    padding: 10px 31.5px;
+    padding: 10px 32px;
   }
 
   .order-form__submit:hover,
