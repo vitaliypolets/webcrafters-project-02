@@ -1,0 +1,46 @@
+/* Popular */
+.section-popular {
+  padding: 48px 20px;
+}
+
+.popular-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #080c09;
+  margin-bottom: 32px;
+}
+
+.popular-swiper {
+  margin-bottom: 48px;
+}
+
+.popular-swiper-up {
+  margin-top: 48px;
+}
+
+.swiper-prev-button-popular,
+.swiper-next-button-popular {
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  border-radius: 100px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background-color: #f2f2f2;
+}
+
+.swiper-prev-button-popular:hover,
+.swiper-prev-button-popular:focus,
+.swiper-next-button-popular:hover,
+.swiper-next-button-popular:focus {
+  background-color: #975052;
+  fill: #fff;
+}
+
+.swiper-prev-button-popular:active,
+.swiper-next-button-popular:active {
+  background: #6b0609;
+  fill: #fff;
+}
