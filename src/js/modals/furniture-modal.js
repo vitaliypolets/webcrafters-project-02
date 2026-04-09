@@ -1,10 +1,10 @@
 import { fetchFurnitureById } from '../api/furniture-api.js';
-import { showToast } from '../utils/toast.js';
 import { refs } from '../utils/selectors.js';
 import { state } from '../utils/state.js';
 import { openModal, closeModal } from './modal-base.js';
 import { lockScroll, unlockScroll } from '../utils/scroll-lock.js';
 import { renderStars } from '../render/render-stars.js';
+import { showToast } from '../utils/toast.js';
 
 export async function openFurnitureModal(id) {
   try {
