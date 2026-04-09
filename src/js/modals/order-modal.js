@@ -84,7 +84,7 @@ export function initOrderModal() {
     }
 
     if (!state.selectedFurnitureId || !state.selectedColor) {
-      showToast("Не обрано товар або колір");
+      showToast('Не обрано товар або колір', 'info');
       return;
     }
 
@@ -98,13 +98,11 @@ export function initOrderModal() {
 
     try {
       const data = await submitOrder(payload);
-      console.log('Order success:', data);
       refs.orderForm.reset();
-      showToast('Замовлення успішно надіслано');
+      showToast('Замовлення успішно надіслано', 'success');
       closeModal(refs.orderModal);
     } catch (error) {
-      console.error('Order error:', error);
-      showToast('Помилка при відправці');
+      showToast('Помилка при відправці', 'error');
     }
   });
 }
