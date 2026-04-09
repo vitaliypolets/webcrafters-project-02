@@ -1,28 +1,34 @@
 <!doctype html>
 <html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Меблерія - там, де народжується комфорт</title>
+    <meta
+      name="description"
+      content="Меблерія — сучасний меблевий магазин із каталогом, відгуками та формою замовлення."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/webcrafters-project-02/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/webcrafters-project-02/assets/vendor-C6jGGvC7.js">
+    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/vendor-XYtvLfmp.css">
+    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-Czy45aO6.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Меблерія - там, де народжується комфорт</title>
-  <meta name="description"
-    content="Меблерія — сучасний меблевий магазин із каталогом, відгуками та формою замовлення." />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
-    integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <script type="module" crossorigin src="/webcrafters-project-02/index.js"></script>
-  <link rel="modulepreload" crossorigin href="/webcrafters-project-02/assets/vendor-C6jGGvC7.js">
-  <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/vendor-XYtvLfmp.css">
-  <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-Dbz34Xrx.css">
-</head>
-
-<body>
-  <div id="top"></div>
+  <body>
+    <div id="top"></div>
 <header class="header">
   <div class="container header__container">
     <a href="#top" class="logo" aria-label="Меблерія — на головну">
@@ -38,6 +44,9 @@
         </li>
         <li class="nav__item">
           <a class="nav__link" href="#about">Про нас</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#popular">Популярні</a>
         </li>
         <li class="nav__item">
           <a class="nav__link" href="#faq">Часті питання</a>
@@ -115,8 +124,8 @@
 </header>
 
 
-  <main>
-    <section class="hero section">
+    <main>
+      <section class="hero section">
   <div class="container hero__container">
     <div class="hero__content">
       <h1 class="hero__title">Створіть свій ідеальний дім</h1>
@@ -132,7 +141,7 @@
   </div>
 </section>
 
-    <section class="furniture section" id="furniture">
+      <section class="furniture section" id="furniture">
   <div class="container furniture__container">
     <div class="furniture__head">
       <h2 class="furniture__title section-title">Наші меблі</h2>
@@ -162,7 +171,7 @@
   </div>
 </section>
 
-    <section class="about__section" id="about">
+      <section class="about__section" id="about">
   <div class="container about__container">
     <div class="about__content">
       <h2 class="about__title">Про Меблерію</h2>
@@ -182,7 +191,42 @@
     </picture>
   </div>
 </section>
-    <section class="faq-section section" id="faq">
+      <section class="container" id="popular">
+  <div class="section-popular">
+    <h2 class="popular-title">Популярні товари</h2>
+
+    <div class="swiper popular-swiper">
+      <ul class="popular-list swiper-wrapper"></ul>
+      <div class="swiper-control-panel popular-swiper-up">
+        <nav
+          class="swiper-pagination-dots-popular swiper-pagination-dots"
+          aria-label="Сторінки слайдера"
+        ></nav>
+
+        <div class="arrows" role="group" aria-label="Керування слайдером">
+          <button
+            class="swiper-prev-button-popular"
+            aria-label="Попередній слайд"
+          >
+            <svg class="left-arrow">
+              <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-left-arrow-alt"></use>
+            </svg>
+          </button>
+          <button
+            class="swiper-next-button-popular"
+            aria-label="Наступний слайд"
+          >
+            <svg class="right-arrow">
+              <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-right-arrow-alt"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="faq-section section" id="faq">
   <div class="faq-container">
     <div class="section-faq">
       <h2 class="section-faq__title">Часті питання</h2>
@@ -316,7 +360,7 @@
   </div>
 </section>
 
-    <section class="feedback-section" id="feedback">
+      <section class="feedback-section" id="feedback">
   <div class="container">
     <h2 class="feedback-title">Відгуки клієнтів</h2>
     <h3 class="feedback-description">
@@ -346,9 +390,9 @@
   </div>
 </section>
 
-  </main>
+    </main>
 
-  <footer class="footer" id="footer">
+    <footer class="footer" id="footer">
   <div class="footer__container">
     <a
       href="#top"
@@ -427,7 +471,7 @@
   </div>
 </footer>
 
-  <div class="modal furniture-modal is-hidden" data-furniture-modal>
+    <div class="modal furniture-modal is-hidden" data-furniture-modal>
   <div
     class="modal__backdrop furniture-modal__backdrop"
     data-modal-backdrop
@@ -506,7 +550,7 @@
   </div>
 </div>
 
-  <div class="modal order-modal is-hidden" data-order-modal aria-hidden="true">
+    <div class="modal order-modal is-hidden" data-order-modal aria-hidden="true">
   <div class="modal__backdrop" data-modal-backdrop></div>
 
   <div
@@ -592,6 +636,5 @@
 </div>
 
 
-</body>
-
+  </body>
 </html>
