@@ -974,7 +974,7 @@ body.no-scroll {
   height: 24px;
 }
 
-/* ++++++++++ */
+/* CSS order modal*/
 
 .order-modal {
   top: 0;
@@ -982,6 +982,13 @@ body.no-scroll {
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
+}
+
+.order-form__field {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* приховує горизонтальний скрол, якщо щось вилізе */
 }
 
 .order-modal__dialog {
@@ -1021,6 +1028,7 @@ body.no-scroll {
   flex-direction: column;
   gap: 5px;
   width: 100%;
+  max-width: 100%;
 }
 
 .order-btn-x {
@@ -1059,6 +1067,8 @@ body.no-scroll {
   min-height: 180px;
   height: auto;
   width: 100%;
+  max-width: 100%;
+  resize: vertical;
   box-sizing: border-box;
 }
 
