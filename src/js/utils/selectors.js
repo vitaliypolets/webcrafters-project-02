@@ -5,6 +5,8 @@ export const refs = {
   menuCloseBtn: document.querySelector('[data-menu-close]'),
   mobileMenu: document.querySelector('[data-mobile-menu]'),
   mobileMenuOverlay: document.querySelector('[data-menu-overlay]'),
+  mobileMenuCloseBtn: document.querySelector('.mobile-menu__close'),
+  mobileMenuOpenBtn: document.querySelector('.burger-btn'),
 
   categoriesContainer: document.querySelector('[data-categories-container]'),
   furnitureContainer: document.querySelector('[data-furniture-container]'),

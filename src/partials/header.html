@@ -1,73 +1,61 @@
 <div id="top"></div>
 <header class="header">
-  <div class="container header__container">
-    <a href="#top" class="logo" aria-label="Меблерія — на головну">
-      <svg class="logo__icon" width="163" height="63">
-        <use href="./icons/icons.svg#icon-logo"></use>
-      </svg>
-    </a>
+  <div class="logo-btn-container">
+    <div class="header__container">
+      <a href="#top" class="logo" aria-label="Меблерія — на головну">
+        <svg class="logo__icon" width="163" height="63">
+          <use href="./icons/icons.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <div class="nav-btn">
+        <nav class="header__nav" aria-label="Основна навігація">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#furniture">Наші меблі</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#about">Про нас</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#faq">Часті питання</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#feedback">Відгуки</a>
+            </li>
+          </ul>
+        </nav>
 
-    <nav class="header__nav nav" aria-label="Основна навігація">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a class="nav__link" href="#furniture">Наші меблі</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#about">Про нас</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#popular">Популярні</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#faq">Часті питання</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#feedback">Відгуки</a>
-        </li>
-      </ul>
-    </nav>
-
-    <a class="header__cta btn btn--primary" href="#furniture">До покупок</a>
-
-    <button
-      class="burger"
-      type="button"
-      aria-label="Відкрити меню"
-      aria-expanded="false"
-      data-menu-open
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+        <a class="header-btn" href="#furniture">До покупок</a>
+      </div>
+      <div class="mobile-btn">
+        <button
+          class="burger-btn"
+          type="button"
+          aria-label="Меню"
+          data-menu-open
+        >
+          <svg class="icon-burger" width="32" height="32">
+            <use href="/icons/icons.svg#icon-brg"></use>
+          </svg>
+        </button>
+        <button
+          class="mobile-menu__close is-hidden-mobail"
+          type="button"
+          s
+          aria-label="Закрити меню"
+          data-menu-close
+        >
+          <svg class="close-x" width="32" height="32">
+            <use href="/icons/icons.svg#icon-x"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 
-  <div class="mobile-menu is-hidden" data-mobile-menu>
+  <div class="mobile-menu is-hidden-mobail" data-mobile-menu>
     <div class="mobile-menu__overlay" data-menu-overlay>
-      <div class="container mobile-menu__panel">
-        <div class="mobile-menu__top">
-          <a
-            href="#top"
-            class="mobile-menu__logo logo"
-            aria-label="Меблерія — на головну"
-          >
-            <svg class="logo__icon log-mobile-menu" width="163" height="63">
-              <use href="./icons/icons.svg#icon-logo"></use>
-            </svg>
-          </a>
-
-          <button
-            class="mobile-menu__close"
-            type="button"
-            aria-label="Закрити меню"
-            data-menu-close
-          >
-            <svg class="close-x">
-              <use href="/icons/icons.svg#icon-x"></use>
-            </svg>
-          </button>
-        </div>
-
+      <div class="mobile-menu__panel">
         <nav class="mobile-menu__nav" aria-label="Мобільна навігація">
           <ul class="mobile-menu__list">
             <li class="mobile-menu__item">
@@ -85,9 +73,7 @@
           </ul>
         </nav>
 
-        <a class="mobile-menu__cta btn btn--primary" href="#furniture">
-          До покупок
-        </a>
+        <a class="mobile-menu__cta" href="#furniture"> До покупок </a>
       </div>
     </div>
   </div>

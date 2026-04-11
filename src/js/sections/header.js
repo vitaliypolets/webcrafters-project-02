@@ -5,36 +5,30 @@ import { setMobileMenuOpen } from '../utils/state.js';
 function openMobileMenu() {
   if (!refs.mobileMenu) return;
 
-  refs.mobileMenu.classList.remove('is-hidden');
-  refs.mobileMenu.classList.add('is-open');
+  refs.mobileMenu.classList.remove('is-hidden-mobail');
+  refs.mobileMenu.classList.add('is-open-mobail');
+  refs.mobileMenuCloseBtn.classList.remove('is-hidden-mobail');
+  refs.mobileMenuOpenBtn.classList.add('is-hidden-mobail');
 
   refs.menuOpenBtn?.setAttribute('aria-expanded', 'true');
   refs.mobileMenu?.addEventListener('click', handleMenuLinkClick);
 
   lockScroll();
   setMobileMenuOpen(true);
-
-  const burger = document.querySelector('.burger');
-  if (burger) {
-    burger.classList.add('is-hidden');
-  }
 }
 
 function closeMobileMenu() {
   if (!refs.mobileMenu) return;
 
-  refs.mobileMenu.classList.add('is-hidden');
-  refs.mobileMenu.classList.remove('is-open');
+  refs.mobileMenu.classList.add('is-hidden-mobail');
+  refs.mobileMenu.classList.remove('is-open-mobail');
+  refs.mobileMenuCloseBtn.classList.add('is-hidden-mobail');
+  refs.mobileMenuOpenBtn.classList.remove('is-hidden-mobail');
 
   refs.menuOpenBtn?.setAttribute('aria-expanded', 'false');
 
   unlockScroll();
   setMobileMenuOpen(false);
-
-  const burger = document.querySelector('.burger');
-  if (burger) {
-    burger.classList.remove('is-hidden');
-  }
 }
 
 function handleEscClose(event) {
