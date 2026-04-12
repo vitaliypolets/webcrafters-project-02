@@ -1,0 +1,166 @@
+.footer {
+  background-color: #6b0609;
+  padding: 32px 20px;
+}
+
+.footer__container {
+  width: 100%;
+  max-width: 1312px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.footer__logo-icon {
+  fill: currentColor;
+}
+
+.footer__nav {
+  width: 100%;
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer__nav-item {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__nav-link {
+  display: inline-block;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 250ms ease;
+}
+
+.footer__nav-link:hover,
+.footer__nav-link:focus-visible {
+  opacity: 0.8;
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease;
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.footer__social-icon {
+  fill: currentColor;
+}
+
+.footer__copy-mobi,
+.footer__copy-desk {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__copy-desk {
+  display: none;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 32px;
+  }
+
+  .footer__container {
+    gap: 28px;
+  }
+
+  .footer__nav-list {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 32px;
+    row-gap: 16px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
+  .footer {
+    padding: 24px 64px;
+  }
+
+  .footer__container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 32px;
+  }
+
+  .footer__logo {
+    order: 1;
+  }
+
+  .footer__nav {
+    order: 2;
+    width: auto;
+  }
+
+  .footer__nav-list {
+    flex-wrap: nowrap;
+    gap: 32px;
+  }
+
+  .footer__socials {
+    order: 3;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .footer__copy-desk {
+    order: 4;
+    display: block;
+    white-space: nowrap;
+  }
+
+  .footer__copy-mobi {
+    display: none;
+  }
+}

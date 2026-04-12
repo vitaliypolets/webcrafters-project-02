@@ -16,6 +16,7 @@
     --color-emerald-darkest: #113916;
     --color-error-red: #d64040;
     --opacity-transparent: rgba(255, 255, 255, 0);
+    --opacity-neutral-darkest-5: rgba(8, 12, 9, 0.05);
     --color-text: #1f1f1f;
     --color-muted: #6f6f6f;
     --color-bg: #fcfaf7;
@@ -29,6 +30,8 @@
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-s: 8px;
+    --radius-full: 999px;
+
     --shadow-sm: 0 10px 30px rgba(36, 27, 23, 0.08);
     --transition: 250ms ease;
     --font-family: "Raleway", sans-serif;
@@ -38,7 +41,44 @@
     --font-base: 16px;
     --text-main: #080c09;
     --bg-body: #fff;
+
+  --font-primary: var(--font-family);
+  
+  
+  --transition-main: var(--transition);
+  --color-background: var(--color-bg);
+  --color-scheme-2-text: var(--color-text);
+  --anchor-offset: 65px;
+
 }
+
+
+
+/* @media screen and (min-width: 768px) {
+  :root {
+    --anchor-offset: 80px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    --anchor-offset: 96px;
+  }
+} */
+
+#furniture,
+#about,
+#popular,
+#faq,
+#feedback,
+#footer {
+  scroll-margin-top: var(--anchor-offset);
+}
+
+
+
+
+
 
 body {
     font-family: var(--font-primary);
@@ -52,12 +92,8 @@ body {
 
 }
 
-.no-scroll {
-    overflow: hidden;
-    height: 100vh;
-    touch-action: none;
-    overscroll-behavior: none;
-
+body.no-scroll {
+  overflow: hidden;
 }
 
 *,
@@ -118,6 +154,10 @@ body.is-locked {
     visibility: hidden;
     pointer-events: none;
 }
+
+/* section[id] {
+  scroll-margin-top: 65px;
+} */
 
 .visually-hidden {
     position: absolute;

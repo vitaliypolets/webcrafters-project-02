@@ -3,6 +3,8 @@ export function initSmoothScroll() {
 
   links.forEach(link => {
     link.addEventListener('click', event => {
+      if (link.closest('.mobile-menu')) return;
+
       const href = link.getAttribute('href');
       if (!href || href === '#') return;
 
@@ -10,7 +12,19 @@ export function initSmoothScroll() {
       if (!target) return;
 
       event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      const header = document.querySelector('.header');
+      const headerHeight = header ? header.offsetHeight : 0;
+
+      const targetTop =
+        target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: targetTop,
+        behavior: 'smooth',
+      });
+
+      history.replaceState(null, '', href);
     });
   });
 }
