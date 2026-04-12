@@ -1,16 +1,21 @@
-<section class="container" id="popular">
-  <div class="section-popular">
+<section class="section-popular" id="popular">
+  <div class="container">
     <h2 class="popular-title">Популярні товари</h2>
 
     <div class="swiper popular-swiper">
       <ul class="popular-list swiper-wrapper"></ul>
+
       <div class="swiper-control-panel popular-swiper-up">
         <nav
-          class="swiper-pagination-dots-popular swiper-pagination-dots"
+          class="swiper-pagination-dots-popular"
           aria-label="Сторінки слайдера"
         ></nav>
 
-        <div class="arrows" role="group" aria-label="Керування слайдером">
+        <div
+          class="popular-arrows"
+          role="group"
+          aria-label="Керування слайдером"
+        >
           <button
             class="swiper-prev-button-popular"
             aria-label="Попередній слайд"
@@ -19,6 +24,7 @@
               <use href="/icons/icons.svg#icon-left-arrow-alt"></use>
             </svg>
           </button>
+
           <button
             class="swiper-next-button-popular"
             aria-label="Наступний слайд"
