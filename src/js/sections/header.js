@@ -7,17 +7,12 @@ function openMobileMenu() {
 
   refs.mobileMenu.classList.remove('is-hidden');
   refs.mobileMenu.classList.add('is-open');
-
   refs.menuOpenBtn?.setAttribute('aria-expanded', 'true');
-  refs.mobileMenu?.addEventListener('click', handleMenuLinkClick);
 
   lockScroll();
   setMobileMenuOpen(true);
 
-  const burger = document.querySelector('.burger');
-  if (burger) {
-    burger.classList.add('is-hidden');
-  }
+  refs.menuOpenBtn?.classList.add('is-hidden');
 }
 
 function closeMobileMenu() {
@@ -25,16 +20,12 @@ function closeMobileMenu() {
 
   refs.mobileMenu.classList.add('is-hidden');
   refs.mobileMenu.classList.remove('is-open');
-
   refs.menuOpenBtn?.setAttribute('aria-expanded', 'false');
 
   unlockScroll();
   setMobileMenuOpen(false);
 
-  const burger = document.querySelector('.burger');
-  if (burger) {
-    burger.classList.remove('is-hidden');
-  }
+  refs.menuOpenBtn?.classList.remove('is-hidden');
 }
 
 function handleEscClose(event) {

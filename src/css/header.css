@@ -1,0 +1,257 @@
+.logo {
+  width: 163px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: visible;
+}
+
+.header__container {
+  position: relative;
+  z-index: 3;
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav,
+.header__cta {
+  display: none;
+}
+
+.burger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin-inline: auto;
+  border-radius: 2px;
+  background: var(--color-dark);
+}
+
+.nav__link:hover,
+.nav__link:focus-visible,
+.mobile-menu__link:hover,
+.mobile-menu__link:focus-visible {
+  color: var(--color-accent);
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
+}
+
+.mobile-menu.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.mobile-menu__panel {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.mobile-menu__nav {
+  margin-bottom: 32px;
+}
+
+.mobile-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.mobile-menu__link {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #080c09;
+  text-decoration: none;
+}
+
+.mobile-menu__cta {
+  width: 100%;
+  max-width: 290px;
+  align-self: center;
+}
+
+.mobile-menu__close {
+  display: block;
+  margin-left: auto;
+  font-size: 28px;
+}
+
+.close-x {
+  width: 32px;
+  height: 32px;
+  fill: #080c09;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .header__container {
+    min-height: 65px;
+  }
+
+  .log-mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background: transparent;
+  }
+
+  .mobile-menu__overlay {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .mobile-menu__overlay::before {
+    content: '';
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - 65px);
+    background: rgba(8, 12, 9, 0.5);
+  }
+
+  .mobile-menu__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 249px;
+    min-height: 406px;
+    height: auto;
+    margin: 0;
+    padding: 19px 32px 32px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  .mobile-menu__top {
+    justify-content: flex-end;
+    margin-bottom: 43px;
+  }
+
+  .mobile-menu__nav {
+    margin-bottom: 0;
+  }
+
+  .mobile-menu__list {
+    margin-top: 0;
+    align-items: flex-end;
+    gap: 32px;
+  }
+
+  .mobile-menu__item {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mobile-menu__link {
+    text-align: right;
+  }
+
+  .mobile-menu__cta {
+    width: 184px;
+    max-width: 184px;
+    margin-top: 40px;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1439px) {
+  .mobile-menu__panel {
+    width: 298px;
+    padding-right: 32px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
+  .burger,
+  .mobile-menu {
+    display: none;
+  }
+
+  .header__nav {
+    display: block;
+  }
+
+  .header__cta {
+    display: inline-flex;
+  }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav__link {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #080c09;
+    text-decoration: none;
+  }
+}

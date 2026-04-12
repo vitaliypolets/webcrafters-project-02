@@ -72,7 +72,6 @@ export async function initFeedback() {
       swiperNextButton.disabled = swiper.isEnd;
     });
   } catch (err) {
-    console.error('Помилка завантаження відгуків:', err);
     showToast('Не вдалося завантажити відгуки', 'error');
   } finally {
     hideLoader();
