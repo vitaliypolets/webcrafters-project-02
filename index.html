@@ -24,7 +24,7 @@
     <script type="module" crossorigin src="/webcrafters-project-02/index.js"></script>
     <link rel="modulepreload" crossorigin href="/webcrafters-project-02/assets/vendor-C6jGGvC7.js">
     <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/vendor-XYtvLfmp.css">
-    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-CK7Xl_mX.css">
+    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-B58tkLMK.css">
   </head>
 
   <body>
@@ -107,6 +107,9 @@
               <a class="mobile-menu__link" href="#about">Про нас</a>
             </li>
             <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#popular">Популярні</a>
+            </li>
+            <li class="mobile-menu__item">
               <a class="mobile-menu__link" href="#faq">Часті питання</a>
             </li>
             <li class="mobile-menu__item">
@@ -129,11 +132,11 @@
   <div class="container hero__container">
     <div class="hero__content">
       <h1 class="hero__title">Створіть свій ідеальний дім</h1>
-      <h2 class="hero__text">
+      <p class="hero__text">
         Відкрийте для себе колекцію стильних та комфортних меблів, які
         перетворять ваш простір. Наша продукція поєднує в собі елегантність та
         функціональність.
-      </h2>
+      </p>
       <div class="hero__actions">
         <a class="btn btn--hero" href="#feedback">Що про нас думають</a>
       </div>
@@ -144,7 +147,7 @@
       <section class="furniture section" id="furniture">
   <div class="container furniture__container">
     <div class="furniture__head">
-      <h2 class="furniture__title section-title">Наші меблі</h2>
+      <h2 class="furniture-card__title section-title">Наші меблі</h2>
       <p class="furniture__subtitle section-text">
         Обирайте меблі, які поєднують стиль, комфорт і функціональність для
         вашого дому.
@@ -183,27 +186,42 @@
       </p>
     </div>
     <picture>
-      <source media="(min-width: 1440px)" srcset="/webcrafters-project-02/assets/about-desk-CwvZx_AE.webp 1x, /webcrafters-project-02/assets/about-desk@2x-CsOqHO7E.webp 2x" />
-      <source media="(min-width: 768px)" srcset="/webcrafters-project-02/assets/about-tablet-l9_uBNaq.webp 1x, /webcrafters-project-02/assets/about-tablet@2x-rv4fRaJF.webp 2x" />
+      <source
+        media="(min-width: 1440px)"
+        srcset="/webcrafters-project-02/assets/about-desk-CwvZx_AE.webp 1x, /webcrafters-project-02/assets/about-desk@2x-CsOqHO7E.webp 2x"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="/webcrafters-project-02/assets/about-tablet-l9_uBNaq.webp 1x, /webcrafters-project-02/assets/about-tablet@2x-rv4fRaJF.webp 2x"
+      />
 
-      <source media="(max-width: 767px)" srcset="/webcrafters-project-02/assets/about-mob-nZDhFZql.webp 1x, /webcrafters-project-02/assets/about-mob@2x-DzAXmxWr.webp 2x" />
+      <source
+        media="(max-width: 767px)"
+        srcset="/webcrafters-project-02/assets/about-mob-nZDhFZql.webp 1x, /webcrafters-project-02/assets/about-mob@2x-DzAXmxWr.webp 2x"
+      />
       <img src="/webcrafters-project-02/assets/about-mob-nZDhFZql.webp" alt="Команда Меблерії" />
     </picture>
   </div>
 </section>
-      <section class="container" id="popular">
-  <div class="section-popular">
+
+      <section class="section-popular" id="popular">
+  <div class="container">
     <h2 class="popular-title">Популярні товари</h2>
 
     <div class="swiper popular-swiper">
       <ul class="popular-list swiper-wrapper"></ul>
+
       <div class="swiper-control-panel popular-swiper-up">
         <nav
-          class="swiper-pagination-dots-popular swiper-pagination-dots"
+          class="swiper-pagination-dots-popular"
           aria-label="Сторінки слайдера"
         ></nav>
 
-        <div class="arrows" role="group" aria-label="Керування слайдером">
+        <div
+          class="popular-arrows"
+          role="group"
+          aria-label="Керування слайдером"
+        >
           <button
             class="swiper-prev-button-popular"
             aria-label="Попередній слайд"
@@ -212,6 +230,7 @@
               <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-left-arrow-alt"></use>
             </svg>
           </button>
+
           <button
             class="swiper-next-button-popular"
             aria-label="Наступний слайд"
@@ -226,7 +245,7 @@
   </div>
 </section>
 
-      <section class="faq-section section" id="faq">
+      <section class="faq-section" id="faq">
   <div class="faq-container">
     <div class="section-faq">
       <h2 class="section-faq__title">Часті питання</h2>
@@ -413,6 +432,9 @@
         </li>
         <li class="footer__nav-item">
           <a class="footer__nav-link" href="#about">Про нас</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#popular">Популярні</a>
         </li>
         <li class="footer__nav-item">
           <a class="footer__nav-link" href="#faq">Часті питання</a>
