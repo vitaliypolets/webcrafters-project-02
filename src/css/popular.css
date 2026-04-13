@@ -1,47 +1,38 @@
-/* Popular */
-.section-popular {
-  padding: 48px 0;
-}
-
-.popular-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  text-align: center;
-  color: #080c09;
-  margin-bottom: 32px;
-}
-
-.popular-swiper {
-  overflow: hidden;
-}
-
 .popular-swiper-up {
   margin-top: 48px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   width: 100%;
 }
 
-.swiper-prev-button-popular,
-.swiper-next-button-popular {
-  border: 1px solid rgba(8, 12, 9, 0.15);
-  border-radius: 100px;
-  padding: 12px;
-  width: 48px;
-  height: 48px;
-  background-color: #f2f2f2;
+.swiper-pagination-dots-popular {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.swiper-pagination-dots-popular {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-  flex-wrap: wrap;
+.popular-swiper-up .swiper-pagination {
+  text-align: left;
+}
+
+.popular-swiper-up .swiper-pagination-bullets-dynamic {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.popular-swiper-up .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #080c09;
+  opacity: 0.2;
+  border-radius: 50%;
+}
+
+.popular-swiper-up .swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
 .popular-arrows {
@@ -49,35 +40,63 @@
   align-items: center;
   gap: 16px;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 
-.swiper-prev-button-popular,
-.swiper-next-button-popular {
-  flex-shrink: 0;
-}
-
-.swiper-prev-button-popular:hover,
-.swiper-prev-button-popular:focus,
-.swiper-next-button-popular:hover,
-.swiper-next-button-popular:focus {
-  background-color: #975052;
-  fill: #fff;
-  
-}
-
-.swiper-prev-button-popular:active,
-.swiper-next-button-popular:active {
-  background: #6b0609;
-  fill: #fff;
-}
-
-@media screen and (min-width: 1440px) {
-  .section-popular {
-    padding: 80px 0;
+@media screen and (max-width: 374px) {
+  .popular-swiper-up {
+    gap: 8px;
   }
 
-  .popular-title {
-  font-size: 48px;
+  .popular-arrows {
+    gap: 8px;
+  }
+
+  .swiper-pagination-dots-popular {
+    max-width: calc(100% - 84px);
+  }
+
+  .popular-swiper-up .swiper-pagination-bullet {
+    margin: 0 3px !important;
+  }
 }
+
+@media screen and (max-width: 767px) {
+  .popular-swiper-up {
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .swiper-pagination-dots-popular {
+    max-width: calc(100% - 92px);
+    overflow: hidden;
+  }
+
+  .popular-swiper-up .swiper-pagination-bullets-dynamic {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+  }
+
+  .popular-swiper-up .swiper-pagination-bullet {
+    margin: 0 4px !important;
+  }
+
+  .popular-arrows {
+    gap: 12px;
+  }
+
+  .swiper-prev-button-popular,
+  .swiper-next-button-popular {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .swiper-prev-button-popular .left-arrow,
+  .swiper-next-button-popular .right-arrow {
+    width: 20px;
+    height: 20px;
+  }
 }

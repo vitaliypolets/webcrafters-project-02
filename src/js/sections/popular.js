@@ -1,5 +1,4 @@
 import { showLoader, hideLoader } from '../utils/loader.js';
-
 import { fetchPopular } from '../api/popular-api.js';
 import { renderPopular } from '../render/render-popular';
 import { showToast } from '../utils/toast.js';
@@ -16,8 +15,9 @@ export async function initPopular() {
 
   try {
     const { furnitures } = await fetchPopular();
+
     if (!furnitures || furnitures.length === 0) {
-      showToast('Не вдалося завантажити популярні товари');
+      showToast('Не вдалося завантажити популярні товари', 'error');
       return;
     }
 
@@ -48,6 +48,8 @@ export async function initPopular() {
       pagination: {
         el: '.swiper-pagination-dots-popular',
         clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
       },
 
       navigation: {
@@ -56,27 +58,24 @@ export async function initPopular() {
       },
     });
 
-    const swiperControlPanel = document.querySelectorAll(
-      '.swiper-pagination-dots-popular, .swiper-next-button-popular, .swiper-prev-button-popular'
-    );
+    const swiperPrevButton = document.querySelector('.swiper-prev-button-popular');
+    const swiperNextButton = document.querySelector('.swiper-next-button-popular');
+    const swiperPagination = document.querySelector('.swiper-pagination-dots-popular');
 
-    swiperControlPanel.forEach(elem => {
-      elem.style.display = 'flex';
-    });
+    if (swiperPrevButton) swiperPrevButton.style.display = 'flex';
+    if (swiperNextButton) swiperNextButton.style.display = 'flex';
+    if (swiperPagination) swiperPagination.style.display = 'block';
 
-    swiper.on('slideChange', () => {
-      const swiperPreButton = document.querySelector(
-        '.swiper-prev-button-popular'
-      );
-      const swiperNextButton = document.querySelector(
-        '.swiper-next-button-popular'
-      );
+    const updateButtonsState = () => {
+      if (swiperPrevButton) swiperPrevButton.disabled = swiper.isBeginning;
+      if (swiperNextButton) swiperNextButton.disabled = swiper.isEnd;
+    };
 
-      swiperPreButton.disabled = swiper.isBeginning;
-      swiperNextButton.disabled = swiper.isEnd;
-    });
+    updateButtonsState();
+    swiper.on('slideChange', updateButtonsState);
   } catch (err) {
     console.error(err);
+    showToast('Не вдалося завантажити популярні товари', 'error');
   } finally {
     hideLoader();
   }
