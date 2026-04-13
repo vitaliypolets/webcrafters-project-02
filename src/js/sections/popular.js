@@ -48,6 +48,8 @@ export async function initPopular() {
       pagination: {
         el: '.swiper-pagination-dots-popular',
         clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
       },
 
       navigation: {
@@ -56,13 +58,13 @@ export async function initPopular() {
       },
     });
 
-    const swiperControlPanel = document.querySelectorAll(
-      '.swiper-pagination-dots-popular, .swiper-next-button-popular, .swiper-prev-button-popular'
-    );
+    const swiperPrevButton = document.querySelector('.swiper-prev-button-popular');
+    const swiperNextButton = document.querySelector('.swiper-next-button-popular');
+    const swiperPagination = document.querySelector('.swiper-pagination-dots-popular');
 
-    swiperControlPanel.forEach(elem => {
-      elem.style.display = 'flex';
-    });
+    if (swiperPrevButton) swiperPrevButton.style.display = 'flex';
+    if (swiperNextButton) swiperNextButton.style.display = 'flex';
+    if (swiperPagination) swiperPagination.style.display = 'block';
 
     const swiperPrevButton = document.querySelector('.swiper-prev-button-popular');
     const swiperNextButton = document.querySelector('.swiper-next-button-popular');
