@@ -48,8 +48,6 @@ export async function initPopular() {
       pagination: {
         el: '.swiper-pagination-dots-popular',
         clickable: true,
-        dynamicBullets: true,
-        dynamicMainBullets: 3,
       },
 
       navigation: {
@@ -58,21 +56,32 @@ export async function initPopular() {
       },
     });
 
+    const swiperControlPanel = document.querySelectorAll(
+      '.swiper-pagination-dots-popular, .swiper-next-button-popular, .swiper-prev-button-popular'
+    );
+
+    swiperControlPanel.forEach(elem => {
+      elem.style.display = 'flex';
+    });
+
     const swiperPrevButton = document.querySelector('.swiper-prev-button-popular');
     const swiperNextButton = document.querySelector('.swiper-next-button-popular');
-    const swiperPagination = document.querySelector('.swiper-pagination-dots-popular');
-
-    if (swiperPrevButton) swiperPrevButton.style.display = 'flex';
-    if (swiperNextButton) swiperNextButton.style.display = 'flex';
-    if (swiperPagination) swiperPagination.style.display = 'block';
 
     const updateButtonsState = () => {
-      if (swiperPrevButton) swiperPrevButton.disabled = swiper.isBeginning;
-      if (swiperNextButton) swiperNextButton.disabled = swiper.isEnd;
+      if (swiperPrevButton) {
+        swiperPrevButton.disabled = swiper.isBeginning;
+      }
+
+      if (swiperNextButton) {
+        swiperNextButton.disabled = swiper.isEnd;
+      }
     };
 
     updateButtonsState();
+
     swiper.on('slideChange', updateButtonsState);
+    swiper.on('breakpoint', updateButtonsState);
+    swiper.on('resize', updateButtonsState);
   } catch (err) {
     console.error(err);
     showToast('Не вдалося завантажити популярні товари', 'error');
