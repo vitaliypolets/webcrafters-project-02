@@ -66,13 +66,24 @@ export async function initPopular() {
     if (swiperNextButton) swiperNextButton.style.display = 'flex';
     if (swiperPagination) swiperPagination.style.display = 'block';
 
+    const swiperPrevButton = document.querySelector('.swiper-prev-button-popular');
+    const swiperNextButton = document.querySelector('.swiper-next-button-popular');
+
     const updateButtonsState = () => {
-      if (swiperPrevButton) swiperPrevButton.disabled = swiper.isBeginning;
-      if (swiperNextButton) swiperNextButton.disabled = swiper.isEnd;
+      if (swiperPrevButton) {
+        swiperPrevButton.disabled = swiper.isBeginning;
+      }
+
+      if (swiperNextButton) {
+        swiperNextButton.disabled = swiper.isEnd;
+      }
     };
 
     updateButtonsState();
+
     swiper.on('slideChange', updateButtonsState);
+    swiper.on('breakpoint', updateButtonsState);
+    swiper.on('resize', updateButtonsState);
   } catch (err) {
     console.error(err);
     showToast('Не вдалося завантажити популярні товари', 'error');
