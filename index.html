@@ -24,7 +24,7 @@
     <script type="module" crossorigin src="/webcrafters-project-02/index.js"></script>
     <link rel="modulepreload" crossorigin href="/webcrafters-project-02/assets/vendor-C6jGGvC7.js">
     <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/vendor-XYtvLfmp.css">
-    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-CqIFqwtO.css">
+    <link rel="stylesheet" crossorigin href="/webcrafters-project-02/assets/index-BlzWXw8o.css">
   </head>
 
   <body>
@@ -160,6 +160,40 @@
 
     <div class="furniture__list" data-furniture-container>
       <!-- renderFurnitureCards() -->
+    </div>
+
+    <div
+      class="furniture__pagination-wrap is-hidden"
+      data-furniture-pagination-wrap
+    >
+      <div class="furniture-pagination" aria-label="Пагінація меблів">
+        <button
+          class="furniture-pagination__arrow"
+          type="button"
+          data-furniture-prev
+          aria-label="Попередня сторінка"
+        >
+          <svg class="left-arrow" width="24" height="24" aria-hidden="true">
+            <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-left-arrow-alt"></use>
+          </svg>
+        </button>
+
+        <div
+          class="furniture-pagination__pages"
+          data-furniture-pagination
+        ></div>
+
+        <button
+          class="furniture-pagination__arrow"
+          type="button"
+          data-furniture-next
+          aria-label="Наступна сторінка"
+        >
+          <svg class="right-arrow" width="24" height="24" aria-hidden="true">
+            <use href="/webcrafters-project-02/assets/icons-BdW928bz.svg#icon-right-arrow-alt"></use>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <div class="furniture__actions">
