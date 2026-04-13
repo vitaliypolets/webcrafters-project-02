@@ -73,7 +73,7 @@ export function renderFurnitureCards(items = []) {
           </div>
 
           <div class="product-card__content">
-            <h3 class="product-card__title">${title}</h3>
+            <h3 class="product-card__title" title="${title}">${title}</h3>
             <div class="product-card__color">
             ${color}
             </div>

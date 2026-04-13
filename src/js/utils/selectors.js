@@ -10,6 +10,13 @@ export const refs = {
   furnitureContainer: document.querySelector('[data-furniture-container]'),
   loadMoreBtn: document.querySelector('[data-load-more]'),
 
+  furniturePaginationWrap: document.querySelector(
+    '[data-furniture-pagination-wrap]'
+  ),
+  furniturePagination: document.querySelector('[data-furniture-pagination]'),
+  furniturePrevBtn: document.querySelector('[data-furniture-prev]'),
+  furnitureNextBtn: document.querySelector('[data-furniture-next]'),
+
   feedbackContainer: document.querySelector('[data-feedback-container]'),
   feedbackPrevBtn: document.querySelector('[data-feedback-prev]'),
   feedbackNextBtn: document.querySelector('[data-feedback-next]'),

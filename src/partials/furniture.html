@@ -16,6 +16,40 @@
       <!-- renderFurnitureCards() -->
     </div>
 
+    <div
+      class="furniture__pagination-wrap is-hidden"
+      data-furniture-pagination-wrap
+    >
+      <div class="furniture-pagination" aria-label="Пагінація меблів">
+        <button
+          class="furniture-pagination__arrow"
+          type="button"
+          data-furniture-prev
+          aria-label="Попередня сторінка"
+        >
+          <svg class="left-arrow" width="24" height="24" aria-hidden="true">
+            <use href="/icons/icons.svg#icon-left-arrow-alt"></use>
+          </svg>
+        </button>
+
+        <div
+          class="furniture-pagination__pages"
+          data-furniture-pagination
+        ></div>
+
+        <button
+          class="furniture-pagination__arrow"
+          type="button"
+          data-furniture-next
+          aria-label="Наступна сторінка"
+        >
+          <svg class="right-arrow" width="24" height="24" aria-hidden="true">
+            <use href="/icons/icons.svg#icon-right-arrow-alt"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <div class="furniture__actions">
       <button
         class="furniture__load-more product__btn btn btn--furniture"
