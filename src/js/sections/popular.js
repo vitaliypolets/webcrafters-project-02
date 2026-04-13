@@ -67,9 +67,6 @@ export async function initPopular() {
     const swiperPrevButton = document.querySelector('.swiper-prev-button-popular');
     const swiperNextButton = document.querySelector('.swiper-next-button-popular');
 
-    const swiperPrevButton = document.querySelector('.swiper-prev-button-popular');
-    const swiperNextButton = document.querySelector('.swiper-next-button-popular');
-
     const updateButtonsState = () => {
       if (swiperPrevButton) {
         swiperPrevButton.disabled = swiper.isBeginning;
